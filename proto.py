@@ -1,11 +1,11 @@
 import random
 
 class Character:
-  def __init__(self):
+  def __init__(self, name, location = None):
     self.relationships = {}
-    self.name = ""
+    self.name = name
     self.schedule_time = 0
-    self.location = ""
+    self.location = location if location is not None else self.name + "'s house"
   
   def schedule_step(self):
     if self.schedule_time <= 0:
@@ -43,9 +43,8 @@ if __name__ == '__main__':
   characters = []
   names = ['John', 'Marsha', 'Patrick', 'Emily', 'George', 'Sarah', 'Ibrahim', 'Natasha', 'Bob', 'Kylie']
   for name in names:
-    person = Character()
-    person.name = name
-    person.location = name + "s house"
+    person = Character(name)
+
     characters.append(person)
   for person in characters:
     for person2 in characters:
