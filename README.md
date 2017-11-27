@@ -13,3 +13,5 @@
 [Prosecco network](http://www.prosecco-network.eu/)
 
 [Veale, T. (2016). A Rap on the Knuckles and a Twist in the Tale: From Tweeting Affective Metaphors to Generating Stories with a Moral](https://www.aaai.org/ocs/index.php/SSS/SSS16/paper/download/12718/11961)
+
+[Veale, T. (2017). Déjà Vu All Over Again On the Creative Value of Familiar Elements in the Telling of Original Tales](http://afflatus.ucd.ie/Papers/Deja%20Vu.pdf)
