@@ -58,7 +58,7 @@ class NOCListReader:
         assert isinstance(file, NOCFile)
 
         path = self.path_to_tsv_list + file.value
-        contents = pd.read_csv(filepath_or_buffer=path, sep=separator, header=True)
+        contents = pd.read_csv(filepath_or_buffer=path, sep=separator)
 
         return contents
 
