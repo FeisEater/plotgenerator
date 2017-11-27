@@ -11,3 +11,5 @@
 [Michael Brenner: Dynamic Plot Generation by Continual Multiagent Planning](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.217.3084&rep=rep1&type=pdf)
 
 [Prosecco network](http://www.prosecco-network.eu/)
+
+[Veale, T. (2016). A Rap on the Knuckles and a Twist in the Tale: From Tweeting Affective Metaphors to Generating Stories with a Moral](https://www.aaai.org/ocs/index.php/SSS/SSS16/paper/download/12718/11961)
