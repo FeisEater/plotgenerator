@@ -1,27 +1,5 @@
 import random
-
-class Character:
-  def __init__(self, name, location = None):
-    self.relationships = {}
-    self.name = name
-    self.schedule_time = 0
-    self.location = location if location is not None else self.name + "'s house"
-  
-  def schedule_step(self):
-    if self.schedule_time <= 0:
-      if self.location == self.name + "s house":
-        self.location = self.name + "s shop"
-        print(self.name + " goes to " + self.location)
-        self.schedule_time = random.randint(2,8)
-      else:
-        locations = [x.name + "s shop" for x in self.relationships.keys()] + ["tavern", self.name + "s house"]
-        self.location = random.choice(locations)
-        print(self.name + " goes to " + self.location)
-        if self.location == self.name + "s house":
-          self.schedule_time = random.randint(2,8)
-        elif self.location == "tavern":
-          self.schedule_time = random.randint(1,4)
-    self.schedule_time -= 1
+from dataloaders import CharacterDataLoader
         
 def safe_append(dict, key, value):
   if key not in dict:
@@ -40,19 +18,8 @@ def change_relationship(person1, person2, delta):
   print("-" + person1.name + " likes " + person2.name + ": " + str(person1.relationships[person2]))
 
 if __name__ == '__main__':
-  characters = []
-  names = ['John', 'Marsha', 'Patrick', 'Emily', 'George', 'Sarah', 'Ibrahim', 'Natasha', 'Bob', 'Kylie']
-  for name in names:
-    person = Character(name)
+  characters = CharacterDataLoader().load(howmany=10)
 
-    characters.append(person)
-  for person in characters:
-    for person2 in characters:
-      if person == person2:
-        continue
-      person.relationships[person2] = random.uniform(-1,1)
-      print(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
-  
   while True:
     input("Press Enter to progress...")
     places = {}
