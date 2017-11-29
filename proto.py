@@ -1,5 +1,6 @@
 import random
 from dataloaders import CharacterDataLoader
+from models import Knowledge
         
 def safe_append(dict, key, value):
   if key not in dict:
@@ -7,21 +8,19 @@ def safe_append(dict, key, value):
   else:
     dict[key].append(value)
     
-def change_relationship(person1, person2, delta):
-  if person1 == person2 or person2 not in person1.relationships:
-    return
-  person1.relationships[person2] += delta
-  if person1.relationships[person2] > 1:
-    person1.relationships[person2] = 1
-  if person1.relationships[person2] < -1:
-    person1.relationships[person2] = -1
-  print("-" + person1.name + " likes " + person2.name + ": " + str(person1.relationships[person2]))
-
 if __name__ == '__main__':
-  characters = CharacterDataLoader().load(howmany=10)
-
+  output = []
+  characters = CharacterDataLoader().load(howmany=10, output=output)
+  for msg in output:
+    print(msg)
+  del output[:]
+  
+  step = 0
   while True:
+    step += 1
+    print("")
     input("Press Enter to progress...")
+    print("")
     places = {}
     for person in characters:
       person.schedule_step()
@@ -42,27 +41,15 @@ if __name__ == '__main__':
             events['converse'].append((person1, person2))
       if not events['kill'] and not events['beat up'] and not events['insult'] and not events['converse']:
         continue
-      print("INT " + place)
+      output.append("INT " + place)
       random.shuffle(events['kill'])
       ignore = []
       for tuple in events['kill']:
         if tuple[0] in ignore:
           continue
-        print("-" + tuple[0].name + " kills " + tuple[1].name)
-        for person in characters:
-          if person == tuple[0]:
-            person.relationships.pop(tuple[1])
-            continue
-          if person == tuple[1] or tuple[1] not in person.relationships:
-            continue
-          if person.relationships[tuple[1]] > 0.5:
-            person.relationships[tuple[0]] = -1
-            print("-" + person.name + " vowes revenge on " + tuple[0].name)
-          elif person.relationships[tuple[1]] > 0:
-            change_relationship(person, tuple[0], -0.25)
-          if person.relationships[tuple[1]] < -0.5:
-            change_relationship(person, tuple[0], 0.25)
-          person.relationships.pop(tuple[1])
+        output.append("-" + tuple[0].name + " kills " + tuple[1].name)
+        for witness in places[place]:
+          witness.acquire_knowledge(Knowledge(tuple[0], "killed", tuple[1], step))
         if tuple[1] in characters:
           characters.remove(tuple[1])
         ignore.append(tuple[1])
@@ -74,28 +61,25 @@ if __name__ == '__main__':
       for tuple in events['beat up']:
         if tuple[0] in ignore:
           continue
-        print("-" + tuple[0].name + " beats up " + tuple[1].name)
-        for person in characters:
-          if person == tuple[0] or person == tuple[1]:
-            continue
-          if person.relationships[tuple[1]] > 0.5:
-            change_relationship(person, tuple[0], -0.5)
-          elif person.relationships[tuple[1]] > 0:
-            change_relationship(person, tuple[0], -0.25)
-          if person.relationships[tuple[1]] < -0.5:
-            change_relationship(person, tuple[0], 0.25)
+        output.append("-" + tuple[0].name + " beats up " + tuple[1].name)
+        for witness in places[place]:
+          witness.acquire_knowledge(Knowledge(tuple[0], "beat up", tuple[1], step))
         tuple[1].relationships[tuple[0]] -= 1
         ignore.append(tuple[1])
         events['insult'] = list(filter(lambda x : x[0] != tuple[1], events['insult']))
         events['converse'] = list(filter(lambda x : x[0] != tuple[1], events['converse']))
       random.shuffle(events['insult'])
       for tuple in events['insult']:
-        print("-" + tuple[0].name + " insults " + tuple[1].name)
-        change_relationship(tuple[1], tuple[0], -0.25)
+        output.append("-" + tuple[0].name + " insults " + tuple[1].name)
+        tuple[1].change_relationship(tuple[0], -0.25)
         events['insult'] = list(filter(lambda x : x[0] != tuple[1], events['insult']))
         events['converse'] = list(filter(lambda x : x[0] != tuple[1], events['converse']))
       random.shuffle(events['converse'])
       for tuple in events['converse']:
-        print("-" + tuple[0].name + " converses with " + tuple[1].name)
-        change_relationship(tuple[1], tuple[0], 0.25)
-  
+        output.append("-" + tuple[0].name + " converses with " + tuple[1].name)
+        tuple[1].change_relationship(tuple[0], 0.25)
+        for knowledge in tuple[1].knowledge:
+          tuple[0].acquire_knowledge(knowledge)
+    for msg in output:
+      print(msg)
+    del output[:]

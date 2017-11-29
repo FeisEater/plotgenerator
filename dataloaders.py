@@ -3,7 +3,8 @@ from models import Character
 import random
 
 class CharacterDataLoader:
-    def load(self, howmany = None):
+    def load(self, howmany = None, output = []):
+        self.out = output
         data = NOCListReader().get_noc_list_contents()
 
         characters = self.__parse_characters(data)
@@ -19,7 +20,7 @@ class CharacterDataLoader:
         characters = []
 
         for index, row in dataframe.iterrows():
-            character = Character(name=row["Character"], opponent = row["Opponent"])
+            character = Character(name=row["Character"], opponent = row["Opponent"], output = self.out)
 
             characters.append(character)
 
@@ -31,6 +32,6 @@ class CharacterDataLoader:
                 if person == person2:
                     continue
                 person.relationships[person2] = random.uniform(-1, 1)
-                print(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
+                self.out.append(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
 
         return characters
