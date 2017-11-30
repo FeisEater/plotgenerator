@@ -1,85 +1,107 @@
 import random
 from dataloaders import CharacterDataLoader
 from models import Knowledge
-        
+from enum import Enum
+from library import Actions
+
+output = []
+characters = CharacterDataLoader().load(howmany=10, output=output)
+step = 0
+
 def safe_append(dict, key, value):
   if key not in dict:
     dict[key] = [value]
   else:
     dict[key].append(value)
-    
-if __name__ == '__main__':
-  output = []
-  characters = CharacterDataLoader().load(howmany=10, output=output)
+
+def dump_output():
+  global output
   for msg in output:
     print(msg)
   del output[:]
+
+def make_decision(source, target):
+  if source.relationships[target] < -0.75:
+    return Actions.KILL
+  if source.relationships[target] < -0.5:
+    return Actions.BEAT_UP
+  if source.relationships[target] < -0.25:
+    return Actions.INSULT
+  if source.relationships[target] > 0:
+    return Actions.CONVERSE
+  return Actions.NONE
+
+def do_kill(source, target, chars_to_ignore):
+  global characters
+  if target in characters:
+    characters.remove(target)
+  chars_to_ignore.append(target)
+
+def do_beat_up(source, target, chars_to_ignore):
+  target.relationships[source] -= 1
+  chars_to_ignore.append(target)
+
+def do_insult(source, target, chars_to_ignore):
+  target.change_relationship(source, -0.25)
+
+def do_converse(source, target, chars_to_ignore):
+  target.change_relationship(source, 0.25)
+  for knowledge in target.knowledge:
+    source.acquire_knowledge(knowledge)
+
+action_methods = {
+  Actions.KILL: do_kill,
+  Actions.BEAT_UP: do_beat_up,
+  Actions.INSULT: do_insult,
+  Actions.CONVERSE: do_converse
+}
+
+def execute_action(action, place, witnessed, events, chars_to_ignore):
+  random.shuffle(events[action])
+  for tuple in events[action]:
+    if tuple[0] in chars_to_ignore:
+      continue
+    output.append("-" + tuple[0].name + " " + action.value + " " + tuple[1].name)
+    if witnessed:
+      for witness in place:
+        witness.acquire_knowledge(Knowledge(tuple[0], action, tuple[1], step))
+    action_methods[action](tuple[0], tuple[1], chars_to_ignore)
+    
+def generation_step():
+  global step
+  global characters
   
-  step = 0
+  step += 1
+  
+  places = {}
+  for person in characters:
+    person.schedule_step()
+    safe_append(places, person.location, person)
+  
+  for place in places:
+    events = {}
+    for action in Actions:
+      events[action] = []
+
+    for person1 in places[place]:
+      for person2 in places[place]:
+        if person1 == person2:
+          continue
+        events[make_decision(person1, person2)].append((person1, person2))
+
+    output.append("At the " + place)
+    chars_to_ignore = []
+    execute_action(Actions.KILL, places[place], True, events, chars_to_ignore)
+    execute_action(Actions.BEAT_UP, places[place], True, events, chars_to_ignore)
+    execute_action(Actions.INSULT, places[place], False, events, chars_to_ignore)
+    execute_action(Actions.CONVERSE, places[place], False, events, chars_to_ignore)
+
+  dump_output()
+
+if __name__ == '__main__':
+  dump_output()
   while True:
-    step += 1
     print("")
     input("Press Enter to progress...")
     print("")
-    places = {}
-    for person in characters:
-      person.schedule_step()
-      safe_append(places, person.location, person)
-    for place in places:
-      events = {'kill': [], 'beat up': [], 'insult': [], 'converse': []}
-      for person1 in places[place]:
-        for person2 in places[place]:
-          if person1 == person2:
-            continue
-          if person1.relationships[person2] < -0.75:
-            events['kill'].append((person1, person2))
-          elif person1.relationships[person2] < -0.5:
-            events['beat up'].append((person1, person2))
-          elif person1.relationships[person2] < -0.25:
-            events['insult'].append((person1, person2))
-          elif person1.relationships[person2] > 0:
-            events['converse'].append((person1, person2))
-      if not events['kill'] and not events['beat up'] and not events['insult'] and not events['converse']:
-        continue
-      output.append("INT " + place)
-      random.shuffle(events['kill'])
-      ignore = []
-      for tuple in events['kill']:
-        if tuple[0] in ignore:
-          continue
-        output.append("-" + tuple[0].name + " kills " + tuple[1].name)
-        for witness in places[place]:
-          witness.acquire_knowledge(Knowledge(tuple[0], "killed", tuple[1], step))
-        if tuple[1] in characters:
-          characters.remove(tuple[1])
-        ignore.append(tuple[1])
-        events['beat up'] = list(filter(lambda x : x[0] != tuple[1] and x[1] != tuple[1], events['beat up']))
-        events['insult'] = list(filter(lambda x : x[0] != tuple[1] and x[1] != tuple[1], events['insult']))
-        events['converse'] = list(filter(lambda x : x[0] != tuple[1] and x[1] != tuple[1], events['converse']))
-      ignore = []
-      random.shuffle(events['beat up'])
-      for tuple in events['beat up']:
-        if tuple[0] in ignore:
-          continue
-        output.append("-" + tuple[0].name + " beats up " + tuple[1].name)
-        for witness in places[place]:
-          witness.acquire_knowledge(Knowledge(tuple[0], "beat up", tuple[1], step))
-        tuple[1].relationships[tuple[0]] -= 1
-        ignore.append(tuple[1])
-        events['insult'] = list(filter(lambda x : x[0] != tuple[1], events['insult']))
-        events['converse'] = list(filter(lambda x : x[0] != tuple[1], events['converse']))
-      random.shuffle(events['insult'])
-      for tuple in events['insult']:
-        output.append("-" + tuple[0].name + " insults " + tuple[1].name)
-        tuple[1].change_relationship(tuple[0], -0.25)
-        events['insult'] = list(filter(lambda x : x[0] != tuple[1], events['insult']))
-        events['converse'] = list(filter(lambda x : x[0] != tuple[1], events['converse']))
-      random.shuffle(events['converse'])
-      for tuple in events['converse']:
-        output.append("-" + tuple[0].name + " converses with " + tuple[1].name)
-        tuple[1].change_relationship(tuple[0], 0.25)
-        for knowledge in tuple[1].knowledge:
-          tuple[0].acquire_knowledge(knowledge)
-    for msg in output:
-      print(msg)
-    del output[:]
+    generation_step()
