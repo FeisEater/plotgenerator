@@ -1,8 +1,6 @@
 import random
 from dataloaders import CharacterDataLoader
-from models import Knowledge
-from enum import Enum
-from library import Actions
+from models import Knowledge, Actions
 
 output = []
 characters = CharacterDataLoader().load(howmany=10, output=output)

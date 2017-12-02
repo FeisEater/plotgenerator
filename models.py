@@ -1,5 +1,5 @@
 import random
-from library import Actions
+from enum import Enum
 
 def persons_house(person):
   return "{}'s house".format(person.name)
@@ -81,3 +81,17 @@ class Knowledge:
         self.action = action
         self.target = target
         self.timestamp = timestamp
+
+class Actions(Enum):
+  KILL = "kill"
+  BEAT_UP = "beat up"
+  INSULT = "insult"
+  CONVERSE = "converse"
+  NONE = "none"
+
+  @property
+  def is_witnessed(self):
+    if self in [Actions.KILL, Actions.BEAT_UP]:
+      return True
+    else:
+      return False
