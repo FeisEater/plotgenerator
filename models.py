@@ -10,8 +10,8 @@ def persons_shop(person):
 TAVERN = "tavern"
 
 class Character:
-    def __init__(self, name, location = None, opponent = None, output = []):
-        self.relationships = {} #{ opponent: -1 } if isinstance(opponent, str) else {}
+    def __init__(self, name, location = None, output = []):
+        self.relationships = {}
         self.name = name
         self.schedule_time = 0
         self.location = location if location is not None else persons_house(self)

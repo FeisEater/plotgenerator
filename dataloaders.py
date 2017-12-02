@@ -29,37 +29,90 @@ class NOCListColumn(Enum):
     NEGATIVE_TALKING_POINTS = 'Negative Talking Points'
     POSITIVE_TALKING_POINTS = 'Positive Talking Points'
 
-
 class CharacterDataLoader:
-    def load(self, howmany = None, output = []):
+    def load(self, howmany = None, random_sample = True, output = []):
         self.out = output
         data = NOCListReader().get_noc_list_contents()
 
         characters = self.__parse_characters(data)
 
         if howmany is not None and isinstance(howmany, int) and howmany > 2:
-            characters = random.sample(characters, howmany)
+            if random_sample:
+                characters = random.sample(characters, howmany)
+            else:
+                characters = characters[:howmany]
 
-        characters = self.__build_relationships(characters)
+        characters = self.__build_relationships(characters, data)
 
         return characters
 
-    def __parse_characters(self, dataframe):
+    def __parse_characters(self, data):
+        '''
+        Parses the characters into a list of Character objects from the NOC list.
+        :param data: The NOC List as a pandas DataFrame.
+        :type data: pandas.core.Frame.DataFrame
+        :return: The list of Characters extracted from the data.
+        :rtype: [Character]
+        '''
         characters = []
 
-        for index, row in dataframe.iterrows():
-            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], opponent = row[NOCListColumn.OPPONENT.value], output = self.out)
+        for index, row in data.iterrows():
+            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], output = self.out)
 
             characters.append(character)
 
         return characters
 
-    def __build_relationships(self, characters):
+    def __build_relationships(self, characters, data):
+        '''
+        Initializes the relationships between the list of characters using the
+        :param characters: The list of Characters.
+        :type characters: [Character]
+        :param data: The NOC List as a pandas DataFrame.
+        :type data: pandas.core.Frame.DataFrame
+        :return: The original list of Characters but with configured relationship dictionaries.
+        :rtype: [Character]
+        '''
         for person in characters:
             for person2 in characters:
-                if person == person2:
+                if person == person2 or self.__have_relationship(person, person2):
                     continue
-                person.relationships[person2] = random.uniform(-1, 1)
+
+                if self.__are_opponents(person, person2, data):
+                    person.relationships[person2] = -1.0
+                    person2.relationships[person] = -1.0
+                else:
+                    person.relationships[person2] = random.uniform(-1, 1)
+                    person2.relationships[person] = random.uniform(-1, 1)
                 self.out.append(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
 
         return characters
+
+    def __have_relationship(self, person1, person2):
+        '''
+        Tells if two characters have a two-way between eachother.
+        :param person1: The first character.
+        :type person1: Character
+        :param person2: The second character.
+        :type person2: Character
+        :return: True, if a two-way relationship exist. False otherwise.
+        :rtype: bool
+        '''
+        return person2 in person1.relationships.keys() and person1 in person2.relationships.keys()
+
+    def __are_opponents(self, person1, person2, data):
+        '''
+        Tells if two characters are opponents.
+        :param person1: The first character.
+        :type person1: Character
+        :param person2: The second character.
+        :type person2: Character
+        :param data: The data extracted from the NOC list as a pandas DataFrame.
+        :type data: pandas.core.Frame.DataFrame
+        :return: True, if the two characters are opponents. False otherwise.
+        :rtype: bool
+        '''
+        if person2.name in data[data[NOCListColumn.OPPONENT.value] == person1.name][NOCListColumn.CHARACTER_NAME.value].values:
+            return True
+        else:
+            return False
