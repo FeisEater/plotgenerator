@@ -1,6 +1,34 @@
 from NOCListReader import *
 from models import Character
 import random
+from enum import Enum
+
+class NOCListColumn(Enum):
+    CHARACTER_NAME = "Character"
+    CANONICAL_NAME = 'Canonical Name'
+    GENDER = 'Gender'
+    DISTRICT = 'Address 1'
+    CITY = 'Address 2'
+    COUNTRY = 'Address 3'
+    POLITICS = 'Politics'
+    MARTIAL_STATUS = 'Marital Status'
+    OPPONENT = 'Opponent'
+    TYPICAL_ACTIVITY = 'Typical Activity'
+    VEHICLE_OF_CHOICE = 'Vehicle of Choice'
+    WEAPON_OF_CHOICE = 'Weapon of Choice'
+    SEEN_WEARING = 'Seen Wearing'
+    DOMAINS = 'Domains'
+    GENRES = 'Genres'
+    FICTIVE_STATUS = 'Fictive Status'
+    PORTRAYED_BY = 'Portrayed By'
+    CREATOR = 'Creator'
+    CREATION = 'Creation'
+    GROUP_AFFILIATION = 'Group Affiliation'
+    FICTIONAL_WORLD = 'Fictional World'
+    CATEGORY = 'Category'
+    NEGATIVE_TALKING_POINTS = 'Negative Talking Points'
+    POSITIVE_TALKING_POINTS = 'Positive Talking Points'
+
 
 class CharacterDataLoader:
     def load(self, howmany = None, output = []):
@@ -20,7 +48,7 @@ class CharacterDataLoader:
         characters = []
 
         for index, row in dataframe.iterrows():
-            character = Character(name=row["Character"], opponent = row["Opponent"], output = self.out)
+            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], opponent = row[NOCListColumn.OPPONENT.value], output = self.out)
 
             characters.append(character)
 
