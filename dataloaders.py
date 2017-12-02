@@ -57,7 +57,7 @@ class CharacterDataLoader:
         characters = []
 
         for index, row in data.iterrows():
-            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], output = self.out)
+            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], positive_talking_points=self.__extract_talking_points(row[NOCListColumn.POSITIVE_TALKING_POINTS.value]), negative_talking_points=self.__extract_talking_points(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]), output = self.out)
 
             characters.append(character)
 
@@ -116,3 +116,9 @@ class CharacterDataLoader:
             return True
         else:
             return False
+
+    def __extract_talking_points(self, column_value):
+        values = str(column_value).split(",")
+        values = list(map(lambda x: x.strip(), values))
+
+        return values
