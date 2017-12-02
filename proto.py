@@ -91,10 +91,9 @@ def generation_step():
 
     output.append("At the " + place)
     chars_to_ignore = []
-    execute_action(Actions.KILL, places[place], events, chars_to_ignore)
-    execute_action(Actions.BEAT_UP, places[place], events, chars_to_ignore)
-    execute_action(Actions.INSULT, places[place], events, chars_to_ignore)
-    execute_action(Actions.CONVERSE, places[place], events, chars_to_ignore)
+    for action in Actions:
+      if action != Actions.NONE:
+        execute_action(action, places[place], events, chars_to_ignore)
 
   dump_output()
 
