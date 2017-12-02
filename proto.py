@@ -56,13 +56,13 @@ action_methods = {
   Actions.CONVERSE: do_converse
 }
 
-def execute_action(action, place, witnessed, events, chars_to_ignore):
+def execute_action(action, place, events, chars_to_ignore):
   random.shuffle(events[action])
   for tuple in events[action]:
     if tuple[0] in chars_to_ignore:
       continue
     output.append("-" + tuple[0].name + " " + action.value + " " + tuple[1].name)
-    if witnessed:
+    if action.is_witnessed:
       for witness in place:
         witness.acquire_knowledge(Knowledge(tuple[0], action, tuple[1], step))
     action_methods[action](tuple[0], tuple[1], chars_to_ignore)
@@ -91,10 +91,10 @@ def generation_step():
 
     output.append("At the " + place)
     chars_to_ignore = []
-    execute_action(Actions.KILL, places[place], True, events, chars_to_ignore)
-    execute_action(Actions.BEAT_UP, places[place], True, events, chars_to_ignore)
-    execute_action(Actions.INSULT, places[place], False, events, chars_to_ignore)
-    execute_action(Actions.CONVERSE, places[place], False, events, chars_to_ignore)
+    execute_action(Actions.KILL, places[place], events, chars_to_ignore)
+    execute_action(Actions.BEAT_UP, places[place], events, chars_to_ignore)
+    execute_action(Actions.INSULT, places[place], events, chars_to_ignore)
+    execute_action(Actions.CONVERSE, places[place], events, chars_to_ignore)
 
   dump_output()
 
