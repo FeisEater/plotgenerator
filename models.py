@@ -10,15 +10,15 @@ def persons_shop(person):
 TAVERN = "tavern"
 
 class Character:
-    def __init__(self, name, location = None, positive_talking_points = [], negative_talking_points = [], output = []):
+    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), output = []):
         self.relationships = {}
         self.name = name
         self.schedule_time = 0
         self.location = location if location is not None else persons_house(self)
         self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
         self.out = output # Queue output so we can filter out unimportant output later
-        self.positive_talking_points = positive_talking_points # type: list
-        self.negative_talking_points = negative_talking_points # type: list
+        self.positive_talking_points = positive_talking_points # type: set
+        self.negative_talking_points = negative_talking_points # type: set
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,

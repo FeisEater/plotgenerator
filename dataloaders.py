@@ -2,6 +2,7 @@ from NOCListReader import *
 from models import Character
 import random
 from enum import Enum
+import numpy as np
 
 class NOCListColumn(Enum):
     CHARACTER_NAME = "Character"
@@ -82,8 +83,16 @@ class CharacterDataLoader:
                     person.relationships[person2] = -1.0
                     person2.relationships[person] = -1.0
                 else:
-                    person.relationships[person2] = random.uniform(-1, 1)
-                    person2.relationships[person] = random.uniform(-1, 1)
+                    positive_union = person.positive_talking_points.union(person2.positive_talking_points)
+                    negative_union = person.negative_talking_points.union(person2.negative_talking_points)
+                    positive_intersection = person.positive_talking_points.intersection(person2.positive_talking_points)
+                    negative_intersection = person.negative_talking_points.intersection(person2.negative_talking_points)
+
+                    scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
+
+                    person.relationships[person2] = np.average(scores)
+                    # person.relationships[person2] = random.uniform(-1, 1)
+                    # person2.relationships[person] = random.uniform(-1, 1)
                 self.out.append(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
 
         return characters
@@ -119,6 +128,6 @@ class CharacterDataLoader:
 
     def __extract_talking_points(self, column_value):
         values = str(column_value).split(",")
-        values = list(map(lambda x: x.strip(), values))
+        values = set(map(lambda x: x.strip(), values))
 
         return values
