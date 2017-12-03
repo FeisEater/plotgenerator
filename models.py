@@ -1,5 +1,5 @@
 import random
-from enum import Enum
+from enum import Enum, auto
 
 def persons_house(person):
   return "{}'s house".format(person.name)
@@ -20,6 +20,7 @@ class Character:
         self.out = output # Queue output so we can filter out unimportant output later
         self.positive_talking_points = positive_talking_points # type: list
         self.negative_talking_points = negative_talking_points # type: list
+        self.goals = [] # prioritised list of goals
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,
@@ -119,3 +120,15 @@ class Actions(Enum):
       return True
     else:
       return False
+
+class GoalType(Enum):
+  GET_OBJECT = auto
+  BEFRIEND = auto
+  KILL = auto
+  SCHEDULE = auto
+
+class Goal:
+  def __init__(self, type, target1, target2 = None):
+    self.type = type
+    self.target1 = target1
+    self.target2 = target2
