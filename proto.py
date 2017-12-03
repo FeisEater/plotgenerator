@@ -12,6 +12,12 @@ def safe_append(dict, key, value):
   else:
     dict[key].append(value)
 
+def safe_extend(dict, key, list):
+  if key not in dict:
+    dict[key] = list
+  else:
+    dict[key].extend(list)
+
 def dump_output():
   global output
   for msg in output:
@@ -44,7 +50,14 @@ def do_insult(source, target, chars_to_ignore):
 
 def do_converse(source, target, chars_to_ignore):
   target.change_relationship(source, 0.25)
-  for knowledge in target.knowledge:
+  if source in target.told_knowledge:
+    untold_knowledge = [x for x in target.knowledge if x not in target.told_knowledge[source]]
+  else:
+    untold_knowledge = target.knowledge
+  conversation_topics = untold_knowledge if len(untold_knowledge) <= 3 else random.sample(untold_knowledge, 3)
+  safe_extend(target.told_knowledge, source, conversation_topics)
+  safe_extend(source.told_knowledge, target, conversation_topics)
+  for knowledge in conversation_topics:
     source.acquire_knowledge(knowledge)
 
 action_methods = {
@@ -89,9 +102,8 @@ def generation_step():
 
     output.append("At the " + place)
     chars_to_ignore = []
-    for action in Actions:
-      if action != Actions.NONE:
-        execute_action(action, places[place], events, chars_to_ignore)
+    for action in action_methods.keys():
+      execute_action(action, places[place], events, chars_to_ignore)
 
   dump_output()
 
