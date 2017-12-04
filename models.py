@@ -53,6 +53,7 @@ class Character(Thing):
         self.positive_talking_points = positive_talking_points # type: list
         self.negative_talking_points = negative_talking_points # type: list
         self.goals = [Goal(GoalType.SCHEDULE)] # prioritised list of goals
+        self.political_views = political_views # type: set
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,
