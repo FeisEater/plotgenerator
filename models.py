@@ -132,3 +132,8 @@ class Goal:
     self.type = type
     self.target1 = target1
     self.target2 = target2
+
+class Object:
+    def __init__(self, name, location):
+        self.name = name # type: str
+        self.location = location # type: str
