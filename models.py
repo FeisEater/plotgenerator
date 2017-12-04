@@ -12,6 +12,15 @@ TAVERN = "tavern"
 class Thing:
     def __init__(self, name):
         self.name = name # type: str
+    
+    def __eq__(self, other):
+        return self.name == other.name
+    
+    def __hash__(self):
+        return hash(self.name)
+        
+    def __ne__(self, other):
+        return not(self == other)
         
 class Object(Thing):
     def __init__(self, name, location=None, owner=None):
@@ -20,13 +29,47 @@ class Object(Thing):
         self.owner = owner # type: Character
 
 class Character(Thing):
-    def do_getObject(self, person, target):
+    
+    def findThing(self, thing):
+        wrong_knowledge = False
+        for know in self.knowledge:
+          if know.action == Actions.LOCATED_IN and know.source == thing:
+            if self.location == know.target:
+              if thing.location == self.location:
+                return True
+              else:
+                wrong_knowledge = True
+                break
+            else:
+              self.location = know.target
+              self.out.append(self.name + " goes to " + self.location)
+              return False
+        if wrong_knowledge:
+          self.knowledge = [k for k in self.knowledge if k.source != thing or k.action != Actions.LOCATED_IN or k.target != self.location]
+          self.out.append(self.name + " didnt find " + thing.name + " from " + self.location)
+          return False
+        if self.schedule_time <= 0:
+          locations = [persons_shop(x) for x in self.relationships.keys()] + [TAVERN]
+          self.location = random.choice(locations)
+          self.out.append(self.name + " goes to " + self.location)
+          self.schedule_time = random.randint(1, 3)    
+    
+    def do_getObject(self, arg1, arg2):
+        if self.findThing(arg1):
+          arg1.owner = self
+          self.goal.pop(0)
+          self.out.append(self.name + " got " + thing.name)
+
+    def do_befriend(self, arg1, arg2):
         print("not implemented")
-    def do_befriend(self, person, target):
-        print("not implemented")
-    def do_kill(self, person, target):
-        print("not implemented")
-    def do_schedule(self, person, target):
+    def do_kill(self, arg1, arg2):
+        if arg2 == None:
+          if self.findThing(arg1):
+            self.out.append(self.name + " killed " + thing.name)
+        else:
+          print("not implemented")
+    
+    def do_schedule(self, arg1, arg2):
         if self.schedule_time <= 0:
             if self.location == persons_house(self):
                 self.location = persons_shop(self)
@@ -40,9 +83,8 @@ class Character(Thing):
                     self.schedule_time = random.randint(2, 8)
                 elif self.location == TAVERN:
                     self.schedule_time = random.randint(1, 4)
-        self.schedule_time -= 1
     
-    def __init__(self, name, location = None, positive_talking_points = [], negative_talking_points = [], output = []):
+    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
         Thing.__init__(self, name)
         self.relationships = {}
         self.schedule_time = 0
@@ -67,18 +109,10 @@ class Character(Thing):
           GoalType.SCHEDULE: self.do_schedule
         }
         
-    def __eq__(self, other):
-        return self.name == other.name
-    
-    def __hash__(self):
-        return hash(self.name)
-        
-    def __ne__(self, other):
-        return not(self == other)
-
     def schedule_step(self):
         goal = self.goals[0]
         self.schedule_methods[goal.type](goal.target1, goal.target1)
+        self.schedule_time -= 1
     
     def change_relationship(self, person, delta):
         if self == person or person not in self.relationships:
@@ -140,6 +174,7 @@ class Actions(Enum):
   BEAT_UP = "beat up"
   INSULT = "insulted"
   CONVERSE = "conversed with"
+  LOCATED_IN = "located in"
   NONE = "none"
 
   @property
