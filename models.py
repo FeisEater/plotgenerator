@@ -1,5 +1,5 @@
 import random
-from enum import Enum
+from enum import Enum, auto
 
 def persons_house(person):
   return "{}'s house".format(person.name)
@@ -16,14 +16,25 @@ class Character:
         self.schedule_time = 0
         self.location = location if location is not None else persons_house(self)
         self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
+        self.told_knowledge = {} # Knowledge that was already told. Key: other person, Value: knowledge
         self.out = output # Queue output so we can filter out unimportant output later
         self.positive_talking_points = positive_talking_points # type: set
         self.negative_talking_points = negative_talking_points # type: set
+        self.goals = [] # prioritised list of goals
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,
           Actions.BEAT_UP: self.react_to_beat_up
         }
+        
+    def __eq__(self, other):
+        return self.name == other.name
+    
+    def __hash__(self):
+        return hash(self.name)
+        
+    def __ne__(self, other):
+        return not(self == other)
 
     def schedule_step(self):
         if self.schedule_time <= 0:
@@ -55,9 +66,9 @@ class Character:
         if knowledge in self.knowledge:
           return
         self.knowledge.append(knowledge)
-        self.out.append("-" + self.name + " found out that " + knowledge.source.name + " " + knowledge.action.value + " " + knowledge.target.name)
         if knowledge.source == self or knowledge.target == self:
           return
+        self.out.append("-" + self.name + " found out that " + knowledge.source.name + " " + knowledge.action.value + " " + knowledge.target.name)
         self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
@@ -83,12 +94,24 @@ class Knowledge:
         self.action = action
         self.target = target
         self.timestamp = timestamp
+        
+    def equality_tuple(self):
+        return (self.source, self.action, self.target, self.timestamp)
+    
+    def __eq__(self, other):
+        return self.equality_tuple() == other.equality_tuple()
+    
+    def __hash__(self):
+        return hash(self.equality_tuple())
+        
+    def __ne__(self, other):
+        return not(self == other)
 
 class Actions(Enum):
-  KILL = "kill"
+  KILL = "killed"
   BEAT_UP = "beat up"
-  INSULT = "insult"
-  CONVERSE = "converse"
+  INSULT = "insulted"
+  CONVERSE = "conversed with"
   NONE = "none"
 
   @property
@@ -97,3 +120,20 @@ class Actions(Enum):
       return True
     else:
       return False
+
+class GoalType(Enum):
+  GET_OBJECT = auto
+  BEFRIEND = auto
+  KILL = auto
+  SCHEDULE = auto
+
+class Goal:
+  def __init__(self, type, target1, target2 = None):
+    self.type = type
+    self.target1 = target1
+    self.target2 = target2
+
+class Object:
+    def __init__(self, name, location):
+        self.name = name # type: str
+        self.location = location # type: str
