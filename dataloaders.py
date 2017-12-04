@@ -30,10 +30,27 @@ class NOCListColumn(Enum):
     NEGATIVE_TALKING_POINTS = 'Negative Talking Points'
     POSITIVE_TALKING_POINTS = 'Positive Talking Points'
 
+class NOCListDomain(Enum):
+    HOLLYWOOD = "Hollywood"
+    ACTING = "Acting"
+    COMEDY = "Comedy"
+    AMERICAN_POLITICS = "American politics"
+    THE_SIMPSONS = "The Simpsons"
+    SPRINGFIELD = "Springfield"
+    POP_MUSIC = "Pop music"
+    MARVEL = "Marvel"
+    COMICS = "Comics"
+    VICTORIAN_LITERATURE = "Victorian literature"
+
 class CharacterDataLoader:
-    def load(self, howmany = None, random_sample = True, output = []):
+    def load(self, howmany = None, random_sample = True, domain = None, output = []):
+        assert domain is None or isinstance(domain, NOCListDomain)
+
         self.out = output
         data = NOCListReader().get_noc_list_contents()
+
+        if domain is not None:
+            data = data[data[NOCListColumn.DOMAINS.value].str.contains(domain.value)]
 
         characters = self.__parse_characters(data)
 
