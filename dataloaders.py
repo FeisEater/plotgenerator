@@ -83,16 +83,10 @@ class CharacterDataLoader:
                     person.relationships[person2] = -1.0
                     person2.relationships[person] = -1.0
                 else:
-                    positive_union = person.positive_talking_points.union(person2.positive_talking_points)
-                    negative_union = person.negative_talking_points.union(person2.negative_talking_points)
-                    positive_intersection = person.positive_talking_points.intersection(person2.positive_talking_points)
-                    negative_intersection = person.negative_talking_points.intersection(person2.negative_talking_points)
-
-                    scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
-
-                    person.relationships[person2] = np.average(scores)
-                    # person.relationships[person2] = random.uniform(-1, 1)
-                    # person2.relationships[person] = random.uniform(-1, 1)
+                    # person.relationships[person2] = self.__get_initial_relationship_from_talking_points(person, person2)
+                    # person2.relationships[person] = self.__get_initial_relationship_from_talking_points(person2, person)
+                    person.relationships[person2] = random.uniform(-1, 1)
+                    person2.relationships[person] = random.uniform(-1, 1)
                 self.out.append(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
 
         return characters
@@ -131,3 +125,13 @@ class CharacterDataLoader:
         values = set(map(lambda x: x.strip(), values))
 
         return values
+
+    def __get_initial_relationship_from_talking_points(self, person, person2):
+        positive_union = person.positive_talking_points.union(person2.positive_talking_points)
+        negative_union = person.negative_talking_points.union(person2.negative_talking_points)
+        positive_intersection = person.positive_talking_points.intersection(person2.positive_talking_points)
+        negative_intersection = person.negative_talking_points.intersection(person2.negative_talking_points)
+        
+        scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
+        
+        return np.average(scores)
