@@ -10,7 +10,7 @@ def persons_shop(person):
 TAVERN = "tavern"
 
 class Character:
-    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), output = []):
+    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
         self.relationships = {}
         self.name = name
         self.schedule_time = 0
@@ -21,6 +21,7 @@ class Character:
         self.positive_talking_points = positive_talking_points # type: set
         self.negative_talking_points = negative_talking_points # type: set
         self.goals = [] # prioritised list of goals
+        self.political_views = political_views # type: set
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,

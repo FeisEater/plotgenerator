@@ -58,7 +58,7 @@ class CharacterDataLoader:
         characters = []
 
         for index, row in data.iterrows():
-            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], positive_talking_points=self.__extract_talking_points(row[NOCListColumn.POSITIVE_TALKING_POINTS.value]), negative_talking_points=self.__extract_talking_points(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]), output = self.out)
+            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], positive_talking_points=self.__extract_set_of_strings(row[NOCListColumn.POSITIVE_TALKING_POINTS.value]), negative_talking_points=self.__extract_set_of_strings(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]), political_views=self.__extract_set_of_strings(row[NOCListColumn.POLITICS.value]), output = self.out)
 
             characters.append(character)
 
@@ -83,10 +83,9 @@ class CharacterDataLoader:
                     person.relationships[person2] = -1.0
                     person2.relationships[person] = -1.0
                 else:
-                    # person.relationships[person2] = self.__get_initial_relationship_from_talking_points(person, person2)
-                    # person2.relationships[person] = self.__get_initial_relationship_from_talking_points(person2, person)
-                    person.relationships[person2] = random.uniform(-1, 1)
-                    person2.relationships[person] = random.uniform(-1, 1)
+                    person.relationships[person2] = np.average([self.__get_initial_relationship_from_political_views(person, person2), self.__get_initial_relationship_from_talking_points(person, person2), random.uniform(-.5, .5)])
+                    person2.relationships[person] = np.average([self.__get_initial_relationship_from_political_views(person2, person), self.__get_initial_relationship_from_talking_points(person2, person), random.uniform(-.5, .5)])
+
                 self.out.append(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
 
         return characters
@@ -120,7 +119,7 @@ class CharacterDataLoader:
         else:
             return False
 
-    def __extract_talking_points(self, column_value):
+    def __extract_set_of_strings(self, column_value):
         values = str(column_value).split(",")
         values = set(map(lambda x: x.strip(), values))
 
@@ -134,4 +133,14 @@ class CharacterDataLoader:
         
         scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
         
-        return np.average(scores)
+        return np.average(scores) # -0.5 # the substractions is an offset to generate more extreme initial relationship
+
+    def __get_initial_relationship_from_political_views(self, person, person2):
+        positive_union = person.political_views.union(person2.political_views)
+        negative_union = person.political_views.union(person2.political_views)
+        positive_intersection = person.political_views.intersection(person2.political_views)
+        negative_intersection = person.political_views.intersection(person2.political_views)
+    
+        scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
+    
+        return np.average(scores) # -0.5 # the substractions is an offset to generate more extreme initial relationship
