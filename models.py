@@ -1,5 +1,5 @@
 import random
-from enum import Enum, auto
+from enum import Enum
 
 def persons_house(person):
   return "{}'s house".format(person.name)
@@ -9,35 +9,24 @@ def persons_shop(person):
   
 TAVERN = "tavern"
 
-class Character:
-    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
-        self.relationships = {}
-        self.name = name
-        self.schedule_time = 0
-        self.location = location if location is not None else persons_house(self)
-        self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
-        self.told_knowledge = {} # Knowledge that was already told. Key: other person, Value: knowledge
-        self.out = output # Queue output so we can filter out unimportant output later
-        self.positive_talking_points = positive_talking_points # type: set
-        self.negative_talking_points = negative_talking_points # type: set
-        self.goals = [] # prioritised list of goals
-        self.political_views = political_views # type: set
-
-        self.reactions = {
-          Actions.KILL: self.react_to_kill,
-          Actions.BEAT_UP: self.react_to_beat_up
-        }
+class Thing:
+    def __init__(self, name):
+        self.name = name # type: str
         
-    def __eq__(self, other):
-        return self.name == other.name
-    
-    def __hash__(self):
-        return hash(self.name)
-        
-    def __ne__(self, other):
-        return not(self == other)
+class Object(Thing):
+    def __init__(self, name, location=None, owner=None):
+        Thing.__init__(self, name)
+        self.location = location # type: str
+        self.owner = owner # type: Character
 
-    def schedule_step(self):
+class Character(Thing):
+    def do_getObject(self, person, target):
+        print("not implemented")
+    def do_befriend(self, person, target):
+        print("not implemented")
+    def do_kill(self, person, target):
+        print("not implemented")
+    def do_schedule(self, person, target):
         if self.schedule_time <= 0:
             if self.location == persons_house(self):
                 self.location = persons_shop(self)
@@ -52,6 +41,44 @@ class Character:
                 elif self.location == TAVERN:
                     self.schedule_time = random.randint(1, 4)
         self.schedule_time -= 1
+    
+    def __init__(self, name, location = None, positive_talking_points = [], negative_talking_points = [], output = []):
+        Thing.__init__(self, name)
+        self.relationships = {}
+        self.schedule_time = 0
+        self.location = location if location is not None else persons_house(self)
+        self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
+        self.told_knowledge = {} # Knowledge that was already told. Key: other person, Value: knowledge
+        self.out = output # Queue output so we can filter out unimportant output later
+        self.positive_talking_points = positive_talking_points # type: list
+        self.negative_talking_points = negative_talking_points # type: list
+        self.goals = [Goal(GoalType.SCHEDULE)] # prioritised list of goals
+        self.political_views = political_views # type: set
+
+        self.reactions = {
+          Actions.KILL: self.react_to_kill,
+          Actions.BEAT_UP: self.react_to_beat_up
+        }
+
+        self.schedule_methods = {
+          GoalType.GET_OBJECT: self.do_getObject,
+          GoalType.BEFRIEND: self.do_befriend,
+          GoalType.KILL: self.do_kill,
+          GoalType.SCHEDULE: self.do_schedule
+        }
+        
+    def __eq__(self, other):
+        return self.name == other.name
+    
+    def __hash__(self):
+        return hash(self.name)
+        
+    def __ne__(self, other):
+        return not(self == other)
+
+    def schedule_step(self):
+        goal = self.goals[0]
+        self.schedule_methods[goal.type](goal.target1, goal.target1)
     
     def change_relationship(self, person, delta):
         if self == person or person not in self.relationships:
@@ -123,18 +150,13 @@ class Actions(Enum):
       return False
 
 class GoalType(Enum):
-  GET_OBJECT = auto
-  BEFRIEND = auto
-  KILL = auto
-  SCHEDULE = auto
+  GET_OBJECT = 1
+  BEFRIEND = 2
+  KILL = 3
+  SCHEDULE = 4
 
 class Goal:
-  def __init__(self, type, target1, target2 = None):
+  def __init__(self, type, target1 = None, target2 = None):
     self.type = type
     self.target1 = target1
     self.target2 = target2
-
-class Object:
-    def __init__(self, name, location):
-        self.name = name # type: str
-        self.location = location # type: str
