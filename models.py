@@ -58,16 +58,37 @@ class Character(Thing):
         if self.findThing(arg1):
           arg1.owner = self
           self.goal.pop(0)
-          self.out.append(self.name + " got " + thing.name)
+          self.out.append(self.name + " got " + arg1.name)
 
     def do_befriend(self, arg1, arg2):
-        print("not implemented")
+        if arg2 == None:
+          print("not implemented")
+        else:
+          print("not implemented")
+
     def do_kill(self, arg1, arg2):
         if arg2 == None:
           if self.findThing(arg1):
-            self.out.append(self.name + " killed " + thing.name)
+            arg1.dead = True
+            self.out.append(self.name + " killed " + arg1.name)
         else:
-          print("not implemented")
+          # self wants arg1 to kill arg2
+          if arg1.relationships[self] < 0:
+            # self.do_befriend(arg1)
+            return
+          acquaintances = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0 and arg1.relationships[person] < 0.5]
+          friends = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0.5]
+          if friends:
+            deadFriends = [friend for friend in friends if friends.dead]
+            if deadFriends:
+              deadFriend = random.choice(deadFriends)
+              self.tellLie(arg1, arg2, Actions.KILL, deadFriend)
+            else:
+              friend = random.choice(friends)
+              self.tellLie(arg1, arg2, Actions.BEAT_UP, friend)
+          elif acquaintances:
+            acquaintance = random.choice(acquaintances)
+            self.tellLie(arg1, arg2, Actions.BEAT_UP, acquaintance)
     
     def do_schedule(self, arg1, arg2):
         if self.schedule_time <= 0:
@@ -83,6 +104,12 @@ class Character(Thing):
                     self.schedule_time = random.randint(2, 8)
                 elif self.location == TAVERN:
                     self.schedule_time = random.randint(1, 4)
+
+    def tellLie(self, target, arg1, action, arg2):
+      lie = Knowledge(arg1, action, arg2, -1) #TODO: change -1 to step from proto.py later
+      #safe_extend(target.told_knowledge, self, lie)
+      #safe_extend(self.told_knowledge, target, lie)
+      target.acquire_knowledge(lie)
     
     def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
         Thing.__init__(self, name)
@@ -96,6 +123,7 @@ class Character(Thing):
         self.negative_talking_points = negative_talking_points # type: list
         self.goals = [Goal(GoalType.SCHEDULE)] # prioritised list of goals
         self.political_views = political_views # type: set
+        self.dead = False
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,
@@ -175,6 +203,7 @@ class Actions(Enum):
   INSULT = "insulted"
   CONVERSE = "conversed with"
   LOCATED_IN = "located in"
+  LIKES = "likes"
   NONE = "none"
 
   @property

@@ -36,6 +36,7 @@ def make_decision(source, target):
   return Actions.NONE
 
 def do_kill(source, target, chars_to_ignore):
+  target.dead = True
   global characters
   if target in characters:
     characters.remove(target)
@@ -85,9 +86,13 @@ def generation_step():
   step += 1
   
   places = {}
+  random.shuffle(characters)
   for person in characters:
+    if person.dead:
+      continue
     person.schedule_step()
     safe_append(places, person.location, person)
+  characters = [c for c in characters if c.dead == False]
   
   for place in places:
     events = {}
