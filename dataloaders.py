@@ -43,7 +43,21 @@ class NOCListDomain(Enum):
     VICTORIAN_LITERATURE = "Victorian literature"
 
 class CharacterDataLoader:
+    '''A class that can parse the NOC List characters into the local Character object type'''
     def load(self, howmany = None, random_sample = True, domain = None, output = []):
+        '''
+        Loads Characters from the NOC list.
+        :param howmany: An integer indicating how many characters to load or None if all of them should be loaded. Must be greater than 2. Defaults to None.
+        :type howmany: int
+        :param random_sample: A boolean indicating if a random sample of characters should be loaded. If set to false, the parsing begins from the beginning of the file. Defaults to True.
+        :type random_sample: bool
+        :param domain: The domain from which characters should be loaded or None, if characters across domains are desired. Defaults to None.
+        :type domain: NOCListDomain
+        :param output:
+        :type output:
+        :return: The list of Character objects loaded from the NOC List with the given parameters.
+        :rtype: [Character]
+        '''
         assert domain is None or isinstance(domain, NOCListDomain)
 
         self.out = output
