@@ -5,6 +5,7 @@ from enum import Enum
 import numpy as np
 
 class NOCListColumn(Enum):
+    '''An enumeration that holds the column headers of the NOC List dataset.'''
     CHARACTER_NAME = "Character"
     CANONICAL_NAME = 'Canonical Name'
     GENDER = 'Gender'
@@ -31,6 +32,7 @@ class NOCListColumn(Enum):
     POSITIVE_TALKING_POINTS = 'Positive Talking Points'
 
 class NOCListDomain(Enum):
+    '''An enumeration that holds some of character domain values in the NOC List dataset.'''
     HOLLYWOOD = "Hollywood"
     ACTING = "Acting"
     COMEDY = "Comedy"
