@@ -1,28 +1,11 @@
 import random
 from dataloaders import CharacterDataLoader
 from models import Knowledge, Actions
+from utilities import safe_append, safe_extend, dump_output
 
 output = []
 characters = CharacterDataLoader().load(howmany=10, output=output)
 step = 0
-
-def safe_append(dict, key, value):
-  if key not in dict:
-    dict[key] = [value]
-  else:
-    dict[key].append(value)
-
-def safe_extend(dict, key, list):
-  if key not in dict:
-    dict[key] = list
-  else:
-    dict[key].extend(list)
-
-def dump_output():
-  global output
-  for msg in output:
-    print(msg)
-  del output[:]
 
 def make_decision(source, target):
   if source.relationships[target] < -0.75:
@@ -108,10 +91,10 @@ def generation_step():
     for action in action_methods.keys():
       execute_action(action, places[place], events, chars_to_ignore)
 
-  dump_output()
+  dump_output(output)
 
 if __name__ == '__main__':
-  dump_output()
+  dump_output(output)
   while True:
     print("")
     input("Press Enter to progress...")
