@@ -87,9 +87,7 @@ def generation_step():
   
   places = {}
   random.shuffle(characters)
-  for person in characters:
-    if person.dead:
-      continue
+  for person in list(filter(lambda c: c.dead == False, characters)):
     person.schedule_step()
     safe_append(places, person.location, person)
   characters = [c for c in characters if c.dead == False]
