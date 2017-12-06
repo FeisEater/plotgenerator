@@ -10,7 +10,12 @@ def persons_shop(person):
 TAVERN = "tavern"
 
 class Thing:
+    '''A base class for all objects in the simulation.'''
     def __init__(self, name):
+        '''
+        :param name: The name of the thing.
+        :type name: str
+        '''
         self.name = name # type: str
     
     def __eq__(self, other):
@@ -23,13 +28,23 @@ class Thing:
         return not(self == other)
         
 class Object(Thing):
+    '''An object during the simulation that can be found by characters.'''
     def __init__(self, name, location=None, owner=None):
-        Thing.__init__(self, name)
+        '''
+        :param name: The name of the object.
+        :type name: str
+        :param location: The location of the object. Defaults to None.
+        :type location: str
+        :param owner: The character who owns the object or None if the object has no owner. Defaults to None.
+        :type owner: Character
+        '''
+        super().__init__(self, name)
+        assert isinstance(owner, Character)
+
         self.location = location # type: str
         self.owner = owner # type: Character
 
 class Character(Thing):
-    
     def findThing(self, thing):
         wrong_knowledge = False
         for know in self.knowledge:
@@ -180,10 +195,10 @@ class Character(Thing):
 
 class Knowledge:
     def __init__(self, source, action, target, timestamp):
-        self.source = source
-        self.action = action
-        self.target = target
-        self.timestamp = timestamp
+        self.source = source # type: Character
+        self.action = action # type: Actions
+        self.target = target # type: Character
+        self.timestamp = timestamp # type: int
         
     def equality_tuple(self):
         return (self.source, self.action, self.target, self.timestamp)
@@ -220,7 +235,8 @@ class GoalType(Enum):
   SCHEDULE = 4
 
 class Goal:
+  '''Represents the goals of characters between each other'''
   def __init__(self, type, target1 = None, target2 = None):
-    self.type = type
-    self.target1 = target1
-    self.target2 = target2
+    self.type = type # type: GoalType
+    self.target1 = target1 # type: Character
+    self.target2 = target2 # type: Character
