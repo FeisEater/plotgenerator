@@ -38,11 +38,14 @@ class Object(Thing):
         :param owner: The character who owns the object or None if the object has no owner. Defaults to None.
         :type owner: Character
         '''
-        super().__init__(self, name)
-        assert isinstance(owner, Character)
+        Thing.__init__(self, name)
+        assert owner is None or isinstance(owner, Character)
 
         self.location = location # type: str
         self.owner = owner # type: Character
+
+    def __str__(self):
+        return self.name
 
 class Character(Thing):
     def findThing(self, thing):

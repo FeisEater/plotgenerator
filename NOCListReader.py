@@ -69,3 +69,11 @@ class NOCListReader:
         :rtype: pandas.core.frame.DataFrame
         '''
         return self.get_contents(file = NOCFile.NOC_LIST)
+
+    def get_weapon_arsenal_contents(self):
+        '''
+        Reads the contents of the Weapon Arsenal file. Equivalent to get_contents(file = NOCFile.WEAPON_ARSENAL).
+        :return: The contents of Weapon Arsenal file.
+        :rtype: pandas.core.frame.DataFrame
+        '''
+        return self.get_contents(file = NOCFile.WEAPON_ARSENAL)

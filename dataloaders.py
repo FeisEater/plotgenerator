@@ -1,5 +1,5 @@
 from NOCListReader import *
-from models import Character
+from models import Character, Object
 import random
 from enum import Enum
 import numpy as np
@@ -44,7 +44,21 @@ class NOCListDomain(Enum):
     COMICS = "Comics"
     VICTORIAN_LITERATURE = "Victorian literature"
 
-class CharacterDataLoader:
+class NOCWeaponArsenalColumn(Enum):
+    DETERMINER = "Determiner"
+    WEAPON = "Weapon"
+    AFFORDANCES = "Affordances"
+
+class DataLoader:
+    def _sample(self, data, howmany, random_sample):
+        if howmany is not None and isinstance(howmany, int) and howmany > 2:
+            if random_sample:
+                data = random.sample(data, howmany)
+            else:
+                data = data[:howmany]
+        return data
+
+class CharacterDataLoader(DataLoader):
     '''A class that can parse the NOC List characters into the local Character object type'''
     def load(self, howmany = None, random_sample = True, domain = None, output = []):
         '''
@@ -69,12 +83,7 @@ class CharacterDataLoader:
             data = data[data[NOCListColumn.DOMAINS.value].str.contains(domain.value)]
 
         characters = self.__parse_characters(data)
-
-        if howmany is not None and isinstance(howmany, int) and howmany > 2:
-            if random_sample:
-                characters = random.sample(characters, howmany)
-            else:
-                characters = characters[:howmany]
+        characters = self._sample(characters, howmany, random_sample)
 
         characters = self.__build_relationships(characters, data)
 
@@ -91,7 +100,13 @@ class CharacterDataLoader:
         characters = []
 
         for index, row in data.iterrows():
-            character = Character(name=row[NOCListColumn.CHARACTER_NAME.value], positive_talking_points=self.__extract_set_of_strings(row[NOCListColumn.POSITIVE_TALKING_POINTS.value]), negative_talking_points=self.__extract_set_of_strings(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]), political_views=self.__extract_set_of_strings(row[NOCListColumn.POLITICS.value]), output = self.out)
+            character = Character(
+                name=row[NOCListColumn.CHARACTER_NAME.value],
+                positive_talking_points=self.__extract_set_of_strings(row[NOCListColumn.POSITIVE_TALKING_POINTS.value]),
+                negative_talking_points=self.__extract_set_of_strings(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]),
+                political_views=self.__extract_set_of_strings(row[NOCListColumn.POLITICS.value]),
+                output = self.out
+            )
 
             characters.append(character)
 
@@ -177,3 +192,24 @@ class CharacterDataLoader:
         scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
     
         return np.average(scores) # -0.5 # the substractions is an offset to generate more extreme initial relationship
+
+class ObjectDataLoader(DataLoader):
+    def load(self, howmany = None, random_sample = True, output = []):
+        self.out = output
+
+        data = NOCListReader().get_weapon_arsenal_contents()
+        
+        objects = self.__parse_objects(data)
+        objects = self._sample(data = objects, howmany = howmany, random_sample = random_sample)
+
+        return objects
+    
+    def __parse_objects(self, data):
+        objects = []
+
+        for index, row in data.iterrows():
+            object = Object(name=row[NOCWeaponArsenalColumn.WEAPON.value])
+
+            objects.append(object)
+
+        return objects
