@@ -1,13 +1,21 @@
 import random
 from dataloaders import CharacterDataLoader
-from models import Knowledge, Actions
+from models import Knowledge, Actions, Goal, GoalType
 from utilities import safe_append, safe_extend, dump_output
 
 output = []
 characters = CharacterDataLoader().load(howmany=10, output=output)
+objects = []
 step = 0
 
 def make_decision(source, target):
+  if [goal for goal in source.goals if goal.type == GoalType.KILL and goal.target1 == target and goal.target2 == None]:
+    return Actions.KILL
+  if [goal.target1 for goal in source.goals if goal.type == GoalType.GET_OBJECT and goal.target1.owner == target]:
+    if source.relationships[target] < -0.75:
+      return Actions.KILL
+    else:
+      return Actions.BEAT_UP
   if source.relationships[target] < -0.75:
     return Actions.KILL
   if source.relationships[target] < -0.5:
@@ -20,14 +28,30 @@ def make_decision(source, target):
 
 def do_kill(source, target, chars_to_ignore):
   target.dead = True
-  global characters
+  global characters, output
   if target in characters:
     characters.remove(target)
   chars_to_ignore.append(target)
+  source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
+  for object in objects:
+    if object.owner == target:
+      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.source == object)]
+      object.owner = source
+      object.location = None
+      source.goals = [goal for goal in source.goals if goal.target1 != object]
+      output.append(source.name + " stole " + object.name)
 
 def do_beat_up(source, target, chars_to_ignore):
   target.relationships[source] -= 1
   chars_to_ignore.append(target)
+  source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
+  for object in objects:
+    if object.owner == target:
+      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.source == object)]
+      object.owner = source
+      object.location = None
+      source.goals = [goal for goal in source.goals if goal.target1 != object]
+      output.append(source.name + " stole " + object.name)
 
 def do_insult(source, target, chars_to_ignore):
   target.change_relationship(source, -0.25)
@@ -71,7 +95,7 @@ def generation_step():
   places = {}
   random.shuffle(characters)
   for person in list(filter(lambda c: c.dead == False, characters)):
-    person.schedule_step()
+    person.schedule_step(step)
     safe_append(places, person.location, person)
   characters = [c for c in characters if c.dead == False]
   

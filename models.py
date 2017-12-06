@@ -1,5 +1,6 @@
 import random
 from enum import Enum
+from utilities import safe_append, safe_extend
 
 def persons_house(person):
   return "{}'s house".format(person.name)
@@ -62,6 +63,8 @@ class Character(Thing):
               self.location = know.target
               self.out.append(self.name + " goes to " + self.location)
               return False
+          elif know.action == Actions.OWNED_BY and know.source == thing:
+            self.findThing(know.target)
         if wrong_knowledge:
           self.knowledge = [k for k in self.knowledge if k.source != thing or k.action != Actions.LOCATED_IN or k.target != self.location]
           self.out.append(self.name + " didnt find " + thing.name + " from " + self.location)
@@ -72,43 +75,47 @@ class Character(Thing):
           self.out.append(self.name + " goes to " + self.location)
           self.schedule_time = random.randint(1, 3)    
     
-    def do_getObject(self, arg1, arg2):
+    def do_getObject(self, arg1, arg2, step):
         if self.findThing(arg1):
           arg1.owner = self
-          self.goal.pop(0)
+          arg1.location = None
+          self.goals = [goal for goal in self.goals if goal.target1 != arg1]
+          self.knowledge = [know for know in self.knowledge if not(know.action == Actions.LOCATED_IN and know.source == arg1)]
           self.out.append(self.name + " got " + arg1.name)
 
-    def do_befriend(self, arg1, arg2):
+    def do_befriend(self, arg1, arg2, step):
         if arg2 == None:
           print("not implemented")
         else:
           print("not implemented")
 
-    def do_kill(self, arg1, arg2):
+    def do_kill(self, arg1, arg2, step):
         if arg2 == None:
-          if self.findThing(arg1):
-            arg1.dead = True
-            self.out.append(self.name + " killed " + arg1.name)
+          self.findThing(arg1)
         else:
           # self wants arg1 to kill arg2
           if arg1.relationships[self] < 0:
             # self.do_befriend(arg1)
             return
+          knownObjects = [know.source for know in self.knowledge if (know.action == Actions.LOCATED_IN or know.action == Actions.OWNED_BY) and type(know.source) is Object]
           acquaintances = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0 and arg1.relationships[person] < 0.5]
           friends = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0.5]
-          if friends:
-            deadFriends = [friend for friend in friends if friends.dead]
-            if deadFriends:
-              deadFriend = random.choice(deadFriends)
-              self.tellLie(arg1, arg2, Actions.KILL, deadFriend)
-            else:
-              friend = random.choice(friends)
-              self.tellLie(arg1, arg2, Actions.BEAT_UP, friend)
-          elif acquaintances:
-            acquaintance = random.choice(acquaintances)
-            self.tellLie(arg1, arg2, Actions.BEAT_UP, acquaintance)
+          if knownObjects and random.random() < 0.5:
+            self.tellLie(arg1, random.choice(knownObjects), Actions.OWNED_BY, arg2, step)
+          else:
+            if friends:
+              deadFriends = [friend for friend in friends if friends.dead]
+              if deadFriends:
+                deadFriend = random.choice(deadFriends)
+                self.tellLie(arg1, arg2, Actions.KILL, deadFriend, step)
+              else:
+                friend = random.choice(friends)
+                self.tellLie(arg1, arg2, Actions.BEAT_UP, friend, step)
+            elif acquaintances:
+              acquaintance = random.choice(acquaintances)
+              self.tellLie(arg1, arg2, Actions.BEAT_UP, acquaintance, step)
     
-    def do_schedule(self, arg1, arg2):
+    def do_schedule(self, arg1, arg2, step):
         if self.schedule_time <= 0:
             if self.location == persons_house(self):
                 self.location = persons_shop(self)
@@ -123,10 +130,10 @@ class Character(Thing):
                 elif self.location == TAVERN:
                     self.schedule_time = random.randint(1, 4)
 
-    def tellLie(self, target, arg1, action, arg2):
-      lie = Knowledge(arg1, action, arg2, -1) #TODO: change -1 to step from proto.py later
-      #safe_extend(target.told_knowledge, self, lie)
-      #safe_extend(self.told_knowledge, target, lie)
+    def tellLie(self, target, arg1, action, arg2, step):
+      lie = Knowledge(arg1, action, arg2, step)
+      safe_extend(target.told_knowledge, self, lie)
+      safe_extend(self.told_knowledge, target, lie)
       target.acquire_knowledge(lie)
     
     def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
@@ -155,9 +162,9 @@ class Character(Thing):
           GoalType.SCHEDULE: self.do_schedule
         }
         
-    def schedule_step(self):
+    def schedule_step(self, step):
         goal = self.goals[0]
-        self.schedule_methods[goal.type](goal.target1, goal.target1)
+        self.schedule_methods[goal.type](goal.target1, goal.target1, step)
         self.schedule_time -= 1
     
     def change_relationship(self, person, delta):
@@ -180,8 +187,10 @@ class Character(Thing):
         self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
+        self.goals = [goal for goal in self.goals if not(goal.type == GoalType.KILL and (goal.target1 == knowledge.target or goal.target2 == knowledge.target))]
         if self.relationships[knowledge.target] > 0.5:
           self.relationships[knowledge.source] = -1
+          self.goals.insert(0, Goal(GoalType.KILL, knowledge.source))
           self.out.append("-" + self.name + " vowes revenge on " + knowledge.source.name)
         elif self.relationships[knowledge.target] > 0:
           self.change_relationship(knowledge.source, -0.25)
@@ -221,6 +230,7 @@ class Actions(Enum):
   INSULT = "insulted"
   CONVERSE = "conversed with"
   LOCATED_IN = "located in"
+  OWNED_BY = "owned by"
   LIKES = "likes"
   NONE = "none"
 
