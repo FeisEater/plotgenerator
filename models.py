@@ -147,7 +147,7 @@ class Character(Thing):
         self.out = output # Queue output so we can filter out unimportant output later
         self.positive_talking_points = positive_talking_points # type: list
         self.negative_talking_points = negative_talking_points # type: list
-        self.goals = [Goal(GoalType.SCHEDULE)] # prioritised list of goals
+        self.goals = [Goal(GoalType.NONE)] # prioritised list of goals
         self.political_views = political_views # type: set
         self.dead = False
 
@@ -160,7 +160,7 @@ class Character(Thing):
           GoalType.GET_OBJECT: self.do_getObject,
           GoalType.BEFRIEND: self.do_befriend,
           GoalType.KILL: self.do_kill,
-          GoalType.SCHEDULE: self.do_schedule
+          GoalType.NONE: self.do_schedule
         }
         
     def schedule_step(self, step):
@@ -302,7 +302,7 @@ class GoalType(Enum):
   GET_OBJECT = 1
   BEFRIEND = 2
   KILL = 3
-  SCHEDULE = 4
+  NONE = 4
 
 class Goal:
   '''Represents the goals of characters between each other'''
