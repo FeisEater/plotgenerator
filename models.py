@@ -52,7 +52,7 @@ class Character(Thing):
     def findThing(self, thing):
         wrong_knowledge = False
         for know in self.knowledge:
-          if know.action == Actions.LOCATED_IN and know.source == thing:
+          if know.action == Actions.LOCATED_IN and know.subject == thing:
             if self.location == know.target:
               if thing.location == self.location:
                 return True
@@ -63,10 +63,10 @@ class Character(Thing):
               self.location = know.target
               self.out.append(self.name + " goes to " + self.location)
               return False
-          elif know.action == Actions.OWNED_BY and know.source == thing:
+          elif know.action == Actions.OWNED_BY and know.subject == thing:
             self.findThing(know.target)
         if wrong_knowledge:
-          self.knowledge = [k for k in self.knowledge if k.source != thing or k.action != Actions.LOCATED_IN or k.target != self.location]
+          self.knowledge = [k for k in self.knowledge if k.subject != thing or k.action != Actions.LOCATED_IN or k.target != self.location]
           self.out.append(self.name + " didnt find " + thing.name + " from " + self.location)
           return False
         if self.schedule_time <= 0:
@@ -80,7 +80,7 @@ class Character(Thing):
           arg1.owner = self
           arg1.location = None
           self.goals = [goal for goal in self.goals if goal.target1 != arg1]
-          self.knowledge = [know for know in self.knowledge if not(know.action == Actions.LOCATED_IN and know.source == arg1)]
+          self.knowledge = [know for know in self.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == arg1)]
           self.out.append(self.name + " got " + arg1.name)
 
     def do_befriend(self, arg1, arg2, step):
@@ -97,7 +97,7 @@ class Character(Thing):
           if arg1.relationships[self] < 0:
             # self.do_befriend(arg1)
             return
-          knownObjects = [know.source for know in self.knowledge if (know.action == Actions.LOCATED_IN or know.action == Actions.OWNED_BY) and type(know.source) is Object]
+          knownObjects = [know.subject for know in self.knowledge if (know.action == Actions.LOCATED_IN or know.action == Actions.OWNED_BY) and type(know.subject) is Object]
           acquaintances = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0 and arg1.relationships[person] < 0.5]
           friends = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0.5]
           if knownObjects and random.random() < 0.5:
@@ -163,6 +163,8 @@ class Character(Thing):
         }
         
     def schedule_step(self, step):
+        self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
+        self.knowledge = [Knowledge(self, self, Actions.LIKES, x, 0, self.relationships[x]) for x in self.relationships.keys()]
         goal = self.goals[0]
         self.schedule_methods[goal.type](goal.target1, goal.target1, step)
         self.schedule_time -= 1
@@ -181,39 +183,43 @@ class Character(Thing):
         if knowledge in self.knowledge:
           return
         self.knowledge.append(knowledge)
-        if knowledge.source == self or knowledge.target == self:
+        if knowledge.subject == self or knowledge.target == self:
           return
-        self.out.append("-" + self.name + " found out that " + knowledge.source.name + " " + knowledge.action.value + " " + knowledge.target.name)
-        self.reactions[knowledge.action](knowledge)
+        self.out.append("-" + self.name + " found out from " + knowledge.source.name + " that " + knowledge.subject.name + " " + knowledge.action.value + " " + knowledge.target.name + " " + str(knowledge.value))
+        if knowledge.action in self.reactions.keys():
+          self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
         self.goals = [goal for goal in self.goals if not(goal.type == GoalType.KILL and (goal.target1 == knowledge.target or goal.target2 == knowledge.target))]
         if self.relationships[knowledge.target] > 0.5:
-          self.relationships[knowledge.source] = -1
-          self.goals.insert(0, Goal(GoalType.KILL, knowledge.source))
-          self.out.append("-" + self.name + " vowes revenge on " + knowledge.source.name)
+          self.relationships[knowledge.subject] = -1
+          self.goals.insert(0, Goal(GoalType.KILL, knowledge.subject))
+          self.out.append("-" + self.name + " vowes revenge on " + knowledge.subject.name)
         elif self.relationships[knowledge.target] > 0:
-          self.change_relationship(knowledge.source, -0.25)
+          self.change_relationship(knowledge.subject, -0.25)
         elif self.relationships[knowledge.target] < -0.5:
-          self.change_relationship(knowledge.source, 0.25)
+          self.change_relationship(knowledge.subject, 0.25)
 
     def react_to_beat_up(self, knowledge):
         if self.relationships[knowledge.target] > 0.5:
-          self.change_relationship(knowledge.source, -0.5)
+          self.change_relationship(knowledge.subject, -0.5)
         elif self.relationships[knowledge.target] > 0:
-          self.change_relationship(knowledge.source, -0.25)
+          self.change_relationship(knowledge.subject, -0.25)
         if self.relationships[knowledge.target] < -0.5:
-          self.change_relationship(knowledge.source, 0.25)
+          self.change_relationship(knowledge.subject, 0.25)
 
 class Knowledge:
-    def __init__(self, source, action, target, timestamp):
-        self.source = source # type: Character
+    def __init__(self, source, subject, action, target, timestamp, value = 0):
+        # Knowledge format: SOURCE told me that SUBJECT performed ACTION on TARGET
+        self.source = source # type: Character. Character that gave this information
+        self.subject = subject # type: Character
         self.action = action # type: Actions
         self.target = target # type: Character
         self.timestamp = timestamp # type: int
+        self.value = value # auxillary numerical value, currently used with LIKES action to tell the value of relationship
         
     def equality_tuple(self):
-        return (self.source, self.action, self.target, self.timestamp)
+        return (self.source, self.subject, self.action, self.target, self.timestamp, self.value)
     
     def __eq__(self, other):
         return self.equality_tuple() == other.equality_tuple()

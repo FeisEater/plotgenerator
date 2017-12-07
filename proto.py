@@ -35,7 +35,7 @@ def do_kill(source, target, chars_to_ignore):
   source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
   for object in objects:
     if object.owner == target:
-      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.source == object)]
+      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == object)]
       object.owner = source
       object.location = None
       source.goals = [goal for goal in source.goals if goal.target1 != object]
@@ -47,7 +47,7 @@ def do_beat_up(source, target, chars_to_ignore):
   source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
   for object in objects:
     if object.owner == target:
-      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.source == object)]
+      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == object)]
       object.owner = source
       object.location = None
       source.goals = [goal for goal in source.goals if goal.target1 != object]
