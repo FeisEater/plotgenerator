@@ -83,7 +83,7 @@ def execute_action(action, place, events, chars_to_ignore):
     output.append("-" + tuple[0].name + " " + action.value + " " + tuple[1].name)
     if action.is_witnessed:
       for witness in place:
-        witness.acquire_knowledge(Knowledge(tuple[0], action, tuple[1], step))
+        witness.acquire_knowledge(Knowledge(witness, tuple[0], action, tuple[1], step))
     action_methods[action](tuple[0], tuple[1], chars_to_ignore)
     
 def generation_step():

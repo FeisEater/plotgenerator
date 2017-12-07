@@ -81,6 +81,7 @@ class Character(Thing):
           arg1.location = None
           self.goals = [goal for goal in self.goals if goal.target1 != arg1]
           self.knowledge = [know for know in self.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == arg1)]
+          self.knowledge.append(Knowledge(self, arg1, Actions.OWNED_BY, self, step))
           self.out.append(self.name + " got " + arg1.name)
 
     def do_befriend(self, arg1, arg2, step):
@@ -131,7 +132,7 @@ class Character(Thing):
                     self.schedule_time = random.randint(1, 4)
 
     def tellLie(self, target, arg1, action, arg2, step):
-      lie = Knowledge(arg1, action, arg2, step)
+      lie = Knowledge(self, arg1, action, arg2, step)
       safe_extend(target.told_knowledge, self, lie)
       safe_extend(self.told_knowledge, target, lie)
       target.acquire_knowledge(lie)
