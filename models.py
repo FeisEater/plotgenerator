@@ -66,7 +66,7 @@ class Character(Thing):
           elif know.action == Actions.OWNED_BY and know.subject == thing:
             self.findThing(know.target)
         if wrong_knowledge:
-          self.knowledge = [k for k in self.knowledge if k.subject != thing or k.action != Actions.LOCATED_IN or k.target != self.location]
+          self.knowledge = [k for k in self.knowledge if not(k.subject == thing and k.action == Actions.LOCATED_IN and k.target == self.location)]
           self.out.append(self.name + " didnt find " + thing.name + " from " + self.location)
           return False
         if self.schedule_time <= 0:
@@ -165,7 +165,7 @@ class Character(Thing):
         
     def schedule_step(self, step):
         self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
-        self.knowledge = [Knowledge(self, self, Actions.LIKES, x, 0, self.relationships[x]) for x in self.relationships.keys()]
+        self.knowledge = [Knowledge(self, self, Actions.LIKES, x, step, self.relationships[x]) for x in self.relationships.keys()]
         goal = self.goals[0]
         self.schedule_methods[goal.type](goal.target1, goal.target1, step)
         self.schedule_time -= 1
@@ -180,15 +180,53 @@ class Character(Thing):
           self.relationships[person] = -1
         self.out.append("-" + self.name + " likes " + person.name + ": " + str(self.relationships[person]))
 
+    def source_trust(self, source):
+      if self == source:
+        return 1
+      return self.relationships[source]
+
+    def choose_who_to_trust(self, newsource, oldsources):
+      oldsources.sort(key=lambda source: self.source_trust(source), reverse=True)
+      if self.relationships[oldsources[0]] < self.relationships[newsource] or newsource == self:
+        for source in oldsources:
+          self.change_relationship(source, -0.25)
+          self.knowledge = [know for know in self.knowledge if not(know.source == source)]
+          return True
+      if self.relationships[oldsources[0]] > self.relationships[newsource] or oldsources[0] == self:
+        self.change_relationship(newsource, -0.25)
+        return False
+      if random.random() < 0.5:
+        for source in oldsources:
+          self.change_relationship(source, -0.25)
+          self.knowledge = [know for know in self.knowledge if not(know.source == source)]
+          return True
+      self.change_relationship(newsource, -0.25)
+      return False
+    
     def acquire_knowledge(self, knowledge):
         if knowledge in self.knowledge:
           return
-        self.knowledge.append(knowledge)
-        if knowledge.subject == self or knowledge.target == self:
+        if knowledge.subject == self and knowledge.source != self:
           return
-        self.out.append("-" + self.name + " found out from " + knowledge.source.name + " that " + knowledge.subject.name + " " + knowledge.action.value + " " + knowledge.target.name + " " + str(knowledge.value))
-        if knowledge.action in self.reactions.keys():
-          self.reactions[knowledge.action](knowledge)
+        if knowledge.target == self and knowledge.source != self and knowledge.action.ignore_if_self_is_target:
+          return
+        conflicting_sources = [know.source for know in self.knowledge if know.subject == knowledge.subject and know.target != knowledge.target]
+        if conflicting_sources and knowledge.action.react_badly_if_conflicting_targets:
+          if self.choose_who_to_trust(knowledge.source, conflicting_sources):
+            self.knowledge.append(knowledge)
+            self.out.append("-" + self.name + " found out from " + knowledge.source.name + " that " + knowledge.subject.name + " " + knowledge.action.value + " " + knowledge.target.name + " " + str(knowledge.value))
+            if knowledge.action in self.reactions.keys():
+              self.reactions[knowledge.action](knowledge)
+            for source in oldsources:
+              self.out.append("-That meant that " + str(conflicting_sources) + " were lying")
+          else:
+            self.out.append("-" + self.name + " found out from " + knowledge.source.name + " that " + knowledge.subject.name + " " + knowledge.action.value + " " + knowledge.target.name + " " + str(knowledge.value))
+            self.out.append("-But " + self.name + " would not believe it!")
+        else:
+          self.knowledge.append(knowledge)
+          self.out.append("-" + self.name + " found out from " + knowledge.source.name + " that " + knowledge.subject.name + " " + knowledge.action.value + " " + knowledge.target.name + " " + str(knowledge.value))
+          if knowledge.action in self.reactions.keys():
+            self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
         self.goals = [goal for goal in self.goals if not(goal.type == GoalType.KILL and (goal.target1 == knowledge.target or goal.target2 == knowledge.target))]
@@ -217,10 +255,10 @@ class Knowledge:
         self.action = action # type: Actions
         self.target = target # type: Character
         self.timestamp = timestamp # type: int
-        self.value = value # auxillary numerical value, currently used with LIKES action to tell the value of relationship
+        self.value = value # type: float. Auxillary numerical value, currently used with LIKES action to tell the value of relationship
         
     def equality_tuple(self):
-        return (self.source, self.subject, self.action, self.target, self.timestamp, self.value)
+        return (self.subject, self.action, self.target, self.timestamp, self.value)
     
     def __eq__(self, other):
         return self.equality_tuple() == other.equality_tuple()
@@ -247,6 +285,18 @@ class Actions(Enum):
       return True
     else:
       return False
+  
+  @property
+  def ignore_if_self_is_target(self):
+    return self in [Actions.KILL, Actions.BEAT_UP, Actions.OWNED_BY]
+  
+  @property
+  def react_badly_if_conflicting_subjects(self):
+    return self in [Actions.KILL, Actions.BEAT_UP]
+  
+  @property
+  def react_badly_if_conflicting_targets(self):
+    return False
 
 class GoalType(Enum):
   GET_OBJECT = 1

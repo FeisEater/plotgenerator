@@ -61,8 +61,10 @@ def do_converse(source, target, chars_to_ignore):
   if source in target.told_knowledge:
     untold_knowledge = [x for x in target.knowledge if x not in target.told_knowledge[source]]
   else:
-    untold_knowledge = target.knowledge
+    untold_knowledge = [x for x in target.knowledge]
   conversation_topics = untold_knowledge if len(untold_knowledge) <= 3 else random.sample(untold_knowledge, 3)
+  for topic in conversation_topics:
+    topic.source = target
   safe_extend(target.told_knowledge, source, conversation_topics)
   safe_extend(source.told_knowledge, target, conversation_topics)
   for knowledge in conversation_topics:
