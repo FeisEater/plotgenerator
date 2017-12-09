@@ -75,7 +75,7 @@ class Character(Thing):
         }
 
     def __str__(self):
-        return "Name: {NAME} Goals {GOALS} Political views: {POLITICAL_VIEWS} Location: {LOCATION} Positive talking points: {POSITIVE_TALKING_POINTS} Negative talking points: {NEGATIVE_TALKING_POINTS} Dead: {DEAD}".format(NAME = self.name, GOALS = self.goals, LOCATION = self.location, POLITICAL_VIEWS = self.political_views, POSITIVE_TALKING_POINTS = self.positive_talking_points, NEGATIVE_TALKING_POINTS = self.negative_talking_points, DEAD = self.dead)
+        return "Name: {NAME} Goals {GOALS} Political views: {POLITICAL_VIEWS} Location: {LOCATION} Domains: {DOMAINS} Positive talking points: {POSITIVE_TALKING_POINTS} Negative talking points: {NEGATIVE_TALKING_POINTS} Dead: {DEAD}".format(NAME = self.name, GOALS = self.goals, LOCATION = self.location, POLITICAL_VIEWS = self.political_views, DOMAINS = self.domains, POSITIVE_TALKING_POINTS = self.positive_talking_points, NEGATIVE_TALKING_POINTS = self.negative_talking_points, DEAD = self.dead)
 
     def __repr__(self):
         return "<Character {}>".format(self.__str__())
