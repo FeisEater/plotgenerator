@@ -1,5 +1,6 @@
 import random
 import numpy as np
+from functools import reduce
 
 def evaluate(story, **kwargs):
     '''
@@ -38,7 +39,31 @@ def __evaluate_characters_variety(characters):
     :return: A score on the range of [0, 1].
     :rtype: float
     '''
-    return random.uniform(0, 1)
+    domains = reduce(lambda x, y: x + list(y.domains), characters, [])
+    positivite_talking_points = reduce(lambda x, y: x + list(y.positive_talking_points), characters, [])
+    negative_talking_points = reduce(lambda x, y: x + list(y.negative_talking_points), characters, [])
+
+    scores = [
+        __evaluate_variety_of_strings(domains),
+        __evaluate_variety_of_strings(positivite_talking_points),
+        __evaluate_variety_of_strings(negative_talking_points)
+    ]
+
+    return np.mean(scores)
+
+def __evaluate_variety_of_strings(values):
+    '''
+    Evaluates the variety of string values.
+    :param domains: The list of the strings.
+    :type domains: [str]
+    :return: A score on the range of [0, 1].
+    :rtype: float
+    '''
+    if len(values) == 0:
+        return 0.0
+    unique_values = set(values)
+
+    return len(unique_values) / len(values)
 
 def __evaluate_story_flow(story):
     '''
