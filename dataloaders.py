@@ -51,7 +51,7 @@ class NOCWeaponArsenalColumn(Enum):
 
 class DataLoader:
     def _sample(self, data, howmany, random_sample):
-        if howmany is not None and isinstance(howmany, int) and howmany > 2:
+        if howmany is not None and isinstance(howmany, int) and howmany > 0:
             if random_sample:
                 data = random.sample(data, howmany)
             else:
