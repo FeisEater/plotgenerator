@@ -1,12 +1,36 @@
 import random
-from dataloaders import CharacterDataLoader
-from models import Knowledge, Actions, Goal, GoalType
-from utilities import safe_append, safe_extend, dump_output
+from dataloaders import CharacterDataLoader, ObjectDataLoader
+from models import Knowledge, Actions, Goal, GoalType, Location
+from utilities import safe_append, safe_extend, persons_shop, TAVERN, dump_output
 
+step = 0
 output = []
 characters = CharacterDataLoader().load(howmany=10, output=output)
-objects = []
-step = 0
+objects = ObjectDataLoader().load(howmany=random.randint(1, 3), random_sample=True, output=output)
+locations = [Location(persons_shop(x)) for x in characters] + [Location(TAVERN)]
+objectLocations = random.sample(locations, len(objects))
+for i in range(len(objects)):
+  objects[i].location = objectLocations[i]
+  output.append(objects[i].name + " was at the " + objectLocations[i].name)
+  pursuerCount = random.randint(1, 3)
+  adviserCount = random.randint(1, 2)
+  redHerringCount = random.randint(1, 4)
+  charSample = random.sample(characters, pursuerCount + adviserCount + redHerringCount)
+  for char in charSample[:pursuerCount]:
+    char.goals.insert(0, Goal(GoalType.GET_OBJECT, objects[i]))
+    output.append(char.name + " always wanted to own " + objects[i].name)
+  for char in charSample[pursuerCount:pursuerCount + adviserCount]:
+    char.knowledge.append(Knowledge(char, objects[i], Actions.LOCATED_IN, objectLocations[i], 0))
+    output.append(char.name + " knew where " + objects[i].name + " was")
+  for char in charSample[pursuerCount + adviserCount:]:
+    locale = random.choice(locations)
+    char.knowledge.append(Knowledge(char, objects[i], Actions.LOCATED_IN, locale, 0))
+    output.append(char.name + " thought " + objects[i].name + " was in " + locale.name)
+    
+for _ in range(random.randint(0, 3)):
+  trio = random.sample(characters, 3)
+  trio[0].goals.insert(0, Goal(GoalType.KILL, trio[1], trio[2]))
+  output.append(trio[0].name + " wanted to see " + trio[1].name + " kill " + trio[2].name)
 
 def make_decision(source, target):
   if [goal for goal in source.goals if goal.type == GoalType.KILL and goal.target1 == target and goal.target2 == None]:
@@ -42,7 +66,7 @@ def do_kill(source, target, chars_to_ignore):
       output.append(source.name + " stole " + object.name)
 
 def do_beat_up(source, target, chars_to_ignore):
-  target.relationships[source] -= 1
+  target.change_relationship(source, -1)
   chars_to_ignore.append(target)
   source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
   for object in objects:
@@ -112,7 +136,7 @@ def generation_step():
           continue
         events[make_decision(person1, person2)].append((person1, person2))
 
-    output.append("At the " + place)
+    output.append("At the " + place.name)
     chars_to_ignore = []
     for action in action_methods.keys():
       execute_action(action, places[place], events, chars_to_ignore)

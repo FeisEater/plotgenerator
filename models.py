@@ -1,14 +1,6 @@
 import random
 from enum import Enum
-from utilities import safe_append, safe_extend
-
-def persons_house(person):
-  return "{}'s house".format(person.name)
-
-def persons_shop(person):
-  return "{}'s shop".format(person.name)
-  
-TAVERN = "tavern"
+from utilities import safe_append, safe_extend, persons_house, persons_shop, TAVERN
 
 class Thing:
     '''A base class for all objects in the simulation.'''
@@ -20,6 +12,8 @@ class Thing:
         self.name = name # type: str
     
     def __eq__(self, other):
+        if not type(self) is type(other):
+          return False
         return self.name == other.name
     
     def __hash__(self):
@@ -27,6 +21,9 @@ class Thing:
         
     def __ne__(self, other):
         return not(self == other)
+
+    def __str__(self):
+        return self.name
         
 class Object(Thing):
     '''An object during the simulation that can be found by characters.'''
@@ -45,8 +42,9 @@ class Object(Thing):
         self.location = location # type: str
         self.owner = owner # type: Character
 
-    def __str__(self):
-        return self.name
+class Location(Thing):
+    def __init__(self, name):
+      Thing.__init__(self, name)
 
 class Character(Thing):
     def findThing(self, thing):
@@ -61,18 +59,18 @@ class Character(Thing):
                 break
             else:
               self.location = know.target
-              self.out.append(self.name + " goes to " + self.location)
+              self.out.append(self.name + " goes to " + self.location.name)
               return False
           elif know.action == Actions.OWNED_BY and know.subject == thing:
             self.findThing(know.target)
         if wrong_knowledge:
           self.knowledge = [k for k in self.knowledge if not(k.subject == thing and k.action == Actions.LOCATED_IN and k.target == self.location)]
-          self.out.append(self.name + " didnt find " + thing.name + " from " + self.location)
+          self.out.append(self.name + " didnt find " + thing.name + " from " + self.location.name)
           return False
         if self.schedule_time <= 0:
-          locations = [persons_shop(x) for x in self.relationships.keys()] + [TAVERN]
+          locations = [Location(persons_shop(x)) for x in self.relationships.keys()] + [Location(TAVERN)]
           self.location = random.choice(locations)
-          self.out.append(self.name + " goes to " + self.location)
+          self.out.append(self.name + " goes to " + self.location.name)
           self.schedule_time = random.randint(1, 3)    
     
     def do_getObject(self, arg1, arg2, step):
@@ -95,6 +93,8 @@ class Character(Thing):
           self.findThing(arg1)
         else:
           # self wants arg1 to kill arg2
+          if arg1.location != self.location:
+            return
           if arg1.relationships[self] < 0:
             # self.do_befriend(arg1)
             return
@@ -105,7 +105,7 @@ class Character(Thing):
             self.tellLie(arg1, random.choice(knownObjects), Actions.OWNED_BY, arg2, step)
           else:
             if friends:
-              deadFriends = [friend for friend in friends if friends.dead]
+              deadFriends = [friend for friend in friends if friend.dead]
               if deadFriends:
                 deadFriend = random.choice(deadFriends)
                 self.tellLie(arg1, arg2, Actions.KILL, deadFriend, step)
@@ -118,30 +118,31 @@ class Character(Thing):
     
     def do_schedule(self, arg1, arg2, step):
         if self.schedule_time <= 0:
-            if self.location == persons_house(self):
-                self.location = persons_shop(self)
-                self.out.append(self.name + " goes to " + self.location)
+            if self.location.name == persons_house(self):
+                self.location = Location(persons_shop(self))
+                self.out.append(self.name + " goes to " + self.location.name)
                 self.schedule_time = random.randint(2, 8)
             else:
-                locations = [persons_shop(x) for x in self.relationships.keys()] + [TAVERN, persons_house(self)]
+                locations = [Location(persons_shop(x)) for x in self.relationships.keys() if not x.dead] + [Location(TAVERN), Location(persons_house(self))]
                 self.location = random.choice(locations)
-                self.out.append(self.name + " goes to " + self.location)
-                if self.location == persons_house(self):
+                self.out.append(self.name + " goes to " + self.location.name)
+                if self.location.name == persons_house(self):
                     self.schedule_time = random.randint(2, 8)
-                elif self.location == TAVERN:
+                elif self.location.name == TAVERN:
                     self.schedule_time = random.randint(1, 4)
 
     def tellLie(self, target, arg1, action, arg2, step):
       lie = Knowledge(self, arg1, action, arg2, step)
-      safe_extend(target.told_knowledge, self, lie)
-      safe_extend(self.told_knowledge, target, lie)
+      safe_append(target.told_knowledge, self, lie)
+      safe_append(self.told_knowledge, target, lie)
       target.acquire_knowledge(lie)
+      self.out.append("-of course, " + self.name + " was lying to " + target.name)
     
     def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
         Thing.__init__(self, name)
         self.relationships = {}
         self.schedule_time = 0
-        self.location = location if location is not None else persons_house(self)
+        self.location = location if location is not None else Location(persons_house(self))
         self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
         self.told_knowledge = {} # Knowledge that was already told. Key: other person, Value: knowledge
         self.out = output # Queue output so we can filter out unimportant output later
@@ -164,8 +165,8 @@ class Character(Thing):
         }
         
     def schedule_step(self, step):
-        self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
-        self.knowledge = [Knowledge(self, self, Actions.LIKES, x, step, self.relationships[x]) for x in self.relationships.keys()]
+        #self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
+        #self.knowledge = [Knowledge(self, self, Actions.LIKES, x, step, self.relationships[x]) for x in self.relationships.keys()]
         goal = self.goals[0]
         self.schedule_methods[goal.type](goal.target1, goal.target1, step)
         self.schedule_time -= 1
@@ -229,6 +230,8 @@ class Character(Thing):
             self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
+        if self == knowledge.target:
+          return
         self.goals = [goal for goal in self.goals if not(goal.type == GoalType.KILL and (goal.target1 == knowledge.target or goal.target2 == knowledge.target))]
         if self.relationships[knowledge.target] > 0.5:
           self.relationships[knowledge.subject] = -1
@@ -240,6 +243,8 @@ class Character(Thing):
           self.change_relationship(knowledge.subject, 0.25)
 
     def react_to_beat_up(self, knowledge):
+        if self == knowledge.target:
+          return
         if self.relationships[knowledge.target] > 0.5:
           self.change_relationship(knowledge.subject, -0.5)
         elif self.relationships[knowledge.target] > 0:

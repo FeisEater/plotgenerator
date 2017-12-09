@@ -14,3 +14,11 @@ def dump_output(output):
   for msg in output:
     print(msg)
   del output[:]
+  
+def persons_house(person):
+  return "{}'s house".format(person.name)
+
+def persons_shop(person):
+  return "{}'s shop".format(person.name)
+  
+TAVERN = "tavern"
