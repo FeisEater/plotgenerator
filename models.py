@@ -47,7 +47,7 @@ class Location(Thing):
       Thing.__init__(self, name)
 
 class Character(Thing):
-    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
+    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), domains = set(), output = []):
         Thing.__init__(self, name)
         self.relationships = {}
         self.schedule_time = 0
@@ -59,6 +59,7 @@ class Character(Thing):
         self.negative_talking_points = negative_talking_points # type: list
         self.goals = [Goal(GoalType.NONE)] # prioritised list of goals
         self.political_views = political_views # type: set
+        self.domains = domains # type: set
         self.dead = False
 
         self.reactions = {

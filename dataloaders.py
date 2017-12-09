@@ -3,6 +3,7 @@ from models import Character, Object
 import random
 from enum import Enum
 import numpy as np
+import math
 
 class NOCListColumn(Enum):
     '''An enumeration that holds the column headers of the NOC List dataset.'''
@@ -105,6 +106,7 @@ class CharacterDataLoader(DataLoader):
                 positive_talking_points=self.__extract_set_of_strings(row[NOCListColumn.POSITIVE_TALKING_POINTS.value]),
                 negative_talking_points=self.__extract_set_of_strings(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]),
                 political_views=self.__extract_set_of_strings(row[NOCListColumn.POLITICS.value]),
+                domains = self.__extract_set_of_strings(row[NOCListColumn.DOMAINS.value]),
                 output = self.out
             )
 
@@ -168,7 +170,11 @@ class CharacterDataLoader(DataLoader):
             return False
 
     def __extract_set_of_strings(self, column_value):
+        if column_value is None or not isinstance(column_value, str):
+            return set()
+
         values = str(column_value).split(",")
+        values = list(filter(lambda s: s != "" and s is not None, values)) # filtering out empty strings
         values = set(map(lambda x: x.strip(), values))
 
         return values
@@ -188,8 +194,11 @@ class CharacterDataLoader(DataLoader):
         negative_union = person.political_views.union(person2.political_views)
         positive_intersection = person.political_views.intersection(person2.political_views)
         negative_intersection = person.political_views.intersection(person2.political_views)
-    
-        scores = [len(positive_intersection) / len(positive_union), len(negative_intersection) / len(negative_union)]
+
+        positive_score = len(positive_intersection) / len(positive_union) if len(positive_union) != 0 else 0
+        negative_score = len(negative_intersection) / len(negative_union) if len(negative_union) != 0 else 0
+
+        scores = [positive_score, negative_score]
     
         return np.average(scores) # -0.5 # the substractions is an offset to generate more extreme initial relationship
 
