@@ -47,6 +47,38 @@ class Location(Thing):
       Thing.__init__(self, name)
 
 class Character(Thing):
+    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
+        Thing.__init__(self, name)
+        self.relationships = {}
+        self.schedule_time = 0
+        self.location = location if location is not None else Location(persons_house(self))
+        self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
+        self.told_knowledge = {} # Knowledge that was already told. Key: other person, Value: knowledge
+        self.out = output # Queue output so we can filter out unimportant output later
+        self.positive_talking_points = positive_talking_points # type: list
+        self.negative_talking_points = negative_talking_points # type: list
+        self.goals = [Goal(GoalType.NONE)] # prioritised list of goals
+        self.political_views = political_views # type: set
+        self.dead = False
+
+        self.reactions = {
+          Actions.KILL: self.react_to_kill,
+          Actions.BEAT_UP: self.react_to_beat_up
+        }
+
+        self.schedule_methods = {
+          GoalType.GET_OBJECT: self.do_getObject,
+          GoalType.BEFRIEND: self.do_befriend,
+          GoalType.KILL: self.do_kill,
+          GoalType.NONE: self.do_schedule
+        }
+
+    def __str__(self):
+        return "Name: {NAME} Goals {GOALS} Political views: {POLITICAL_VIEWS} Location: {LOCATION} Positive talking points: {POSITIVE_TALKING_POINTS} Negative talking points: {NEGATIVE_TALKING_POINTS} Dead: {DEAD}".format(NAME = self.name, GOALS = self.goals, LOCATION = self.location, POLITICAL_VIEWS = self.political_views, POSITIVE_TALKING_POINTS = self.positive_talking_points, NEGATIVE_TALKING_POINTS = self.negative_talking_points, DEAD = self.dead)
+
+    def __repr__(self):
+        return "<Character {}>".format(self.__str__())
+
     def findThing(self, thing):
         wrong_knowledge = False
         for know in self.knowledge:
@@ -137,32 +169,6 @@ class Character(Thing):
       safe_append(self.told_knowledge, target, lie)
       target.acquire_knowledge(lie)
       self.out.append("-of course, " + self.name + " was lying to " + target.name)
-    
-    def __init__(self, name, location = None, positive_talking_points = set(), negative_talking_points = set(), political_views = set(), output = []):
-        Thing.__init__(self, name)
-        self.relationships = {}
-        self.schedule_time = 0
-        self.location = location if location is not None else Location(persons_house(self))
-        self.knowledge = [] # Knowledge character has acquired through witnessing or conversing with other characters
-        self.told_knowledge = {} # Knowledge that was already told. Key: other person, Value: knowledge
-        self.out = output # Queue output so we can filter out unimportant output later
-        self.positive_talking_points = positive_talking_points # type: list
-        self.negative_talking_points = negative_talking_points # type: list
-        self.goals = [Goal(GoalType.NONE)] # prioritised list of goals
-        self.political_views = political_views # type: set
-        self.dead = False
-
-        self.reactions = {
-          Actions.KILL: self.react_to_kill,
-          Actions.BEAT_UP: self.react_to_beat_up
-        }
-
-        self.schedule_methods = {
-          GoalType.GET_OBJECT: self.do_getObject,
-          GoalType.BEFRIEND: self.do_befriend,
-          GoalType.KILL: self.do_kill,
-          GoalType.NONE: self.do_schedule
-        }
         
     def schedule_step(self, step):
         #self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
