@@ -1,12 +1,13 @@
 import random
 import numpy as np
 from functools import reduce
+import output
 
 def evaluate(story, **kwargs):
     '''
     Evaluates the creativity score of the given story parameter, which is returned by the generator.
     :param story: The story object.
-    :type story:
+    :type story: [Output]
     :param kwargs: The list of optional parameters as explained below.
         verbose: A boolean indicating if debug information should be printed during the evaluation. Defaults to False.
     :type kwargs: dict
@@ -15,9 +16,28 @@ def evaluate(story, **kwargs):
     '''
     verbose = kwargs.get("verbose", False)
 
-    scores = []
+    characters = __get_unique_characters(story)
+    scores = [
+        __evaluate_characters_variety(characters)
+    ]
 
     return np.mean(scores)
+
+def __get_unique_characters(story):
+    '''
+    Extracts the list of characters from the story.
+    :param story: The story object.
+    :type story: [Output]
+    :return: The list of Character that appear in the story.
+    :rtype: set
+    '''
+    characters = set()
+    relationships = list(filter(lambda x: isinstance(x, output.ExposRelationship), story))
+    for relationship in relationships:
+        characters.add(relationship.source)
+        characters.add(relationship.target)
+
+    return characters
 
 def __evaluate_initial_and_final_state(initial_state, final_state):
     '''
