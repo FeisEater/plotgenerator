@@ -68,7 +68,7 @@ class Knowledge:
         return not(self == other)
         
     def importantKnowledge(self):
-        return self.action in [Actions.KILL, Actions.BEAT_UP, Actions.INSULT, Actions.LOCATED_IN, Actions.OWNED_BY]
+        return self.action in [Actions.KILL, Actions.BEAT_UP, Actions.INSULT, Actions.OWNED_BY]
 
 class Actions(Enum):
   KILL = "killed"

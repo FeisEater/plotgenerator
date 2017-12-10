@@ -2,566 +2,710 @@ Debug output with unimportant fluff
 
 
 At the ....
-Cicero had no opinion of Andrew Lloyd Webber
-Cicero had no opinion of Henry Ford
-Cicero had no opinion of Groot
-Cicero had no opinion of Kenneth Parcell 
-Cicero was annoyed by Christian Bale
-Cicero was annoyed by Kim Jong-Il
-Cicero had no opinion of Rain Man
-Cicero was annoyed by Bertie Wooster
-Cicero was annoyed by Mickey Rourke
-Andrew Lloyd Webber had no opinion of Henry Ford
-Andrew Lloyd Webber had no opinion of Groot
-Andrew Lloyd Webber had no opinion of Kenneth Parcell 
-Andrew Lloyd Webber had no opinion of Christian Bale
-Andrew Lloyd Webber had no opinion of Kim Jong-Il
-Andrew Lloyd Webber was annoyed by Rain Man
-Andrew Lloyd Webber had no opinion of Bertie Wooster
-Andrew Lloyd Webber was fond of Mickey Rourke
-Henry Ford had no opinion of Groot
-Henry Ford was annoyed by Kenneth Parcell 
-Henry Ford had no opinion of Christian Bale
-Henry Ford had no opinion of Kim Jong-Il
-Henry Ford had no opinion of Rain Man
-Henry Ford was fond of Bertie Wooster
-Henry Ford had no opinion of Mickey Rourke
-Groot was annoyed by Kenneth Parcell 
-Groot was annoyed by Christian Bale
-Groot was annoyed by Kim Jong-Il
-Groot was annoyed by Rain Man
-Groot was annoyed by Bertie Wooster
-Groot was annoyed by Mickey Rourke
-Kenneth Parcell  had no opinion of Christian Bale
-Kenneth Parcell  was annoyed by Kim Jong-Il
-Kenneth Parcell  had no opinion of Rain Man
-Kenneth Parcell  had no opinion of Bertie Wooster
-Kenneth Parcell  was annoyed by Mickey Rourke
-Christian Bale had no opinion of Kim Jong-Il
-Christian Bale had no opinion of Rain Man
-Christian Bale had no opinion of Bertie Wooster
-Christian Bale had no opinion of Mickey Rourke
-Kim Jong-Il was annoyed by Rain Man
-Kim Jong-Il had no opinion of Bertie Wooster
-Kim Jong-Il was annoyed by Mickey Rourke
-Rain Man had no opinion of Bertie Wooster
-Rain Man had no opinion of Mickey Rourke
-Bertie Wooster was fond of Mickey Rourke
-xenophobic jokes was hidden in Andrew Lloyd Webber's shop
-Since childhood, Andrew Lloyd Webber always wanted to have xenophobic jokes
-Since childhood, Kim Jong-Il always wanted to have xenophobic jokes
-Henry Ford knew that xenophobic jokes was hidden in Andrew Lloyd Webber's shop
-Christian Bale thought in err that xenophobic jokes was hidden in Bertie Wooster's shop
-Cicero thought it'd be fun to see Rain Man kill Kim Jong-Il
-Henry Ford thought it'd be fun to see Christian Bale kill Kenneth Parcell 
-
-At the None...
-Kenneth Parcell  now had no opinion of Kim Jong-Il
-Bertie Wooster now was fond of Andrew Lloyd Webber
-Andrew Lloyd Webber now was fond of Bertie Wooster
-Bertie Wooster now liked Mickey Rourke
-Mickey Rourke now was fond of Bertie Wooster
-Mickey Rourke now liked Bertie Wooster
-Bertie Wooster now loved Mickey Rourke
-Kenneth Parcell  now was fond of Rain Man
-Rain Man now had no opinion of Christian Bale
-Rain Man now was fond of Kenneth Parcell 
-Christian Bale now was fond of Kenneth Parcell 
-Kenneth Parcell  now was fond of Christian Bale
-Mickey Rourke now loved Bertie Wooster
-Bertie Wooster now loved Mickey Rourke
-Rain Man now was fond of Christian Bale
-Christian Bale now was fond of Rain Man
-Kim Jong-Il now was fond of Christian Bale
-Christian Bale now was fond of Kim Jong-Il
-Mickey Rourke now had no opinion of Christian Bale
-Bertie Wooster now loved Mickey Rourke
-Mickey Rourke now loved Bertie Wooster
-Kim Jong-Il now liked Christian Bale
-Christian Bale now liked Kim Jong-Il
-Bertie Wooster now liked Andrew Lloyd Webber
-Andrew Lloyd Webber now liked Bertie Wooster
-Kim Jong-Il now loved Christian Bale
-Christian Bale now loved Kim Jong-Il
-Kenneth Parcell  now was fond of Bertie Wooster
-Bertie Wooster now was fond of Kenneth Parcell 
-Groot now had no opinion of Andrew Lloyd Webber
-Bertie Wooster now loved Andrew Lloyd Webber
-Andrew Lloyd Webber now loved Bertie Wooster
-Kenneth Parcell  now liked Rain Man
-Kenneth Parcell  now was fond of Andrew Lloyd Webber
-Rain Man now liked Kenneth Parcell 
-Andrew Lloyd Webber now was fond of Kenneth Parcell 
+Xena had no opinion of Fox Mulder
+Xena was fond of Jack The Ripper
+Xena had no opinion of Karl Lagerfeld
+Xena was annoyed by Pepé Le Pew
+Xena was annoyed by Niccolò Paganini
+Xena had no opinion of Bart Simpson
+Xena was annoyed by Sun Tzu
+Xena was annoyed by Bruce Wayne
+Xena was annoyed by Jim Jones
+Fox Mulder was annoyed by Jack The Ripper
+Fox Mulder was annoyed by Karl Lagerfeld
+Fox Mulder had no opinion of Pepé Le Pew
+Fox Mulder was annoyed by Niccolò Paganini
+Fox Mulder was annoyed by Bart Simpson
+Fox Mulder had no opinion of Sun Tzu
+Fox Mulder had no opinion of Bruce Wayne
+Fox Mulder was annoyed by Jim Jones
+Jack The Ripper was annoyed by Karl Lagerfeld
+Jack The Ripper had no opinion of Pepé Le Pew
+Jack The Ripper had no opinion of Niccolò Paganini
+Jack The Ripper was fond of Bart Simpson
+Jack The Ripper had no opinion of Sun Tzu
+Jack The Ripper had no opinion of Bruce Wayne
+Jack The Ripper had no opinion of Jim Jones
+Karl Lagerfeld had no opinion of Pepé Le Pew
+Karl Lagerfeld had no opinion of Niccolò Paganini
+Karl Lagerfeld was annoyed by Bart Simpson
+Karl Lagerfeld was annoyed by Sun Tzu
+Karl Lagerfeld was fond of Bruce Wayne
+Karl Lagerfeld had no opinion of Jim Jones
+Pepé Le Pew had no opinion of Niccolò Paganini
+Pepé Le Pew was annoyed by Bart Simpson
+Pepé Le Pew was annoyed by Sun Tzu
+Pepé Le Pew had no opinion of Bruce Wayne
+Pepé Le Pew was annoyed by Jim Jones
+Niccolò Paganini was annoyed by Bart Simpson
+Niccolò Paganini had no opinion of Sun Tzu
+Niccolò Paganini was annoyed by Bruce Wayne
+Niccolò Paganini was annoyed by Jim Jones
+Bart Simpson had no opinion of Sun Tzu
+Bart Simpson had no opinion of Bruce Wayne
+Bart Simpson had no opinion of Jim Jones
+Sun Tzu was annoyed by Bruce Wayne
+Sun Tzu had no opinion of Jim Jones
+Bruce Wayne was fond of Jim Jones
+musket rifle was hidden in Niccolò Paganini's shop
+Since childhood, Pepé Le Pew always wanted to have musket rifle
+Since childhood, Jack The Ripper always wanted to have musket rifle
+Since childhood, Bruce Wayne always wanted to have musket rifle
+Karl Lagerfeld knew that musket rifle was hidden in Niccolò Paganini's shop
+Fox Mulder knew that musket rifle was hidden in Niccolò Paganini's shop
+Xena thought in err that musket rifle was hidden in Jack The Ripper's shop
+Jim Jones thought in err that musket rifle was hidden in Jack The Ripper's shop
+Greek fire was hidden in Pepé Le Pew's shop
+Since childhood, Bart Simpson always wanted to have Greek fire
+Pepé Le Pew knew that Greek fire was hidden in Pepé Le Pew's shop
+Karl Lagerfeld thought in err that Greek fire was hidden in Xena's shop
+Xena thought in err that Greek fire was hidden in Pepé Le Pew's shop
+Niccolò Paganini thought in err that Greek fire was hidden in Bruce Wayne's shop
+Tin Man's axe was hidden in Sun Tzu's shop
+Since childhood, Bruce Wayne always wanted to have Tin Man's axe
+Since childhood, Jack The Ripper always wanted to have Tin Man's axe
+Since childhood, Sun Tzu always wanted to have Tin Man's axe
+Pepé Le Pew knew that Tin Man's axe was hidden in Sun Tzu's shop
+Niccolò Paganini knew that Tin Man's axe was hidden in Sun Tzu's shop
+Bart Simpson thought in err that Tin Man's axe was hidden in Niccolò Paganini's shop
+Fox Mulder thought in err that Tin Man's axe was hidden in Fox Mulder's shop
+Jim Jones thought in err that Tin Man's axe was hidden in Bruce Wayne's shop
+Karl Lagerfeld thought in err that Tin Man's axe was hidden in Fox Mulder's shop
+Niccolò Paganini thought it'd be fun to see Karl Lagerfeld kill Xena
 
 ***
 
 
-At the Kim Jong-Il's house...
-Kim Jong-Il then decided to go to tavern
+At the Jim Jones's house...
+Jim Jones then decided to go to Jim Jones's shop
 
-At the Mickey Rourke's house...
-Mickey Rourke then decided to go to Mickey Rourke's shop
+At the Karl Lagerfeld's house...
+Karl Lagerfeld then decided to go to Karl Lagerfeld's shop
 
-At the Rain Man's house...
-Rain Man then decided to go to Rain Man's shop
+At the Jack The Ripper's house...
+Jack The Ripper then decided to go to Bruce Wayne's shop
 
-At the Bertie Wooster's house...
-Bertie Wooster then decided to go to Bertie Wooster's shop
+At the Fox Mulder's house...
+Fox Mulder then decided to go to Fox Mulder's shop
 
-At the Andrew Lloyd Webber's house...
-Andrew Lloyd Webber then decided to go to Kim Jong-Il's shop
+At the Bart Simpson's house...
+Bart Simpson then decided to go to tavern
 
-At the Kenneth Parcell 's house...
-Kenneth Parcell  then decided to go to Kenneth Parcell 's shop
+At the Xena's house...
+Xena then decided to go to Xena's shop
 
-At the Groot's house...
-Groot then decided to go to Groot's shop
+At the Pepé Le Pew's house...
+Pepé Le Pew then decided to go to Xena's shop
 
-At the Christian Bale's house...
-Christian Bale then decided to go to Christian Bale's shop
+At the Sun Tzu's house...
+Sun Tzu then decided to go to Xena's shop
+
+At the Bruce Wayne's house...
+Bruce Wayne then decided to go to Xena's shop
+
+At the Xena's shop...
+Xena now had no opinion of Sun Tzu
+Sun Tzu learned from Jack The Ripper that musket rifle located in Jack The Ripper's shop
+Sun Tzu learned from Jack The Ripper that Greek fire located in Pepé Le Pew's shop
+Sun Tzu conversed with Xena
+Bruce Wayne now had no opinion of Pepé Le Pew
+Pepé Le Pew conversed with Bruce Wayne
+Xena now had no opinion of Pepé Le Pew
+Pepé Le Pew learned from Jack The Ripper that musket rifle located in Jack The Ripper's shop
+Pepé Le Pew conversed with Xena
 
 ***
 
 
-At the Kim Jong-Il's shop...
-Andrew Lloyd Webber then decided to go to Cicero's shop
+At the Xena's shop...
+Pepé Le Pew then decided to go to Jack The Ripper's shop
+Sun Tzu now was fond of Xena
+Xena conversed with Sun Tzu
+Xena now was fond of Sun Tzu
+Sun Tzu conversed with Xena
 
 ***
 
 
-At the Cicero's shop...
-Andrew Lloyd Webber then decided to go to Cicero's shop
+At the Jack The Ripper's shop...
+Pepé Le Pew didnt find musket rifle in Jack The Ripper's shop
+
+At the Xena's shop...
+Bruce Wayne then decided to go to Pepé Le Pew's shop
+
+At the Jim Jones's shop...
+Jim Jones then decided to go to Fox Mulder's shop
 
 At the tavern...
-Kim Jong-Il then decided to go to Rain Man's shop
+Bart Simpson then decided to go to Karl Lagerfeld's shop
+
+At the Xena's shop...
+Xena now liked Sun Tzu
+Sun Tzu conversed with Xena
+Sun Tzu now liked Xena
+Xena conversed with Sun Tzu
+
+At the Fox Mulder's shop...
+Fox Mulder now had no opinion of Jim Jones
+Jim Jones learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Jim Jones learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Jim Jones conversed with Fox Mulder
 
 ***
 
 
-At the Groot's shop...
-Groot then decided to go to Rain Man's shop
+At the Xena's shop...
+Sun Tzu then decided to go to Bart Simpson's shop
 
-At the Rain Man's shop...
-Rain Man then decided to go to Cicero's shop
+At the Pepé Le Pew's shop...
+Bruce Wayne then decided to go to tavern
 
-At the Cicero's shop...
-Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+At the Fox Mulder's shop...
+Jim Jones then decided to go to Pepé Le Pew's shop
 
-At the Rain Man's shop...
-Kim Jong-Il then decided to go to Kenneth Parcell 's shop
+At the Bruce Wayne's shop...
+Jack The Ripper then decided to go to Jim Jones's shop
 
-At the Kenneth Parcell 's shop...
-Kim Jong-Il conversed with Kenneth Parcell 
-
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber conversed with Bertie Wooster
-Bertie Wooster conversed with Andrew Lloyd Webber
-
-***
-
-
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber then decided to go to Rain Man's shop
-
-At the Mickey Rourke's shop...
-Mickey Rourke then decided to go to Bertie Wooster's shop
-
-At the Rain Man's shop...
-Groot then decided to go to Kim Jong-Il's shop
-
-At the Kenneth Parcell 's shop...
-Kim Jong-Il then decided to go to tavern
-
-At the Cicero's shop...
-Rain Man then decided to go to Henry Ford's shop
-
-At the Bertie Wooster's shop...
-Mickey Rourke conversed with Bertie Wooster
-Bertie Wooster conversed with Mickey Rourke
-
-***
-
-
-At the Henry Ford's shop...
-Rain Man then decided to go to Groot's shop
-
-At the tavern...
-Kim Jong-Il then decided to go to Groot's shop
-
-At the Kim Jong-Il's shop...
-Groot then decided to go to Andrew Lloyd Webber's shop
-
-At the Bertie Wooster's shop...
-Mickey Rourke then decided to go to Bertie Wooster's shop
-
-At the Christian Bale's shop...
-Christian Bale then decided to go to Kim Jong-Il's shop
-
-At the Bertie Wooster's shop...
-Bertie Wooster conversed with Mickey Rourke
-Mickey Rourke conversed with Bertie Wooster
-
-***
-
-
-At the Andrew Lloyd Webber's shop...
-Groot then decided to go to Henry Ford's shop
-
-At the Bertie Wooster's shop...
-Mickey Rourke then decided to go to Henry Ford's shop
-Bertie Wooster then decided to go to Andrew Lloyd Webber's shop
-
-At the Kim Jong-Il's shop...
-Christian Bale then decided to go to Kenneth Parcell 's shop
-
-At the Kenneth Parcell 's shop...
-Kenneth Parcell  then decided to go to Kim Jong-Il's shop
-
-At the Rain Man's shop...
-Andrew Lloyd Webber then decided to go to Christian Bale's shop
-
-At the Groot's shop...
-Rain Man then decided to go to Cicero's shop
-
-***
-
-
-At the Kenneth Parcell 's shop...
-Christian Bale then decided to go to Mickey Rourke's shop
-
-At the Kim Jong-Il's shop...
-Kenneth Parcell  then decided to go to Mickey Rourke's shop
-
-At the Cicero's shop...
-Rain Man then decided to go to Mickey Rourke's shop
-
-At the Henry Ford's shop...
-Groot then decided to go to tavern
-
-At the Andrew Lloyd Webber's shop...
-Bertie Wooster then decided to go to Henry Ford's shop
-
-At the Henry Ford's shop...
-Mickey Rourke then decided to go to Henry Ford's shop
-
-At the Mickey Rourke's shop...
-Rain Man conversed with Kenneth Parcell 
-Christian Bale conversed with Rain Man
-Kenneth Parcell  conversed with Rain Man
-Kenneth Parcell  conversed with Christian Bale
-Kenneth Parcell  learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-Christian Bale conversed with Kenneth Parcell 
-
-At the Henry Ford's shop...
-Bertie Wooster conversed with Mickey Rourke
-Mickey Rourke conversed with Bertie Wooster
-
-***
-
-
-At the Henry Ford's shop...
-Mickey Rourke then decided to go to Groot's shop
-
-At the tavern...
-Groot then decided to go to Groot's house
-
-At the Henry Ford's shop...
-Bertie Wooster then decided to go to Kim Jong-Il's shop
-
-At the Mickey Rourke's shop...
-Rain Man then decided to go to Bertie Wooster's shop
-
-At the Groot's shop...
-Kim Jong-Il then decided to go to Bertie Wooster's shop
-
-At the Mickey Rourke's shop...
-Christian Bale then decided to go to Bertie Wooster's shop
-Kenneth Parcell  then decided to go to Groot's shop
-
-At the Bertie Wooster's shop...
-Christian Bale conversed with Rain Man
-Rain Man conversed with Christian Bale
-Rain Man learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-Christian Bale conversed with Kim Jong-Il
-Kim Jong-Il conversed with Christian Bale
-Kim Jong-Il learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-
-***
-
-
-At the Groot's shop...
-Kenneth Parcell  then decided to go to Kenneth Parcell 's house
-
-At the Bertie Wooster's shop...
-Rain Man then decided to go to Kim Jong-Il's shop
-
-At the Kim Jong-Il's shop...
-Bertie Wooster then decided to go to Christian Bale's shop
-
-At the Bertie Wooster's shop...
-Kim Jong-Il didnt find xenophobic jokes in Bertie Wooster's shop
-
-At the Christian Bale's shop...
-Andrew Lloyd Webber then decided to go to Henry Ford's shop
-
-At the Bertie Wooster's shop...
-Christian Bale then decided to go to tavern
-
-At the Groot's shop...
-Mickey Rourke then decided to go to Andrew Lloyd Webber's shop
-
-***
-
-
-At the Bertie Wooster's shop...
-Kim Jong-Il then decided to go to Bertie Wooster's shop
-
-At the tavern...
-Christian Bale then decided to go to Cicero's shop
-
-At the Andrew Lloyd Webber's shop...
-Mickey Rourke then decided to go to Cicero's shop
-
-At the Kim Jong-Il's shop...
-Rain Man then decided to go to Kenneth Parcell 's shop
-
-At the Christian Bale's shop...
-Bertie Wooster then decided to go to Andrew Lloyd Webber's shop
-
-At the Cicero's shop...
-Christian Bale conversed with Mickey Rourke
-
-***
-
-
-At the Cicero's shop...
-Mickey Rourke then decided to go to Kim Jong-Il's shop
-
-At the Kenneth Parcell 's shop...
-Rain Man then decided to go to Christian Bale's shop
-
-At the Andrew Lloyd Webber's shop...
-Bertie Wooster then decided to go to Kim Jong-Il's shop
-
-At the Kenneth Parcell 's house...
-Kenneth Parcell  then decided to go to Kenneth Parcell 's shop
-
-At the Cicero's shop...
-Christian Bale then decided to go to tavern
-
-At the Kim Jong-Il's shop...
-Mickey Rourke conversed with Bertie Wooster
-Bertie Wooster conversed with Mickey Rourke
-
-***
-
-
-At the Groot's house...
-Groot then decided to go to Groot's shop
-
-At the Kim Jong-Il's shop...
-Bertie Wooster then decided to go to Christian Bale's shop
-
-At the Christian Bale's shop...
-Rain Man then decided to go to Bertie Wooster's shop
-
-At the Kim Jong-Il's shop...
-Mickey Rourke then decided to go to Groot's shop
-
-At the Bertie Wooster's shop...
-Kim Jong-Il then decided to go to tavern
-
-At the Henry Ford's shop...
-Andrew Lloyd Webber then decided to go to Christian Bale's shop
-
-At the tavern...
-Christian Bale conversed with Kim Jong-Il
-Kim Jong-Il conversed with Christian Bale
-
-At the Christian Bale's shop...
-Andrew Lloyd Webber conversed with Bertie Wooster
-Bertie Wooster conversed with Andrew Lloyd Webber
-
-***
-
-
-At the Bertie Wooster's shop...
-Rain Man then decided to go to Andrew Lloyd Webber's shop
-
-At the Christian Bale's shop...
-Bertie Wooster then decided to go to Kenneth Parcell 's shop
-
-At the Groot's shop...
-Mickey Rourke then decided to go to Kim Jong-Il's shop
-
-At the tavern...
-Christian Bale conversed with Kim Jong-Il
-Kim Jong-Il conversed with Christian Bale
-
-At the Kenneth Parcell 's shop...
-Bertie Wooster conversed with Kenneth Parcell 
-Bertie Wooster learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-Kenneth Parcell  conversed with Bertie Wooster
-
-***
-
-
-At the Christian Bale's shop...
-Andrew Lloyd Webber then decided to go to Groot's shop
-
-At the Andrew Lloyd Webber's shop...
-Rain Man then decided to go to Henry Ford's shop
-
-At the Kim Jong-Il's shop...
-Mickey Rourke then decided to go to Christian Bale's shop
-
-At the Kenneth Parcell 's shop...
-Bertie Wooster then decided to go to Cicero's shop
-
-At the tavern...
-Christian Bale then decided to go to Christian Bale's house
-
-At the Groot's shop...
-Andrew Lloyd Webber conversed with Groot
-
-***
-
-
-At the Henry Ford's shop...
-Rain Man then decided to go to Kim Jong-Il's shop
-
-At the Groot's shop...
-Andrew Lloyd Webber then decided to go to Henry Ford's shop
-Groot then decided to go to Cicero's shop
-
-At the tavern...
-Kim Jong-Il then decided to go to Mickey Rourke's shop
-
-At the Cicero's shop...
-Bertie Wooster then decided to go to Henry Ford's shop
-
-At the Christian Bale's shop...
-Mickey Rourke then decided to go to Bertie Wooster's shop
-
-At the Henry Ford's shop...
-Andrew Lloyd Webber conversed with Bertie Wooster
-Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-Bertie Wooster conversed with Andrew Lloyd Webber
-
-***
-
-
-At the Bertie Wooster's shop...
-Mickey Rourke then decided to go to Mickey Rourke's house
-
-At the Cicero's shop...
-Groot then decided to go to Cicero's shop
-
-At the Kim Jong-Il's shop...
-Rain Man then decided to go to Mickey Rourke's shop
-
-At the Henry Ford's shop...
-Bertie Wooster then decided to go to Bertie Wooster's house
-
-At the Kenneth Parcell 's shop...
-Kenneth Parcell  then decided to go to Henry Ford's shop
-
-At the Henry Ford's shop...
-Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
-
-***
-
-
-At the Henry Ford's shop...
-Kenneth Parcell  then decided to go to Christian Bale's shop
-
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
-
-At the Mickey Rourke's shop...
-Rain Man then decided to go to Cicero's shop
-
-At the Cicero's shop...
-Groot then decided to go to Andrew Lloyd Webber's shop
-
-***
-
-
-At the Christian Bale's shop...
-Kenneth Parcell  then decided to go to Kenneth Parcell 's house
-
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber then decided to go to Kenneth Parcell 's shop
-
-At the Andrew Lloyd Webber's shop...
-Groot then decided to go to Henry Ford's shop
-
-At the Cicero's shop...
-Rain Man then decided to go to Groot's shop
-
-At the Mickey Rourke's shop...
-Kim Jong-Il then decided to go to Rain Man's shop
-
-***
-
-
-At the Rain Man's shop...
-Kim Jong-Il then decided to go to Cicero's shop
-
-At the Groot's shop...
-Rain Man then decided to go to tavern
-
-At the Henry Ford's shop...
-Groot then decided to go to Bertie Wooster's shop
+At the Jack The Ripper's shop...
+Pepé Le Pew then decided to go to Bart Simpson's shop
 
 ***
 
 
 At the tavern...
-Rain Man then decided to go to Kenneth Parcell 's shop
+Bruce Wayne then decided to go to Bart Simpson's shop
 
-At the Kenneth Parcell 's house...
-Kenneth Parcell  then decided to go to Kenneth Parcell 's shop
+At the Pepé Le Pew's shop...
+Jim Jones then decided to go to tavern
 
-At the Bertie Wooster's shop...
-Groot then decided to go to Andrew Lloyd Webber's shop
+At the Karl Lagerfeld's shop...
+Karl Lagerfeld then decided to go to Niccolò Paganini's shop
 
-At the Kenneth Parcell 's shop...
-Rain Man conversed with Kenneth Parcell 
-Andrew Lloyd Webber conversed with Kenneth Parcell 
-Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-Kenneth Parcell  conversed with Rain Man
-Kenneth Parcell  conversed with Andrew Lloyd Webber
+At the Xena's shop...
+Xena then decided to go to Sun Tzu's shop
 
-***
-
-
-At the Kenneth Parcell 's shop...
-Rain Man then decided to go to Rain Man's house
-
-At the Andrew Lloyd Webber's shop...
-Groot then decided to go to Mickey Rourke's shop
-
-At the Kenneth Parcell 's shop...
-Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+At the Bart Simpson's shop...
+Pepé Le Pew now was fond of Bruce Wayne
+Bruce Wayne learned from Fox Mulder that Greek fire located in Pepé Le Pew's shop
+Bruce Wayne learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Bruce Wayne conversed with Pepé Le Pew
+Bruce Wayne now was fond of Pepé Le Pew
+Pepé Le Pew conversed with Bruce Wayne
 
 ***
 
 
-At the Cicero's shop...
-Kim Jong-Il then decided to go to Andrew Lloyd Webber's shop
+At the Karl Lagerfeld's shop...
+Bart Simpson then decided to go to tavern
 
-At the Mickey Rourke's shop...
-Groot then decided to go to Cicero's shop
+At the Bart Simpson's shop...
+Bruce Wayne then decided to go to Sun Tzu's shop
 
-At the Christian Bale's house...
-Christian Bale then decided to go to Christian Bale's shop
+At the Jim Jones's shop...
+Jack The Ripper then decided to go to Bruce Wayne's shop
 
-At the Mickey Rourke's house...
-Mickey Rourke then decided to go to Mickey Rourke's shop
+At the Niccolò Paganini's shop...
+Karl Lagerfeld then decided to go to Karl Lagerfeld's house
 
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
+At the Sun Tzu's shop...
+Xena then decided to go to Fox Mulder's shop
+
+At the tavern...
+Jim Jones now had no opinion of Bart Simpson
+Bart Simpson learned from Fox Mulder that musket rifle located in Jack The Ripper's shop
+Bart Simpson learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Bart Simpson learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Bart Simpson conversed with Jim Jones
+
+At the Fox Mulder's shop...
+Fox Mulder now had no opinion of Xena
+Xena learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Xena learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Xena conversed with Fox Mulder
+
+***
+
+
+At the Fox Mulder's shop...
+Xena then decided to go to Bart Simpson's shop
+
+At the Sun Tzu's shop...
+Bruce Wayne took Tin Man's axe
+
+At the Bart Simpson's shop...
+Sun Tzu then decided to go to Bruce Wayne's shop
+
+At the Fox Mulder's shop...
+Fox Mulder then decided to go to Karl Lagerfeld's shop
+
+At the Bart Simpson's shop...
+Pepé Le Pew then decided to go to Jack The Ripper's shop
+
+At the tavern...
+Jim Jones then decided to go to Karl Lagerfeld's shop
+
+At the Bruce Wayne's shop...
+Sun Tzu now had no opinion of Jack The Ripper
+Jack The Ripper learned from Jack The Ripper that musket rifle located in Jack The Ripper's shop
+Jack The Ripper learned from Jack The Ripper that Greek fire located in Pepé Le Pew's shop
+Jack The Ripper conversed with Sun Tzu
+
+At the Karl Lagerfeld's shop...
+Fox Mulder now was fond of Jim Jones
+Jim Jones conversed with Fox Mulder
+Jim Jones now was fond of Fox Mulder
+Fox Mulder learned from Fox Mulder that musket rifle located in Jack The Ripper's shop
+Fox Mulder learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Fox Mulder conversed with Jim Jones
+
+***
+
+
+At the Bruce Wayne's shop...
+Sun Tzu then decided to go to Jim Jones's shop
+
+At the Jack The Ripper's shop...
+Pepé Le Pew then decided to go to Bart Simpson's shop
+
+At the Bart Simpson's shop...
+Xena then decided to go to Xena's house
+
+At the Karl Lagerfeld's shop...
+Jim Jones then decided to go to Bruce Wayne's shop
+
+At the Sun Tzu's shop...
+Bruce Wayne then decided to go to Jim Jones's shop
+
+At the Bruce Wayne's shop...
+Jack The Ripper then decided to go to Niccolò Paganini's shop
+
+At the Karl Lagerfeld's shop...
+Fox Mulder then decided to go to Niccolò Paganini's shop
+
+At the Niccolò Paganini's shop...
+Fox Mulder now had no opinion of Jack The Ripper
+Jack The Ripper learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Jack The Ripper learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Jack The Ripper learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Jack The Ripper conversed with Fox Mulder
+
+At the Jim Jones's shop...
+Bruce Wayne now had a vendetta against Sun Tzu
+Sun Tzu stole Tin Man's axe from the Bruce Wayne's body
+Sun Tzu beat up Bruce Wayne
+Sun Tzu learned from Sun Tzu that Sun Tzu beat up Bruce Wayne
+Bruce Wayne learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+
+***
+
+
+At the Niccolò Paganini's shop...
+Jack The Ripper then decided to go to Bruce Wayne's shop
+
+At the tavern...
+Bart Simpson then decided to go to Xena's shop
+
+At the Niccolò Paganini's shop...
+Fox Mulder then decided to go to Bart Simpson's shop
+
+At the Bruce Wayne's shop...
+Jim Jones then decided to go to Jack The Ripper's shop
+
+At the Jim Jones's shop...
+Bruce Wayne stole Tin Man's axe from the Sun Tzu's body
+Bruce Wayne killed Sun Tzu
+Bruce Wayne learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Sun Tzu learned from Sun Tzu that Bruce Wayne killed Sun Tzu
+
+At the Bart Simpson's shop...
+Fox Mulder now was fond of Pepé Le Pew
+Pepé Le Pew learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Pepé Le Pew learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Pepé Le Pew learned from Fox Mulder that musket rifle located in Jack The Ripper's shop
+Pepé Le Pew conversed with Fox Mulder
+Pepé Le Pew now was fond of Fox Mulder
+Fox Mulder learned from Fox Mulder that Greek fire located in Pepé Le Pew's shop
+Fox Mulder learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Fox Mulder conversed with Pepé Le Pew
+
+***
+
+
+At the Bruce Wayne's shop...
+Jack The Ripper didnt find Tin Man's axe in Bruce Wayne's shop
+
+At the Jim Jones's shop...
+Bruce Wayne then decided to go to Xena's shop
+
+At the Bart Simpson's shop...
+Pepé Le Pew then decided to go to Niccolò Paganini's shop
+Fox Mulder then decided to go to Bruce Wayne's shop
+
+At the Jack The Ripper's shop...
+Jim Jones then decided to go to Niccolò Paganini's shop
+
+At the Niccolò Paganini's shop...
+Pepé Le Pew now had no opinion of Jim Jones
+Jim Jones conversed with Pepé Le Pew
+
+At the Xena's shop...
+Bruce Wayne now had no opinion of Bart Simpson
+Bart Simpson learned from Fox Mulder that Greek fire located in Pepé Le Pew's shop
+Bart Simpson learned from Bart Simpson that Tin Man's axe owned by Bruce Wayne
+Bart Simpson learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Bart Simpson now was annoyed by Sun Tzu
+Bart Simpson conversed with Bruce Wayne
+
+At the Bruce Wayne's shop...
+Fox Mulder now was fond of Jack The Ripper
+Jack The Ripper learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Jack The Ripper conversed with Fox Mulder
+Jack The Ripper now was fond of Fox Mulder
+Fox Mulder conversed with Jack The Ripper
+
+***
+
+
+At the Xena's shop...
+Bart Simpson then decided to go to Pepé Le Pew's shop
+
+At the Niccolò Paganini's shop...
+Pepé Le Pew took musket rifle
+Jim Jones then decided to go to Pepé Le Pew's shop
+
+At the Bruce Wayne's shop...
+Jack The Ripper then decided to go to Fox Mulder's shop
+Fox Mulder then decided to go to Pepé Le Pew's shop
+
+At the Pepé Le Pew's shop...
+Jim Jones now liked Fox Mulder
+Fox Mulder conversed with Jim Jones
+Bart Simpson now was fond of Jim Jones
+Jim Jones learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Jim Jones now disliked Sun Tzu
+Jim Jones learned from Fox Mulder that Greek fire located in Pepé Le Pew's shop
+Jim Jones learned from Bart Simpson that Tin Man's axe located in Niccolò Paganini's shop
+Jim Jones conversed with Bart Simpson
+Jim Jones now was fond of Bart Simpson
+Bart Simpson learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Bart Simpson conversed with Jim Jones
+Fox Mulder now liked Jim Jones
+Jim Jones learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Jim Jones conversed with Fox Mulder
+Fox Mulder now had no opinion of Bart Simpson
+Bart Simpson learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Bart Simpson conversed with Fox Mulder
+
+***
+
+
+At the Fox Mulder's shop...
+Jack The Ripper didnt find Tin Man's axe in Fox Mulder's shop
+
+At the Pepé Le Pew's shop...
+Bart Simpson took Greek fire
+Jim Jones then decided to go to Jim Jones's house
+Fox Mulder then decided to go to Jim Jones's shop
+
+At the Niccolò Paganini's shop...
+Pepé Le Pew then decided to go to Bruce Wayne's shop
+
+***
+
+
+At the Fox Mulder's shop...
+Jack The Ripper then decided to go to Sun Tzu's shop
+
+At the Pepé Le Pew's shop...
+Bart Simpson then decided to go to Jack The Ripper's shop
+
+At the Xena's shop...
+Bruce Wayne then decided to go to Fox Mulder's shop
+
+At the Jim Jones's shop...
+Fox Mulder then decided to go to Niccolò Paganini's shop
+
+At the Xena's house...
+Xena then decided to go to Xena's shop
+
+At the Karl Lagerfeld's house...
+Karl Lagerfeld then decided to go to Karl Lagerfeld's shop
+
+At the Bruce Wayne's shop...
+Pepé Le Pew then decided to go to Pepé Le Pew's house
+
+***
+
+
+At the Sun Tzu's shop...
+Jack The Ripper didnt find Tin Man's axe in Sun Tzu's shop
+
+At the Niccolò Paganini's shop...
+Fox Mulder then decided to go to Pepé Le Pew's shop
+
+At the Jack The Ripper's shop...
+Bart Simpson then decided to go to Bart Simpson's house
+
+***
+
+
+At the Pepé Le Pew's shop...
+Fox Mulder then decided to go to Bart Simpson's shop
+
+At the Sun Tzu's shop...
+Jack The Ripper then decided to go to Jim Jones's shop
+
+***
+
+
+At the Bart Simpson's shop...
+Fox Mulder then decided to go to Jack The Ripper's shop
+
+At the Fox Mulder's shop...
+Bruce Wayne then decided to go to Karl Lagerfeld's shop
+
+At the Karl Lagerfeld's shop...
+Karl Lagerfeld then decided to go to Pepé Le Pew's shop
+
+***
+
+
+At the Jim Jones's shop...
+Jack The Ripper then decided to go to tavern
+
+At the Jack The Ripper's shop...
+Fox Mulder then decided to go to Bruce Wayne's shop
+
+At the Pepé Le Pew's shop...
+Karl Lagerfeld then decided to go to Jack The Ripper's shop
+
+***
+
+
+At the Bruce Wayne's shop...
+Fox Mulder then decided to go to Karl Lagerfeld's shop
+
+At the Jack The Ripper's shop...
+Karl Lagerfeld then decided to go to Karl Lagerfeld's house
+
+At the Karl Lagerfeld's shop...
+Fox Mulder now was fond of Bruce Wayne
+Bruce Wayne learned from Fox Mulder that musket rifle located in Jack The Ripper's shop
+Bruce Wayne learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Bruce Wayne conversed with Fox Mulder
+Bruce Wayne now was fond of Fox Mulder
+Fox Mulder learned from Bart Simpson that Tin Man's axe owned by Bruce Wayne
+Fox Mulder learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Fox Mulder now was annoyed by Sun Tzu
+Fox Mulder learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Fox Mulder conversed with Bruce Wayne
+
+***
+
+
+At the Karl Lagerfeld's shop...
+Bruce Wayne then decided to go to Jack The Ripper's shop
+
+At the Bart Simpson's house...
+Bart Simpson then decided to go to Bart Simpson's shop
+
+At the Karl Lagerfeld's shop...
+Fox Mulder then decided to go to Jim Jones's shop
+
+***
+
+
+At the Xena's shop...
+Xena then decided to go to Bruce Wayne's shop
+
+At the Karl Lagerfeld's house...
+Karl Lagerfeld then decided to go to Karl Lagerfeld's shop
+
+At the Jim Jones's house...
+Jim Jones then decided to go to Jim Jones's shop
+
+At the Jack The Ripper's shop...
+Bruce Wayne didnt find musket rifle in Jack The Ripper's shop
+
+At the Jim Jones's shop...
+Fox Mulder then decided to go to Pepé Le Pew's shop
+
+At the tavern...
+Jack The Ripper then decided to go to Jim Jones's shop
+
+At the Jim Jones's shop...
+Jack The Ripper now was fond of Jim Jones
+Jim Jones conversed with Jack The Ripper
+Jim Jones now was fond of Jack The Ripper
+Jack The Ripper learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Jack The Ripper now was annoyed by Sun Tzu
+Jack The Ripper learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Jack The Ripper learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Jack The Ripper conversed with Jim Jones
+
+***
+
+
+At the Bruce Wayne's shop...
+Xena then decided to go to Jack The Ripper's shop
+
+At the Pepé Le Pew's shop...
+Fox Mulder then decided to go to Bart Simpson's shop
+
+At the Jim Jones's shop...
+Jack The Ripper then decided to go to Fox Mulder's shop
+
+At the Jack The Ripper's shop...
+Bruce Wayne then decided to go to Niccolò Paganini's shop
+
+At the Pepé Le Pew's house...
+Pepé Le Pew then decided to go to Pepé Le Pew's shop
+
+At the Bart Simpson's shop...
+Bart Simpson now was fond of Fox Mulder
+Fox Mulder learned from Bart Simpson that Tin Man's axe located in Niccolò Paganini's shop
+Fox Mulder learned from Jack The Ripper that Greek fire owned by Bart Simpson
+Fox Mulder conversed with Bart Simpson
+Fox Mulder now was fond of Bart Simpson
+Bart Simpson learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Bart Simpson conversed with Fox Mulder
+
+***
+
+
+At the Bart Simpson's shop...
+Bart Simpson then decided to go to Pepé Le Pew's shop
+
+At the Jack The Ripper's shop...
+Xena then decided to go to Bart Simpson's shop
+
+At the Fox Mulder's shop...
+Jack The Ripper didnt find Tin Man's axe in Fox Mulder's shop
+
+At the Niccolò Paganini's shop...
+Bruce Wayne didnt find musket rifle in Niccolò Paganini's shop
+
+At the Bart Simpson's shop...
+Fox Mulder then decided to go to Bruce Wayne's shop
+
+At the Pepé Le Pew's shop...
+Pepé Le Pew now had no opinion of Bart Simpson
+Bart Simpson learned from Bart Simpson that musket rifle owned by Pepé Le Pew
+Bart Simpson conversed with Pepé Le Pew
+
+***
+
+
+At the Bart Simpson's shop...
+Xena then decided to go to tavern
+
+At the Niccolò Paganini's shop...
+Bruce Wayne then decided to go to Fox Mulder's shop
+
+At the Pepé Le Pew's shop...
+Bart Simpson then decided to go to Jim Jones's shop
+
+At the Fox Mulder's shop...
+Jack The Ripper then decided to go to Bruce Wayne's shop
+
+At the Jim Jones's shop...
+Jim Jones then decided to go to Xena's shop
+
+At the Bruce Wayne's shop...
+Fox Mulder then decided to go to Karl Lagerfeld's shop
+
+At the Pepé Le Pew's shop...
+Pepé Le Pew then decided to go to Bruce Wayne's shop
+
+At the Bruce Wayne's shop...
+Pepé Le Pew now had a vendetta against Jack The Ripper
+Jack The Ripper stole musket rifle from the Pepé Le Pew's body
+Jack The Ripper beat up Pepé Le Pew
+Jack The Ripper learned from Jim Jones that Jack The Ripper beat up Pepé Le Pew
+Pepé Le Pew learned from Pepé Le Pew that Jack The Ripper beat up Pepé Le Pew
+
+***
+
+
+At the Jim Jones's shop...
+Bart Simpson then decided to go to Fox Mulder's shop
+
+At the Bruce Wayne's shop...
+Jack The Ripper didnt find Tin Man's axe in Bruce Wayne's shop
+
+At the Karl Lagerfeld's shop...
+Fox Mulder then decided to go to Jim Jones's shop
+
+At the Bruce Wayne's shop...
+Pepé Le Pew then decided to go to Niccolò Paganini's shop
+
+At the Xena's shop...
+Jim Jones then decided to go to Bruce Wayne's shop
+
+At the Fox Mulder's shop...
+Bruce Wayne now was fond of Bart Simpson
+Bart Simpson conversed with Bruce Wayne
+Bart Simpson now was fond of Bruce Wayne
+Bruce Wayne learned from Bart Simpson that Tin Man's axe located in Niccolò Paganini's shop
+Bruce Wayne learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Bruce Wayne learned from Bart Simpson that musket rifle owned by Pepé Le Pew
+Bruce Wayne conversed with Bart Simpson
+
+At the Bruce Wayne's shop...
+Jim Jones now liked Jack The Ripper
+Jack The Ripper learned from Bart Simpson that Tin Man's axe located in Niccolò Paganini's shop
+Jack The Ripper learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Jack The Ripper conversed with Jim Jones
+Jack The Ripper now liked Jim Jones
+Jim Jones learned from Jim Jones that Jack The Ripper beat up Pepé Le Pew
+Jim Jones now was fond of Jack The Ripper
+Jim Jones conversed with Jack The Ripper
+
+***
+
+
+At the Jim Jones's shop...
+Fox Mulder then decided to go to Jim Jones's shop
+
+At the Bruce Wayne's shop...
+Jack The Ripper then decided to go to Niccolò Paganini's shop
+
+At the Fox Mulder's shop...
+Bruce Wayne then decided to go to tavern
+
+At the Bruce Wayne's shop...
+Jim Jones then decided to go to Niccolò Paganini's shop
+
+At the Fox Mulder's shop...
+Bart Simpson then decided to go to Niccolò Paganini's shop
+
+At the Niccolò Paganini's shop...
+Pepé Le Pew then decided to go to Bart Simpson's shop
+
+At the tavern...
+Xena then decided to go to Bruce Wayne's shop
+
+At the Niccolò Paganini's shop...
+Jack The Ripper now liked Bart Simpson
+Bart Simpson learned from Jim Jones that Jack The Ripper beat up Pepé Le Pew
+Bart Simpson now had no opinion of Jack The Ripper
+Bart Simpson conversed with Jack The Ripper
+Jim Jones now liked Bart Simpson
+Bart Simpson conversed with Jim Jones
+Jim Jones now liked Jack The Ripper
+Jack The Ripper conversed with Jim Jones
+Bart Simpson now was fond of Jack The Ripper
+Jack The Ripper learned from Jack The Ripper that Greek fire owned by Bart Simpson
+Jack The Ripper learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Jack The Ripper conversed with Bart Simpson
+Jack The Ripper now loved Jim Jones
+Jim Jones learned from Jack The Ripper that Greek fire owned by Bart Simpson
+Jim Jones learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Jim Jones conversed with Jack The Ripper
+Bart Simpson now liked Jim Jones
+Jim Jones learned from Bart Simpson that Tin Man's axe owned by Bruce Wayne
+Jim Jones learned from Bart Simpson that musket rifle owned by Pepé Le Pew
+Jim Jones conversed with Bart Simpson
 
 Now, filtered output:
 
@@ -570,68 +714,265 @@ Now, filtered output:
 
 
 At the ....
-Since childhood, Andrew Lloyd Webber always wanted to have xenophobic jokes
-Since childhood, Kim Jong-Il always wanted to have xenophobic jokes
-Cicero thought it'd be fun to see Rain Man kill Kim Jong-Il
-Henry Ford thought it'd be fun to see Christian Bale kill Kenneth Parcell 
+Xena was annoyed by Pepé Le Pew
+Fox Mulder was annoyed by Jack The Ripper
+Fox Mulder had no opinion of Pepé Le Pew
+Fox Mulder was annoyed by Bart Simpson
+Fox Mulder had no opinion of Bruce Wayne
+Jack The Ripper had no opinion of Pepé Le Pew
+Jack The Ripper had no opinion of Jim Jones
+Pepé Le Pew had no opinion of Bruce Wayne
+Pepé Le Pew was annoyed by Jim Jones
+Bart Simpson had no opinion of Bruce Wayne
+Bart Simpson had no opinion of Jim Jones
+Sun Tzu was annoyed by Bruce Wayne
+Since childhood, Pepé Le Pew always wanted to have musket rifle
+Since childhood, Jack The Ripper always wanted to have musket rifle
+Since childhood, Bruce Wayne always wanted to have musket rifle
+Since childhood, Bart Simpson always wanted to have Greek fire
+Since childhood, Bruce Wayne always wanted to have Tin Man's axe
+Since childhood, Jack The Ripper always wanted to have Tin Man's axe
+Since childhood, Sun Tzu always wanted to have Tin Man's axe
+Niccolò Paganini thought it'd be fun to see Karl Lagerfeld kill Xena
 
 ***
 
 
-At the Mickey Rourke's shop...
-Kenneth Parcell  learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+At the Jack The Ripper's house...
+Jack The Ripper then decided to go to Bruce Wayne's shop
+
+At the Xena's shop...
+Bruce Wayne now had no opinion of Pepé Le Pew
+Pepé Le Pew learned from Jack The Ripper that musket rifle located in Jack The Ripper's shop
+Pepé Le Pew conversed with Xena
+
+***
+
+Pepé Le Pew then decided to go to Jack The Ripper's shop
 
 ***
 
 
-At the Bertie Wooster's shop...
-Rain Man learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
-Kim Jong-Il learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+At the Jack The Ripper's shop...
+Pepé Le Pew didnt find musket rifle in Jack The Ripper's shop
 
 ***
 
 
-At the Bertie Wooster's shop...
-Kim Jong-Il didnt find xenophobic jokes in Bertie Wooster's shop
+At the Bart Simpson's shop...
+Bruce Wayne learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Bruce Wayne conversed with Pepé Le Pew
+Bruce Wayne now was fond of Pepé Le Pew
 
 ***
 
 
-At the Kenneth Parcell 's shop...
-Bertie Wooster learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+At the Bart Simpson's shop...
+Bruce Wayne then decided to go to Sun Tzu's shop
+
+At the Jim Jones's shop...
+Jack The Ripper then decided to go to Bruce Wayne's shop
+
+At the tavern...
+Jim Jones now had no opinion of Bart Simpson
 
 ***
 
 
-At the Henry Ford's shop...
-Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+At the Sun Tzu's shop...
+Bruce Wayne took Tin Man's axe
 
 ***
 
 
-At the Henry Ford's shop...
-Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+At the Niccolò Paganini's shop...
+Jack The Ripper learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Jack The Ripper learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Jack The Ripper conversed with Fox Mulder
+
+At the Jim Jones's shop...
+Bruce Wayne now had a vendetta against Sun Tzu
+Sun Tzu stole Tin Man's axe from the Bruce Wayne's body
+Sun Tzu beat up Bruce Wayne
+Sun Tzu learned from Sun Tzu that Sun Tzu beat up Bruce Wayne
+Bruce Wayne learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
 
 ***
 
 
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
+At the Niccolò Paganini's shop...
+Jack The Ripper then decided to go to Bruce Wayne's shop
+
+At the Jim Jones's shop...
+Bruce Wayne stole Tin Man's axe from the Sun Tzu's body
+Bruce Wayne killed Sun Tzu
+Bruce Wayne learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Sun Tzu learned from Sun Tzu that Bruce Wayne killed Sun Tzu
+
+At the Bart Simpson's shop...
+Pepé Le Pew learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Pepé Le Pew conversed with Fox Mulder
+Pepé Le Pew now was fond of Fox Mulder
 
 ***
 
 
-At the Kenneth Parcell 's shop...
-Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+At the Bruce Wayne's shop...
+Jack The Ripper didnt find Tin Man's axe in Bruce Wayne's shop
+
+At the Bart Simpson's shop...
+Pepé Le Pew then decided to go to Niccolò Paganini's shop
+
+At the Xena's shop...
+Bart Simpson learned from Fox Mulder that Greek fire located in Pepé Le Pew's shop
+Bart Simpson learned from Bart Simpson that Tin Man's axe owned by Bruce Wayne
+Bart Simpson learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Bart Simpson conversed with Bruce Wayne
+
+At the Bruce Wayne's shop...
+Jack The Ripper learned from Jim Jones that Tin Man's axe located in Sun Tzu's shop
+Jack The Ripper conversed with Fox Mulder
+Jack The Ripper now was fond of Fox Mulder
 
 ***
 
 
-At the Kenneth Parcell 's shop...
-Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+At the Xena's shop...
+Bart Simpson then decided to go to Pepé Le Pew's shop
+
+At the Niccolò Paganini's shop...
+Pepé Le Pew took musket rifle
+
+At the Bruce Wayne's shop...
+Jack The Ripper then decided to go to Fox Mulder's shop
+
+At the Pepé Le Pew's shop...
+Jim Jones learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Jim Jones conversed with Bart Simpson
+Jim Jones now was fond of Bart Simpson
+Bart Simpson conversed with Fox Mulder
 
 ***
 
 
-At the Bertie Wooster's shop...
-Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
+At the Fox Mulder's shop...
+Jack The Ripper didnt find Tin Man's axe in Fox Mulder's shop
+
+At the Pepé Le Pew's shop...
+Bart Simpson took Greek fire
+
+***
+
+
+At the Fox Mulder's shop...
+Jack The Ripper then decided to go to Sun Tzu's shop
+
+***
+
+
+At the Sun Tzu's shop...
+Jack The Ripper didnt find Tin Man's axe in Sun Tzu's shop
+
+***
+
+
+At the Karl Lagerfeld's shop...
+Bruce Wayne learned from Fox Mulder that musket rifle located in Jack The Ripper's shop
+Bruce Wayne learned from Bart Simpson that musket rifle located in Niccolò Paganini's shop
+Bruce Wayne conversed with Fox Mulder
+Bruce Wayne now was fond of Fox Mulder
+Fox Mulder learned from Bart Simpson that Tin Man's axe owned by Bruce Wayne
+Fox Mulder learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Fox Mulder learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+
+***
+
+Bruce Wayne then decided to go to Jack The Ripper's shop
+
+***
+
+
+At the Jack The Ripper's shop...
+Bruce Wayne didnt find musket rifle in Jack The Ripper's shop
+
+At the Jim Jones's shop...
+Jack The Ripper now was fond of Jim Jones
+Jim Jones conversed with Jack The Ripper
+Jim Jones now was fond of Jack The Ripper
+Jack The Ripper learned from Jack The Ripper that Sun Tzu beat up Bruce Wayne
+Jack The Ripper learned from Bart Simpson that Tin Man's axe located in Fox Mulder's shop
+Jack The Ripper learned from Pepé Le Pew that Tin Man's axe located in Bruce Wayne's shop
+Jack The Ripper conversed with Jim Jones
+
+***
+
+
+At the Jim Jones's shop...
+Jack The Ripper then decided to go to Fox Mulder's shop
+
+At the Jack The Ripper's shop...
+Bruce Wayne then decided to go to Niccolò Paganini's shop
+
+At the Bart Simpson's shop...
+Bart Simpson now was fond of Fox Mulder
+Fox Mulder learned from Jack The Ripper that Greek fire owned by Bart Simpson
+Bart Simpson learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+
+***
+
+
+At the Fox Mulder's shop...
+Jack The Ripper didnt find Tin Man's axe in Fox Mulder's shop
+
+At the Niccolò Paganini's shop...
+Bruce Wayne didnt find musket rifle in Niccolò Paganini's shop
+
+At the Pepé Le Pew's shop...
+Bart Simpson learned from Bart Simpson that musket rifle owned by Pepé Le Pew
+
+***
+
+
+At the Fox Mulder's shop...
+Jack The Ripper then decided to go to Bruce Wayne's shop
+
+At the Bruce Wayne's shop...
+Jack The Ripper stole musket rifle from the Pepé Le Pew's body
+Jack The Ripper beat up Pepé Le Pew
+Jack The Ripper learned from Jim Jones that Jack The Ripper beat up Pepé Le Pew
+Pepé Le Pew learned from Pepé Le Pew that Jack The Ripper beat up Pepé Le Pew
+
+***
+
+
+At the Bruce Wayne's shop...
+Jack The Ripper didnt find Tin Man's axe in Bruce Wayne's shop
+
+At the Fox Mulder's shop...
+Bruce Wayne learned from Bart Simpson that musket rifle owned by Pepé Le Pew
+
+At the Bruce Wayne's shop...
+Jim Jones now liked Jack The Ripper
+Jack The Ripper learned from Bart Simpson that Tin Man's axe located in Niccolò Paganini's shop
+Jack The Ripper conversed with Jim Jones
+Jack The Ripper now liked Jim Jones
+Jim Jones learned from Jim Jones that Jack The Ripper beat up Pepé Le Pew
+Jim Jones now was fond of Jack The Ripper
+Jim Jones conversed with Jack The Ripper
+
+***
+
+
+At the Bruce Wayne's shop...
+Jack The Ripper then decided to go to Niccolò Paganini's shop
+
+At the Niccolò Paganini's shop...
+Bart Simpson learned from Jim Jones that Jack The Ripper beat up Pepé Le Pew
+Jim Jones now liked Bart Simpson
+Jim Jones now liked Jack The Ripper
+Jack The Ripper learned from Jack The Ripper that Greek fire owned by Bart Simpson
+Jack The Ripper learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Jim Jones learned from Jack The Ripper that Greek fire owned by Bart Simpson
+Jim Jones learned from Bart Simpson that Bruce Wayne killed Sun Tzu
+Jim Jones learned from Bart Simpson that Tin Man's axe owned by Bruce Wayne
+Jim Jones learned from Bart Simpson that musket rifle owned by Pepé Le Pew

@@ -18,14 +18,15 @@ def verbalValueOfRelationship(x):
   return 4
 
 class Output:
-  def __init__(self, time, location, important=False):
+  def __init__(self, time, location, context, important=False):
     self.time = time
     self.location = location
+    self.context = context
     self.important = important
 
 class ExposRelationship(Output):
   def __init__(self, source, target, value):
-    Output.__init__(self, -1, '.')
+    Output.__init__(self, -1, '.', [])
     self.source = source
     self.target = target
     self.value = value
@@ -46,7 +47,7 @@ class ExposRelationship(Output):
 
 class ExposObjectPosition(Output):
   def __init__(self, object, place):
-    Output.__init__(self, -1, '.')
+    Output.__init__(self, -1, '.', [])
     self.object = object
     self.place = place
 
@@ -55,7 +56,7 @@ class ExposObjectPosition(Output):
 
 class ExposOwningMotivation(Output):
   def __init__(self, subject, object):
-    Output.__init__(self, -1, '.', True)
+    Output.__init__(self, -1, '.', [], True)
     self.subject = subject
     self.object = object
 
@@ -64,7 +65,7 @@ class ExposOwningMotivation(Output):
 
 class ExposObjectInfo(Output):
   def __init__(self, source, knowledge, trueInfo):
-    Output.__init__(self, -1, '.')
+    Output.__init__(self, -1, '.', [])
     self.source = source
     self.knowledge = knowledge
     self.trueInfo = trueInfo
@@ -77,7 +78,7 @@ class ExposObjectInfo(Output):
     
 class ExposManipulationMotivation(Output):
   def __init__(self, subject, killer, victim):
-    Output.__init__(self, -1, '.', True)
+    Output.__init__(self, -1, '.', [], True)
     self.subject = subject
     self.killer = killer
     self.victim = victim
@@ -86,8 +87,8 @@ class ExposManipulationMotivation(Output):
     return "{SUBJECT} thought it'd be fun to see {TARGET} kill {VICTIM}".format(SUBJECT=self.subject.name, TARGET=self.killer.name, VICTIM=self.victim.name)
 
 class GoesTo(Output):
-  def __init__(self, time, location, character, place, important=False):
-    Output.__init__(self, time, location, important)
+  def __init__(self, time, location, context, character, place, important=False):
+    Output.__init__(self, time, location, context, important)
     self.character = character
     self.place = place
 
@@ -95,8 +96,8 @@ class GoesTo(Output):
     return "{SUBJECT} then decided to go to {LOCATION}".format(SUBJECT=self.character.name, LOCATION=self.place.name)
 
 class Got(Output):
-  def __init__(self, time, location, character, object):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, character, object):
+    Output.__init__(self, time, location, context, True)
     self.character = character
     self.object = object
 
@@ -104,8 +105,8 @@ class Got(Output):
     return "{SUBJECT} took {OBJECT}".format(SUBJECT=self.character.name, OBJECT=self.object.name)
 
 class DidntFind(Output):
-  def __init__(self, time, location, character, thing):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, character, thing):
+    Output.__init__(self, time, location, context, True)
     self.character = character
     self.thing = thing
 
@@ -113,8 +114,8 @@ class DidntFind(Output):
     return "{SUBJECT} didnt find {OBJECT} in {LOCATION}".format(SUBJECT=self.character.name, OBJECT=self.thing.name, LOCATION=self.location.name)
 
 class WasLying(Output):
-  def __init__(self, time, location, source, target, lie):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, source, target, lie):
+    Output.__init__(self, time, location, context, True)
     self.source = source
     self.target = target
     self.lie = lie
@@ -123,11 +124,11 @@ class WasLying(Output):
     return "But {SUBJECT} was lying to {TARGET} about {LIE}".format(SUBJECT=self.source.name, TARGET=self.target.name, LIE=self.lie.action.value)
 
 class RelationshipChange(Output):
-  def __init__(self, time, location, source, target, oldvalue, newvalue, important=False):
+  def __init__(self, time, location, context, source, target, oldvalue, newvalue, important=False):
     imp = False
     if important and verbalValueOfRelationship(oldvalue) != verbalValueOfRelationship(newvalue):
       imp = True
-    Output.__init__(self, -1, None, imp)
+    Output.__init__(self, time, location, context, imp)
     self.source = source
     self.target = target
     self.oldvalue = oldvalue
@@ -148,9 +149,9 @@ class RelationshipChange(Output):
     return "{SOURCE} now {RELATIONSHIP} {TARGET}".format(SOURCE=self.source.name, RELATIONSHIP=relationship, TARGET=self.target.name)
 
 class KnowledgeLearned(Output):
-  def __init__(self, time, location, learner, knowledge):
+  def __init__(self, time, location, context, learner, knowledge):
     important = knowledge.importantKnowledge()
-    Output.__init__(self, time, location, important)
+    Output.__init__(self, time, location, context, important)
     self.learner = learner
     self.knowledge = knowledge
 
@@ -158,8 +159,8 @@ class KnowledgeLearned(Output):
     return "{CHARACTER} learned from {SOURCE} that {SUBJECT} {ACTION} {TARGET}".format(CHARACTER=self.learner.name, SOURCE=self.knowledge.source.name, SUBJECT=self.knowledge.subject.name, ACTION=self.knowledge.action.value, TARGET=self.knowledge.target.name)
 
 class LieReveal(Output):
-  def __init__(self, time, location, learner, liar):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, learner, liar):
+    Output.__init__(self, time, location, context, True)
     self.learner = learner
     self.liar = liar
 
@@ -167,8 +168,8 @@ class LieReveal(Output):
     return "{CHARACTER} then realised that {LIAR} was a liar".format(CHARACTER=self.learner.name, LIAR=self.liar.name)
 
 class NewInfoIsLie(Output):
-  def __init__(self, time, location, learner, knowledge):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, learner, knowledge):
+    Output.__init__(self, time, location, context, True)
     self.learner = learner
     self.knowledge = knowledge
 
@@ -176,8 +177,8 @@ class NewInfoIsLie(Output):
     return "But {CHARACTER} didnt believe {LIAR}".format(CHARACTER=self.learner.name, LIAR=self.knowledge.source.name)
 
 class VowRevenge(Output):
-  def __init__(self, time, location, source, target, victim):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, source, target, victim):
+    Output.__init__(self, time, location, context, True)
     self.source = source
     self.target = target
     self.victim = victim
@@ -186,8 +187,8 @@ class VowRevenge(Output):
     return "{CHARACTER} vowed revenge on {TARGET} for the death of {VICTIM}".format(CHARACTER=self.source.name, TARGET=self.target.name, VICTIM=self.victim.name)
 
 class Steal(Output):
-  def __init__(self, time, location, source, target, object):
-    Output.__init__(self, time, location, True)
+  def __init__(self, time, location, context, source, target, object):
+    Output.__init__(self, time, location, context, True)
     self.source = source
     self.target = target
     self.object = object
@@ -196,9 +197,9 @@ class Steal(Output):
     return "{CHARACTER} stole {OBJECT} from the {TARGET}'s body".format(CHARACTER=self.source.name, TARGET=self.target.name, OBJECT=self.object.name)
 
 class SomeAction(Output):
-  def __init__(self, time, location, source, target, action):
+  def __init__(self, time, location, context, source, target, action):
     important = action.importantEvent
-    Output.__init__(self, time, location, important)
+    Output.__init__(self, time, location, context, important)
     self.source = source
     self.target = target
     self.action = action
@@ -206,11 +207,40 @@ class SomeAction(Output):
   def __str__(self):
     return "{CHARACTER} {ACTION} {TARGET}".format(CHARACTER=self.source.name, TARGET=self.target.name, ACTION=self.action.value)
 
+class Context:
+  def __init__(self, outputType, attrDict):
+    self.outputType = outputType
+    self.attrDict = attrDict
+
+def attrMatch(object, nestedattr, value):
+  attrs = nestedattr.split('.')
+  tempObject = object
+  for attr in attrs:
+    tempObject = getattr(tempObject, attr)
+  return tempObject == value
+
+def revealContext(output, maxIdx, context):
+  for idx, line in enumerate(output[:maxIdx]):
+    if type(line) is context.outputType:
+      match = True
+      for attr in context.attrDict:
+        if not attrMatch(line, attr, context.attrDict[attr]):
+          match = False
+      if match and not line.important:
+        line.important = True
+        for context in line.context:
+          revealContext(output, idx, context)
+
 def printOutput(output):
   output.sort(key=attrgetter('time'))
   prevLocation = None
   prevTime = -1
   
+  for idx, line in enumerate(output):
+    if line.important:
+      for context in line.context:
+        revealContext(output, idx, context)
+
   print("Debug output with unimportant fluff\n")
   for line in output:
     if line.time != prevTime:

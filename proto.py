@@ -66,10 +66,17 @@ def do_kill(source, target, chars_to_ignore):
       object.owner = source
       object.location = None
       source.goals = [goal for goal in source.goals if goal.target1 != object]
-      out.append(output.Steal(step, source.location, source, target, object))
+      context = [output.Context(output.Got, {'character': target, 'object': object})]
+      out.append(output.Steal(step, source.location, context, source, target, object))
+  return [
+    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
+    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
+    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
+    output.Context(output.VowRevenge, {'source': source, 'target': target}),
+  ]
 
 def do_beat_up(source, target, chars_to_ignore):
-  target.change_relationship(source, -1)
+  target.change_relationship(source, -1, [])
   chars_to_ignore.append(target)
   source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
   for object in objects:
@@ -78,13 +85,24 @@ def do_beat_up(source, target, chars_to_ignore):
       object.owner = source
       object.location = None
       source.goals = [goal for goal in source.goals if goal.target1 != object]
-      out.append(output.Steal(step, source.location, source, target, object))
+      context = [output.Context(output.Got, {'character': target, 'object': object})]
+      out.append(output.Steal(step, source.location, context, source, target, object))
+  return [
+    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
+    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
+    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
+  ]
 
 def do_insult(source, target, chars_to_ignore):
-  target.change_relationship(source, -0.25)
+  target.change_relationship(source, -0.25, [])
+  return [
+    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
+    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
+    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
+  ]
 
 def do_converse(source, target, chars_to_ignore):
-  target.change_relationship(source, 0.25)
+  target.change_relationship(source, 0.25, [])
   if source in target.told_knowledge:
     untold_knowledge = [x for x in target.knowledge if x not in target.told_knowledge[source]]
   else:
@@ -96,6 +114,11 @@ def do_converse(source, target, chars_to_ignore):
   safe_extend(source.told_knowledge, target, conversation_topics)
   for knowledge in conversation_topics:
     source.acquire_knowledge(knowledge)
+  return [
+    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
+    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
+    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
+  ]
 
 action_methods = {
   Actions.KILL: do_kill,
@@ -109,11 +132,11 @@ def execute_action(action, place, events, chars_to_ignore):
   for tuple in events[action]:
     if tuple[0] in chars_to_ignore:
       continue
-    out.append(output.SomeAction(step, tuple[0].location, tuple[0], tuple[1], action))
+    context = action_methods[action](tuple[0], tuple[1], chars_to_ignore)
+    out.append(output.SomeAction(step, tuple[0].location, context, tuple[0], tuple[1], action))
     if action.is_witnessed:
       for witness in place:
         witness.acquire_knowledge(Knowledge(witness, tuple[0], action, tuple[1], step))
-    action_methods[action](tuple[0], tuple[1], chars_to_ignore)
     
 def generation_step():
   global step

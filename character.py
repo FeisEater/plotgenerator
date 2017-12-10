@@ -49,19 +49,21 @@ class Character(Thing):
                 wrong_knowledge = True
                 break
             else:
-              self.out.append(output.GoesTo(self.step, self.location, self, know.target, True))
+              context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge': know})]
+              self.out.append(output.GoesTo(self.step, self.location, context, self, know.target, True))
               self.location = know.target
               return False
           elif know.action == Actions.OWNED_BY and know.subject == thing:
             self.findThing(know.target)
         if wrong_knowledge:
           self.knowledge = [k for k in self.knowledge if not(k.subject == thing and k.action == Actions.LOCATED_IN and k.target == self.location)]
-          self.out.append(output.DidntFind(self.step, self.location, self, thing))
+          context = [output.Context(output.GoesTo, {'character': self, 'place': self.location})]
+          self.out.append(output.DidntFind(self.step, self.location, context, self, thing))
           return False
         if self.schedule_time <= 0:
           locations = [Location(persons_shop(x)) for x in self.relationships.keys()] + [Location(TAVERN)]
           newlocation = random.choice(locations)
-          self.out.append(output.GoesTo(self.step, self.location, self, newlocation))
+          self.out.append(output.GoesTo(self.step, self.location, [], self, newlocation))
           self.location = newlocation
           self.schedule_time = random.randint(1, 3)    
     
@@ -72,7 +74,8 @@ class Character(Thing):
           self.goals = [goal for goal in self.goals if goal.target1 != arg1]
           self.knowledge = [know for know in self.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == arg1)]
           self.knowledge.append(Knowledge(self, arg1, Actions.OWNED_BY, self, self.step))
-          self.out.append(output.Got(self.step, self.location, self, arg1))
+          context = [output.Context(output.GoesTo, {'character': self, 'place': self.location})]
+          self.out.append(output.Got(self.step, self.location, context, self, arg1))
 
     def do_befriend(self, arg1, arg2):
         if arg2 == None:
@@ -112,13 +115,13 @@ class Character(Thing):
         if self.schedule_time <= 0:
             if self.location.name == persons_house(self):
                 newlocation = Location(persons_shop(self))
-                self.out.append(output.GoesTo(self.step, self.location, self, newlocation))
+                self.out.append(output.GoesTo(self.step, self.location, [], self, newlocation))
                 self.location = newlocation
                 self.schedule_time = random.randint(2, 8)
             else:
                 locations = [Location(persons_shop(x)) for x in self.relationships.keys() if not x.dead] + [Location(TAVERN), Location(persons_house(self))]
                 newlocation = random.choice(locations)
-                self.out.append(output.GoesTo(self.step, self.location, self, newlocation))
+                self.out.append(output.GoesTo(self.step, self.location, [], self, newlocation))
                 self.location = newlocation
                 if self.location.name == persons_house(self):
                     self.schedule_time = random.randint(2, 8)
@@ -130,7 +133,8 @@ class Character(Thing):
       safe_append(target.told_knowledge, self, lie)
       safe_append(self.told_knowledge, target, lie)
       target.acquire_knowledge(lie)
-      self.out.append(output.WasLying(self.step, self.location, self, target, lie))
+      context = [output.Context(output.ExposManipulationMotivation, {'subject': self, 'killer': target})]
+      self.out.append(output.WasLying(self.step, self.location, context, self, target, lie))
         
     def schedule_step(self, step):
         #self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
@@ -140,7 +144,7 @@ class Character(Thing):
         self.schedule_methods[goal.type](goal.target1, goal.target1)
         self.schedule_time -= 1
     
-    def change_relationship(self, person, delta):
+    def change_relationship(self, person, delta, context):
         if self == person or person not in self.relationships:
           return
         oldvalue = self.relationships[person]
@@ -149,7 +153,7 @@ class Character(Thing):
           self.relationships[person] = 1
         if self.relationships[person] < -1:
           self.relationships[person] = -1
-        self.out.append(output.RelationshipChange(self.step, self.location, self, person, oldvalue, self.relationships[person]))
+        self.out.append(output.RelationshipChange(self.step, self.location, context, self, person, oldvalue, self.relationships[person]))
 
     def source_trust(self, source):
       if self == source:
@@ -160,18 +164,12 @@ class Character(Thing):
       oldsources.sort(key=lambda source: self.source_trust(source), reverse=True)
       if self.relationships[oldsources[0]] < self.relationships[newsource] or newsource == self:
         for source in oldsources:
-          self.change_relationship(source, -0.25)
-          self.knowledge = [know for know in self.knowledge if not(know.source == source)]
           return True
       if self.relationships[oldsources[0]] > self.relationships[newsource] or oldsources[0] == self:
-        self.change_relationship(newsource, -0.25)
         return False
       if random.random() < 0.5:
         for source in oldsources:
-          self.change_relationship(source, -0.25)
-          self.knowledge = [know for know in self.knowledge if not(know.source == source)]
           return True
-      self.change_relationship(newsource, -0.25)
       return False
     
     def acquire_knowledge(self, knowledge):
@@ -181,43 +179,60 @@ class Character(Thing):
           return
         if knowledge.target == self and knowledge.source != self and knowledge.action.ignore_if_self_is_target:
           return
+        discussionContext = [output.Context(output.SomeAction, {'source': self, 'target': knowledge.source, 'action': Actions.CONVERSE})]
         conflicting_sources = [know.source for know in self.knowledge if know.subject == knowledge.subject and know.target != knowledge.target]
         if conflicting_sources and knowledge.action.react_badly_if_conflicting_targets:
           if self.choose_who_to_trust(knowledge.source, conflicting_sources):
             self.knowledge.append(knowledge)
-            self.out.append(output.KnowledgeLearned(self.step, self.location, self, knowledge))
+            self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
             if knowledge.action in self.reactions.keys():
               self.reactions[knowledge.action](knowledge)
-            for source in oldsources:
-              self.out.append(output.LieReveal(self.step, self.location, self, source))
+            for source in conflicting_sources:
+              self.change_relationship(source, -0.25, [])
+              self.knowledge = [know for know in self.knowledge if not(know.source == source)]
+              context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge.source': source})]
+              self.out.append(output.LieReveal(self.step, self.location, context, self, source))
           else:
-            self.out.append(output.KnowledgeLearned(self.step, self.location, self, knowledge))
-            self.out.append(output.NewInfoIsLie(self.step, self.location, self, knowledge))
+            self.change_relationship(knowledge.source, -0.25, [])
+            self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
+            context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge': knowledge})]
+            self.out.append(output.NewInfoIsLie(self.step, self.location, context, self, knowledge))
         else:
           self.knowledge.append(knowledge)
-          self.out.append(output.KnowledgeLearned(self.step, self.location, self, knowledge))
+          self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
           if knowledge.action in self.reactions.keys():
             self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
         if self == knowledge.target:
           return
+        context = [
+          output.Context(output.ExposRelationship, {'source': self, 'target': knowledge.target}),
+          output.Context(output.ExposRelationship, {'source': knowledge.target, 'target': self}),
+          output.Context(output.RelationshipChange, {'source': self, 'target': knowledge.target}),
+        ]
         self.goals = [goal for goal in self.goals if not(goal.type == GoalType.KILL and (goal.target1 == knowledge.target or goal.target2 == knowledge.target))]
         if self.relationships[knowledge.target] > 0.5:
           self.relationships[knowledge.subject] = -1
           self.goals.insert(0, Goal(GoalType.KILL, knowledge.subject))
-          self.out.append(output.VowRevenge(self.step, self.location, self, knowledge.subject, knowledge.target))
+          context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge': knowledge})]
+          self.out.append(output.VowRevenge(self.step, self.location, context, self, knowledge.subject, knowledge.target))
         elif self.relationships[knowledge.target] > 0:
-          self.change_relationship(knowledge.subject, -0.25)
+          self.change_relationship(knowledge.subject, -0.25, context)
         elif self.relationships[knowledge.target] < -0.5:
-          self.change_relationship(knowledge.subject, 0.25)
+          self.change_relationship(knowledge.subject, 0.25, context)
 
     def react_to_beat_up(self, knowledge):
         if self == knowledge.target:
           return
+        context = [
+          output.Context(output.ExposRelationship, {'source': self, 'target': knowledge.target}),
+          output.Context(output.ExposRelationship, {'source': knowledge.target, 'target': self}),
+          output.Context(output.RelationshipChange, {'source': self, 'target': knowledge.target}),
+        ]
         if self.relationships[knowledge.target] > 0.5:
-          self.change_relationship(knowledge.subject, -0.5)
+          self.change_relationship(knowledge.subject, -0.5, context)
         elif self.relationships[knowledge.target] > 0:
-          self.change_relationship(knowledge.subject, -0.25)
-        if self.relationships[knowledge.target] < -0.5:
-          self.change_relationship(knowledge.subject, 0.25)
+          self.change_relationship(knowledge.subject, -0.25, context)
+        elif self.relationships[knowledge.target] < -0.5:
+          self.change_relationship(knowledge.subject, 0.25, context)
