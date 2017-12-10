@@ -1,9 +1,11 @@
 from NOCListReader import *
-from models import Character, Object
+from models import Object
+from character import Character
 import random
 from enum import Enum
 import numpy as np
 import math
+import output
 
 class NOCListColumn(Enum):
     '''An enumeration that holds the column headers of the NOC List dataset.'''
@@ -61,7 +63,7 @@ class DataLoader:
 
 class CharacterDataLoader(DataLoader):
     '''A class that can parse the NOC List characters into the local Character object type'''
-    def load(self, howmany = None, random_sample = True, domain = None, output = []):
+    def load(self, howmany = None, random_sample = True, domain = None, out = []):
         '''
         Loads Characters from the NOC list.
         :param howmany: An integer indicating how many characters to load or None if all of them should be loaded. Must be greater than 2. Defaults to None.
@@ -70,14 +72,14 @@ class CharacterDataLoader(DataLoader):
         :type random_sample: bool
         :param domain: The domain from which characters should be loaded or None, if characters across domains are desired. Defaults to None.
         :type domain: NOCListDomain
-        :param output:
-        :type output:
+        :param out:
+        :type out:
         :return: The list of Character objects loaded from the NOC List with the given parameters.
         :rtype: [Character]
         '''
         assert domain is None or isinstance(domain, NOCListDomain)
 
-        self.out = output
+        self.out = out
         data = NOCListReader().get_noc_list_contents()
 
         if domain is not None:
@@ -107,7 +109,7 @@ class CharacterDataLoader(DataLoader):
                 negative_talking_points=self.__extract_set_of_strings(row[NOCListColumn.NEGATIVE_TALKING_POINTS.value]),
                 political_views=self.__extract_set_of_strings(row[NOCListColumn.POLITICS.value]),
                 domains = self.__extract_set_of_strings(row[NOCListColumn.DOMAINS.value]),
-                output = self.out
+                out = self.out
             )
 
             characters.append(character)
@@ -136,7 +138,7 @@ class CharacterDataLoader(DataLoader):
                     person.relationships[person2] = np.average([self.__get_initial_relationship_from_political_views(person, person2), self.__get_initial_relationship_from_talking_points(person, person2), random.uniform(-.5, .5)])
                     person2.relationships[person] = np.average([self.__get_initial_relationship_from_political_views(person2, person), self.__get_initial_relationship_from_talking_points(person2, person), random.uniform(-.5, .5)])
 
-                self.out.append(person.name + " likes " + person2.name + ": " + str(person.relationships[person2]))
+                self.out.append(output.ExposRelationship(person, person2, person.relationships[person2]))
 
         return characters
 
@@ -203,8 +205,8 @@ class CharacterDataLoader(DataLoader):
         return np.average(scores) # -0.5 # the substractions is an offset to generate more extreme initial relationship
 
 class ObjectDataLoader(DataLoader):
-    def load(self, howmany = None, random_sample = True, output = []):
-        self.out = output
+    def load(self, howmany = None, random_sample = True, out = []):
+        self.out = out
 
         data = NOCListReader().get_weapon_arsenal_contents()
         

@@ -1,0 +1,637 @@
+Debug output with unimportant fluff
+
+
+At the ....
+Cicero had no opinion of Andrew Lloyd Webber
+Cicero had no opinion of Henry Ford
+Cicero had no opinion of Groot
+Cicero had no opinion of Kenneth Parcell 
+Cicero was annoyed by Christian Bale
+Cicero was annoyed by Kim Jong-Il
+Cicero had no opinion of Rain Man
+Cicero was annoyed by Bertie Wooster
+Cicero was annoyed by Mickey Rourke
+Andrew Lloyd Webber had no opinion of Henry Ford
+Andrew Lloyd Webber had no opinion of Groot
+Andrew Lloyd Webber had no opinion of Kenneth Parcell 
+Andrew Lloyd Webber had no opinion of Christian Bale
+Andrew Lloyd Webber had no opinion of Kim Jong-Il
+Andrew Lloyd Webber was annoyed by Rain Man
+Andrew Lloyd Webber had no opinion of Bertie Wooster
+Andrew Lloyd Webber was fond of Mickey Rourke
+Henry Ford had no opinion of Groot
+Henry Ford was annoyed by Kenneth Parcell 
+Henry Ford had no opinion of Christian Bale
+Henry Ford had no opinion of Kim Jong-Il
+Henry Ford had no opinion of Rain Man
+Henry Ford was fond of Bertie Wooster
+Henry Ford had no opinion of Mickey Rourke
+Groot was annoyed by Kenneth Parcell 
+Groot was annoyed by Christian Bale
+Groot was annoyed by Kim Jong-Il
+Groot was annoyed by Rain Man
+Groot was annoyed by Bertie Wooster
+Groot was annoyed by Mickey Rourke
+Kenneth Parcell  had no opinion of Christian Bale
+Kenneth Parcell  was annoyed by Kim Jong-Il
+Kenneth Parcell  had no opinion of Rain Man
+Kenneth Parcell  had no opinion of Bertie Wooster
+Kenneth Parcell  was annoyed by Mickey Rourke
+Christian Bale had no opinion of Kim Jong-Il
+Christian Bale had no opinion of Rain Man
+Christian Bale had no opinion of Bertie Wooster
+Christian Bale had no opinion of Mickey Rourke
+Kim Jong-Il was annoyed by Rain Man
+Kim Jong-Il had no opinion of Bertie Wooster
+Kim Jong-Il was annoyed by Mickey Rourke
+Rain Man had no opinion of Bertie Wooster
+Rain Man had no opinion of Mickey Rourke
+Bertie Wooster was fond of Mickey Rourke
+xenophobic jokes was hidden in Andrew Lloyd Webber's shop
+Since childhood, Andrew Lloyd Webber always wanted to have xenophobic jokes
+Since childhood, Kim Jong-Il always wanted to have xenophobic jokes
+Henry Ford knew that xenophobic jokes was hidden in Andrew Lloyd Webber's shop
+Christian Bale thought in err that xenophobic jokes was hidden in Bertie Wooster's shop
+Cicero thought it'd be fun to see Rain Man kill Kim Jong-Il
+Henry Ford thought it'd be fun to see Christian Bale kill Kenneth Parcell 
+
+At the None...
+Kenneth Parcell  now had no opinion of Kim Jong-Il
+Bertie Wooster now was fond of Andrew Lloyd Webber
+Andrew Lloyd Webber now was fond of Bertie Wooster
+Bertie Wooster now liked Mickey Rourke
+Mickey Rourke now was fond of Bertie Wooster
+Mickey Rourke now liked Bertie Wooster
+Bertie Wooster now loved Mickey Rourke
+Kenneth Parcell  now was fond of Rain Man
+Rain Man now had no opinion of Christian Bale
+Rain Man now was fond of Kenneth Parcell 
+Christian Bale now was fond of Kenneth Parcell 
+Kenneth Parcell  now was fond of Christian Bale
+Mickey Rourke now loved Bertie Wooster
+Bertie Wooster now loved Mickey Rourke
+Rain Man now was fond of Christian Bale
+Christian Bale now was fond of Rain Man
+Kim Jong-Il now was fond of Christian Bale
+Christian Bale now was fond of Kim Jong-Il
+Mickey Rourke now had no opinion of Christian Bale
+Bertie Wooster now loved Mickey Rourke
+Mickey Rourke now loved Bertie Wooster
+Kim Jong-Il now liked Christian Bale
+Christian Bale now liked Kim Jong-Il
+Bertie Wooster now liked Andrew Lloyd Webber
+Andrew Lloyd Webber now liked Bertie Wooster
+Kim Jong-Il now loved Christian Bale
+Christian Bale now loved Kim Jong-Il
+Kenneth Parcell  now was fond of Bertie Wooster
+Bertie Wooster now was fond of Kenneth Parcell 
+Groot now had no opinion of Andrew Lloyd Webber
+Bertie Wooster now loved Andrew Lloyd Webber
+Andrew Lloyd Webber now loved Bertie Wooster
+Kenneth Parcell  now liked Rain Man
+Kenneth Parcell  now was fond of Andrew Lloyd Webber
+Rain Man now liked Kenneth Parcell 
+Andrew Lloyd Webber now was fond of Kenneth Parcell 
+
+***
+
+
+At the Kim Jong-Il's house...
+Kim Jong-Il then decided to go to tavern
+
+At the Mickey Rourke's house...
+Mickey Rourke then decided to go to Mickey Rourke's shop
+
+At the Rain Man's house...
+Rain Man then decided to go to Rain Man's shop
+
+At the Bertie Wooster's house...
+Bertie Wooster then decided to go to Bertie Wooster's shop
+
+At the Andrew Lloyd Webber's house...
+Andrew Lloyd Webber then decided to go to Kim Jong-Il's shop
+
+At the Kenneth Parcell 's house...
+Kenneth Parcell  then decided to go to Kenneth Parcell 's shop
+
+At the Groot's house...
+Groot then decided to go to Groot's shop
+
+At the Christian Bale's house...
+Christian Bale then decided to go to Christian Bale's shop
+
+***
+
+
+At the Kim Jong-Il's shop...
+Andrew Lloyd Webber then decided to go to Cicero's shop
+
+***
+
+
+At the Cicero's shop...
+Andrew Lloyd Webber then decided to go to Cicero's shop
+
+At the tavern...
+Kim Jong-Il then decided to go to Rain Man's shop
+
+***
+
+
+At the Groot's shop...
+Groot then decided to go to Rain Man's shop
+
+At the Rain Man's shop...
+Rain Man then decided to go to Cicero's shop
+
+At the Cicero's shop...
+Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+
+At the Rain Man's shop...
+Kim Jong-Il then decided to go to Kenneth Parcell 's shop
+
+At the Kenneth Parcell 's shop...
+Kim Jong-Il conversed with Kenneth Parcell 
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber conversed with Bertie Wooster
+Bertie Wooster conversed with Andrew Lloyd Webber
+
+***
+
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber then decided to go to Rain Man's shop
+
+At the Mickey Rourke's shop...
+Mickey Rourke then decided to go to Bertie Wooster's shop
+
+At the Rain Man's shop...
+Groot then decided to go to Kim Jong-Il's shop
+
+At the Kenneth Parcell 's shop...
+Kim Jong-Il then decided to go to tavern
+
+At the Cicero's shop...
+Rain Man then decided to go to Henry Ford's shop
+
+At the Bertie Wooster's shop...
+Mickey Rourke conversed with Bertie Wooster
+Bertie Wooster conversed with Mickey Rourke
+
+***
+
+
+At the Henry Ford's shop...
+Rain Man then decided to go to Groot's shop
+
+At the tavern...
+Kim Jong-Il then decided to go to Groot's shop
+
+At the Kim Jong-Il's shop...
+Groot then decided to go to Andrew Lloyd Webber's shop
+
+At the Bertie Wooster's shop...
+Mickey Rourke then decided to go to Bertie Wooster's shop
+
+At the Christian Bale's shop...
+Christian Bale then decided to go to Kim Jong-Il's shop
+
+At the Bertie Wooster's shop...
+Bertie Wooster conversed with Mickey Rourke
+Mickey Rourke conversed with Bertie Wooster
+
+***
+
+
+At the Andrew Lloyd Webber's shop...
+Groot then decided to go to Henry Ford's shop
+
+At the Bertie Wooster's shop...
+Mickey Rourke then decided to go to Henry Ford's shop
+Bertie Wooster then decided to go to Andrew Lloyd Webber's shop
+
+At the Kim Jong-Il's shop...
+Christian Bale then decided to go to Kenneth Parcell 's shop
+
+At the Kenneth Parcell 's shop...
+Kenneth Parcell  then decided to go to Kim Jong-Il's shop
+
+At the Rain Man's shop...
+Andrew Lloyd Webber then decided to go to Christian Bale's shop
+
+At the Groot's shop...
+Rain Man then decided to go to Cicero's shop
+
+***
+
+
+At the Kenneth Parcell 's shop...
+Christian Bale then decided to go to Mickey Rourke's shop
+
+At the Kim Jong-Il's shop...
+Kenneth Parcell  then decided to go to Mickey Rourke's shop
+
+At the Cicero's shop...
+Rain Man then decided to go to Mickey Rourke's shop
+
+At the Henry Ford's shop...
+Groot then decided to go to tavern
+
+At the Andrew Lloyd Webber's shop...
+Bertie Wooster then decided to go to Henry Ford's shop
+
+At the Henry Ford's shop...
+Mickey Rourke then decided to go to Henry Ford's shop
+
+At the Mickey Rourke's shop...
+Rain Man conversed with Kenneth Parcell 
+Christian Bale conversed with Rain Man
+Kenneth Parcell  conversed with Rain Man
+Kenneth Parcell  conversed with Christian Bale
+Kenneth Parcell  learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+Christian Bale conversed with Kenneth Parcell 
+
+At the Henry Ford's shop...
+Bertie Wooster conversed with Mickey Rourke
+Mickey Rourke conversed with Bertie Wooster
+
+***
+
+
+At the Henry Ford's shop...
+Mickey Rourke then decided to go to Groot's shop
+
+At the tavern...
+Groot then decided to go to Groot's house
+
+At the Henry Ford's shop...
+Bertie Wooster then decided to go to Kim Jong-Il's shop
+
+At the Mickey Rourke's shop...
+Rain Man then decided to go to Bertie Wooster's shop
+
+At the Groot's shop...
+Kim Jong-Il then decided to go to Bertie Wooster's shop
+
+At the Mickey Rourke's shop...
+Christian Bale then decided to go to Bertie Wooster's shop
+Kenneth Parcell  then decided to go to Groot's shop
+
+At the Bertie Wooster's shop...
+Christian Bale conversed with Rain Man
+Rain Man conversed with Christian Bale
+Rain Man learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+Christian Bale conversed with Kim Jong-Il
+Kim Jong-Il conversed with Christian Bale
+Kim Jong-Il learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+
+***
+
+
+At the Groot's shop...
+Kenneth Parcell  then decided to go to Kenneth Parcell 's house
+
+At the Bertie Wooster's shop...
+Rain Man then decided to go to Kim Jong-Il's shop
+
+At the Kim Jong-Il's shop...
+Bertie Wooster then decided to go to Christian Bale's shop
+
+At the Bertie Wooster's shop...
+Kim Jong-Il didnt find xenophobic jokes in Bertie Wooster's shop
+
+At the Christian Bale's shop...
+Andrew Lloyd Webber then decided to go to Henry Ford's shop
+
+At the Bertie Wooster's shop...
+Christian Bale then decided to go to tavern
+
+At the Groot's shop...
+Mickey Rourke then decided to go to Andrew Lloyd Webber's shop
+
+***
+
+
+At the Bertie Wooster's shop...
+Kim Jong-Il then decided to go to Bertie Wooster's shop
+
+At the tavern...
+Christian Bale then decided to go to Cicero's shop
+
+At the Andrew Lloyd Webber's shop...
+Mickey Rourke then decided to go to Cicero's shop
+
+At the Kim Jong-Il's shop...
+Rain Man then decided to go to Kenneth Parcell 's shop
+
+At the Christian Bale's shop...
+Bertie Wooster then decided to go to Andrew Lloyd Webber's shop
+
+At the Cicero's shop...
+Christian Bale conversed with Mickey Rourke
+
+***
+
+
+At the Cicero's shop...
+Mickey Rourke then decided to go to Kim Jong-Il's shop
+
+At the Kenneth Parcell 's shop...
+Rain Man then decided to go to Christian Bale's shop
+
+At the Andrew Lloyd Webber's shop...
+Bertie Wooster then decided to go to Kim Jong-Il's shop
+
+At the Kenneth Parcell 's house...
+Kenneth Parcell  then decided to go to Kenneth Parcell 's shop
+
+At the Cicero's shop...
+Christian Bale then decided to go to tavern
+
+At the Kim Jong-Il's shop...
+Mickey Rourke conversed with Bertie Wooster
+Bertie Wooster conversed with Mickey Rourke
+
+***
+
+
+At the Groot's house...
+Groot then decided to go to Groot's shop
+
+At the Kim Jong-Il's shop...
+Bertie Wooster then decided to go to Christian Bale's shop
+
+At the Christian Bale's shop...
+Rain Man then decided to go to Bertie Wooster's shop
+
+At the Kim Jong-Il's shop...
+Mickey Rourke then decided to go to Groot's shop
+
+At the Bertie Wooster's shop...
+Kim Jong-Il then decided to go to tavern
+
+At the Henry Ford's shop...
+Andrew Lloyd Webber then decided to go to Christian Bale's shop
+
+At the tavern...
+Christian Bale conversed with Kim Jong-Il
+Kim Jong-Il conversed with Christian Bale
+
+At the Christian Bale's shop...
+Andrew Lloyd Webber conversed with Bertie Wooster
+Bertie Wooster conversed with Andrew Lloyd Webber
+
+***
+
+
+At the Bertie Wooster's shop...
+Rain Man then decided to go to Andrew Lloyd Webber's shop
+
+At the Christian Bale's shop...
+Bertie Wooster then decided to go to Kenneth Parcell 's shop
+
+At the Groot's shop...
+Mickey Rourke then decided to go to Kim Jong-Il's shop
+
+At the tavern...
+Christian Bale conversed with Kim Jong-Il
+Kim Jong-Il conversed with Christian Bale
+
+At the Kenneth Parcell 's shop...
+Bertie Wooster conversed with Kenneth Parcell 
+Bertie Wooster learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+Kenneth Parcell  conversed with Bertie Wooster
+
+***
+
+
+At the Christian Bale's shop...
+Andrew Lloyd Webber then decided to go to Groot's shop
+
+At the Andrew Lloyd Webber's shop...
+Rain Man then decided to go to Henry Ford's shop
+
+At the Kim Jong-Il's shop...
+Mickey Rourke then decided to go to Christian Bale's shop
+
+At the Kenneth Parcell 's shop...
+Bertie Wooster then decided to go to Cicero's shop
+
+At the tavern...
+Christian Bale then decided to go to Christian Bale's house
+
+At the Groot's shop...
+Andrew Lloyd Webber conversed with Groot
+
+***
+
+
+At the Henry Ford's shop...
+Rain Man then decided to go to Kim Jong-Il's shop
+
+At the Groot's shop...
+Andrew Lloyd Webber then decided to go to Henry Ford's shop
+Groot then decided to go to Cicero's shop
+
+At the tavern...
+Kim Jong-Il then decided to go to Mickey Rourke's shop
+
+At the Cicero's shop...
+Bertie Wooster then decided to go to Henry Ford's shop
+
+At the Christian Bale's shop...
+Mickey Rourke then decided to go to Bertie Wooster's shop
+
+At the Henry Ford's shop...
+Andrew Lloyd Webber conversed with Bertie Wooster
+Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+Bertie Wooster conversed with Andrew Lloyd Webber
+
+***
+
+
+At the Bertie Wooster's shop...
+Mickey Rourke then decided to go to Mickey Rourke's house
+
+At the Cicero's shop...
+Groot then decided to go to Cicero's shop
+
+At the Kim Jong-Il's shop...
+Rain Man then decided to go to Mickey Rourke's shop
+
+At the Henry Ford's shop...
+Bertie Wooster then decided to go to Bertie Wooster's house
+
+At the Kenneth Parcell 's shop...
+Kenneth Parcell  then decided to go to Henry Ford's shop
+
+At the Henry Ford's shop...
+Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+
+***
+
+
+At the Henry Ford's shop...
+Kenneth Parcell  then decided to go to Christian Bale's shop
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
+
+At the Mickey Rourke's shop...
+Rain Man then decided to go to Cicero's shop
+
+At the Cicero's shop...
+Groot then decided to go to Andrew Lloyd Webber's shop
+
+***
+
+
+At the Christian Bale's shop...
+Kenneth Parcell  then decided to go to Kenneth Parcell 's house
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber then decided to go to Kenneth Parcell 's shop
+
+At the Andrew Lloyd Webber's shop...
+Groot then decided to go to Henry Ford's shop
+
+At the Cicero's shop...
+Rain Man then decided to go to Groot's shop
+
+At the Mickey Rourke's shop...
+Kim Jong-Il then decided to go to Rain Man's shop
+
+***
+
+
+At the Rain Man's shop...
+Kim Jong-Il then decided to go to Cicero's shop
+
+At the Groot's shop...
+Rain Man then decided to go to tavern
+
+At the Henry Ford's shop...
+Groot then decided to go to Bertie Wooster's shop
+
+***
+
+
+At the tavern...
+Rain Man then decided to go to Kenneth Parcell 's shop
+
+At the Kenneth Parcell 's house...
+Kenneth Parcell  then decided to go to Kenneth Parcell 's shop
+
+At the Bertie Wooster's shop...
+Groot then decided to go to Andrew Lloyd Webber's shop
+
+At the Kenneth Parcell 's shop...
+Rain Man conversed with Kenneth Parcell 
+Andrew Lloyd Webber conversed with Kenneth Parcell 
+Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+Kenneth Parcell  conversed with Rain Man
+Kenneth Parcell  conversed with Andrew Lloyd Webber
+
+***
+
+
+At the Kenneth Parcell 's shop...
+Rain Man then decided to go to Rain Man's house
+
+At the Andrew Lloyd Webber's shop...
+Groot then decided to go to Mickey Rourke's shop
+
+At the Kenneth Parcell 's shop...
+Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+
+***
+
+
+At the Cicero's shop...
+Kim Jong-Il then decided to go to Andrew Lloyd Webber's shop
+
+At the Mickey Rourke's shop...
+Groot then decided to go to Cicero's shop
+
+At the Christian Bale's house...
+Christian Bale then decided to go to Christian Bale's shop
+
+At the Mickey Rourke's house...
+Mickey Rourke then decided to go to Mickey Rourke's shop
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
+
+Now, filtered output:
+
+
+***
+
+
+At the ....
+Since childhood, Andrew Lloyd Webber always wanted to have xenophobic jokes
+Since childhood, Kim Jong-Il always wanted to have xenophobic jokes
+Cicero thought it'd be fun to see Rain Man kill Kim Jong-Il
+Henry Ford thought it'd be fun to see Christian Bale kill Kenneth Parcell 
+
+***
+
+
+At the Mickey Rourke's shop...
+Kenneth Parcell  learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+
+***
+
+
+At the Bertie Wooster's shop...
+Rain Man learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+Kim Jong-Il learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+
+***
+
+
+At the Bertie Wooster's shop...
+Kim Jong-Il didnt find xenophobic jokes in Bertie Wooster's shop
+
+***
+
+
+At the Kenneth Parcell 's shop...
+Bertie Wooster learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+
+***
+
+
+At the Henry Ford's shop...
+Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+
+***
+
+
+At the Henry Ford's shop...
+Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+
+***
+
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop
+
+***
+
+
+At the Kenneth Parcell 's shop...
+Andrew Lloyd Webber learned from Kenneth Parcell  that xenophobic jokes located in Bertie Wooster's shop
+
+***
+
+
+At the Kenneth Parcell 's shop...
+Andrew Lloyd Webber then decided to go to Bertie Wooster's shop
+
+***
+
+
+At the Bertie Wooster's shop...
+Andrew Lloyd Webber didnt find xenophobic jokes in Bertie Wooster's shop

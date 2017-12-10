@@ -2,35 +2,38 @@ import random
 from dataloaders import CharacterDataLoader, ObjectDataLoader
 from models import Knowledge, Actions, Goal, GoalType, Location
 from utilities import safe_append, safe_extend, persons_shop, TAVERN, dump_output
+import output
 
 step = 0
-output = []
-characters = CharacterDataLoader().load(howmany=10, output=output)
-objects = ObjectDataLoader().load(howmany=random.randint(1, 3), random_sample=True, output=output)
+out = []
+characters = CharacterDataLoader().load(howmany=10, out=out)
+objects = ObjectDataLoader().load(howmany=random.randint(1, 3), random_sample=True, out=out)
 locations = [Location(persons_shop(x)) for x in characters] + [Location(TAVERN)]
 objectLocations = random.sample(locations, len(objects))
 for i in range(len(objects)):
   objects[i].location = objectLocations[i]
-  output.append(objects[i].name + " was at the " + objectLocations[i].name)
+  out.append(output.ExposObjectPosition(objects[i], objectLocations[i]))
   pursuerCount = random.randint(1, 3)
   adviserCount = random.randint(1, 2)
   redHerringCount = random.randint(1, 4)
   charSample = random.sample(characters, pursuerCount + adviserCount + redHerringCount)
   for char in charSample[:pursuerCount]:
     char.goals.insert(0, Goal(GoalType.GET_OBJECT, objects[i]))
-    output.append(char.name + " always wanted to own " + objects[i].name)
+    out.append(output.ExposOwningMotivation(char, objects[i]))
   for char in charSample[pursuerCount:pursuerCount + adviserCount]:
-    char.knowledge.append(Knowledge(char, objects[i], Actions.LOCATED_IN, objectLocations[i], 0))
-    output.append(char.name + " knew where " + objects[i].name + " was")
+    locationKnowledge = Knowledge(char, objects[i], Actions.LOCATED_IN, objectLocations[i], -1)
+    char.knowledge.append(locationKnowledge)
+    out.append(output.ExposObjectInfo(char, locationKnowledge, True))
   for char in charSample[pursuerCount + adviserCount:]:
     locale = random.choice(locations)
-    char.knowledge.append(Knowledge(char, objects[i], Actions.LOCATED_IN, locale, 0))
-    output.append(char.name + " thought " + objects[i].name + " was in " + locale.name)
+    locationKnowledge = Knowledge(char, objects[i], Actions.LOCATED_IN, locale, -1)
+    char.knowledge.append(locationKnowledge)
+    out.append(output.ExposObjectInfo(char, locationKnowledge, False))
     
 for _ in range(random.randint(0, 3)):
   trio = random.sample(characters, 3)
   trio[0].goals.insert(0, Goal(GoalType.KILL, trio[1], trio[2]))
-  output.append(trio[0].name + " wanted to see " + trio[1].name + " kill " + trio[2].name)
+  out.append(output.ExposManipulationMotivation(trio[0], trio[1], trio[2]))
 
 def make_decision(source, target):
   if [goal for goal in source.goals if goal.type == GoalType.KILL and goal.target1 == target and goal.target2 == None]:
@@ -52,7 +55,7 @@ def make_decision(source, target):
 
 def do_kill(source, target, chars_to_ignore):
   target.dead = True
-  global characters, output
+  global characters, out
   if target in characters:
     characters.remove(target)
   chars_to_ignore.append(target)
@@ -63,7 +66,7 @@ def do_kill(source, target, chars_to_ignore):
       object.owner = source
       object.location = None
       source.goals = [goal for goal in source.goals if goal.target1 != object]
-      output.append(source.name + " stole " + object.name)
+      out.append(output.Steal(step, source.location, source, target, object))
 
 def do_beat_up(source, target, chars_to_ignore):
   target.change_relationship(source, -1)
@@ -75,7 +78,7 @@ def do_beat_up(source, target, chars_to_ignore):
       object.owner = source
       object.location = None
       source.goals = [goal for goal in source.goals if goal.target1 != object]
-      output.append(source.name + " stole " + object.name)
+      out.append(output.Steal(step, source.location, source, target, object))
 
 def do_insult(source, target, chars_to_ignore):
   target.change_relationship(source, -0.25)
@@ -106,7 +109,7 @@ def execute_action(action, place, events, chars_to_ignore):
   for tuple in events[action]:
     if tuple[0] in chars_to_ignore:
       continue
-    output.append("-" + tuple[0].name + " " + action.value + " " + tuple[1].name)
+    out.append(output.SomeAction(step, tuple[0].location, tuple[0], tuple[1], action))
     if action.is_witnessed:
       for witness in place:
         witness.acquire_knowledge(Knowledge(witness, tuple[0], action, tuple[1], step))
@@ -136,17 +139,14 @@ def generation_step():
           continue
         events[make_decision(person1, person2)].append((person1, person2))
 
-    output.append("At the " + place.name)
     chars_to_ignore = []
     for action in action_methods.keys():
       execute_action(action, places[place], events, chars_to_ignore)
 
-  dump_output(output)
+  #dump_output(out)
 
 if __name__ == '__main__':
-  dump_output(output)
-  while True:
-    print("")
-    input("Press Enter to progress...")
-    print("")
+  #dump_output(out)
+  for _ in range(25):
     generation_step()
+  output.printOutput(out)
