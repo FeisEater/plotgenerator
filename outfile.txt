@@ -2,1382 +2,627 @@ Debug output with unimportant fluff
 
 
 At the ....
-Robert Langdon was annoyed by Bridget Jones
-Robert Langdon was annoyed by Lord Voldemort
-Robert Langdon was annoyed by Leonardo DiCaprio
-Robert Langdon had no opinion of Elmore Leonard
-Robert Langdon had no opinion of Woody Guthrie
-Robert Langdon was annoyed by Mr. Darcy
-Robert Langdon was annoyed by Dick Cheney
-Robert Langdon was annoyed by Benedict Arnold
-Robert Langdon was annoyed by George Orwell
-Bridget Jones was annoyed by Lord Voldemort
-Bridget Jones was fond of Leonardo DiCaprio
-Bridget Jones had no opinion of Elmore Leonard
-Bridget Jones was fond of Woody Guthrie
-Bridget Jones had no opinion of Mr. Darcy
-Bridget Jones had no opinion of Dick Cheney
-Bridget Jones was annoyed by Benedict Arnold
-Bridget Jones had no opinion of George Orwell
-Lord Voldemort had no opinion of Leonardo DiCaprio
-Lord Voldemort had no opinion of Elmore Leonard
-Lord Voldemort was annoyed by Woody Guthrie
-Lord Voldemort liked Mr. Darcy
-Lord Voldemort had no opinion of Dick Cheney
-Lord Voldemort was annoyed by Benedict Arnold
-Lord Voldemort had no opinion of George Orwell
-Leonardo DiCaprio was annoyed by Elmore Leonard
-Leonardo DiCaprio was fond of Woody Guthrie
-Leonardo DiCaprio was annoyed by Mr. Darcy
-Leonardo DiCaprio had no opinion of Dick Cheney
-Leonardo DiCaprio had no opinion of Benedict Arnold
-Leonardo DiCaprio had no opinion of George Orwell
-Elmore Leonard had no opinion of Woody Guthrie
-Elmore Leonard was annoyed by Mr. Darcy
-Elmore Leonard had no opinion of Dick Cheney
-Elmore Leonard was annoyed by Benedict Arnold
-Elmore Leonard was annoyed by George Orwell
-Woody Guthrie was annoyed by Mr. Darcy
-Woody Guthrie had no opinion of Dick Cheney
-Woody Guthrie was annoyed by Benedict Arnold
-Woody Guthrie was fond of George Orwell
-Mr. Darcy was fond of Dick Cheney
-Mr. Darcy had no opinion of Benedict Arnold
-Mr. Darcy was annoyed by George Orwell
-Dick Cheney was annoyed by Benedict Arnold
-Dick Cheney was annoyed by George Orwell
-Benedict Arnold had no opinion of George Orwell
-On The Road-rage was hidden in Mr. Darcy's shop
-Since childhood, Woody Guthrie always wanted to have On The Road-rage
-Since childhood, Bridget Jones always wanted to have On The Road-rage
-Mr. Darcy knew that On The Road-rage was hidden in Mr. Darcy's shop
-Leonardo DiCaprio thought in err that On The Road-rage was hidden in George Orwell's shop
-George Orwell thought in err that On The Road-rage was hidden in Benedict Arnold's shop
-Elmore Leonard thought in err that On The Road-rage was hidden in Bridget Jones's shop
-Benedict Arnold thought in err that On The Road-rage was hidden in Mr. Darcy's shop
-bureaucratic skullduggery was hidden in Lord Voldemort's shop
-Since childhood, Woody Guthrie always wanted to have bureaucratic skullduggery
-Since childhood, George Orwell always wanted to have bureaucratic skullduggery
-Since childhood, Mr. Darcy always wanted to have bureaucratic skullduggery
-Lord Voldemort knew that bureaucratic skullduggery was hidden in Lord Voldemort's shop
-Leonardo DiCaprio knew that bureaucratic skullduggery was hidden in Lord Voldemort's shop
-Benedict Arnold thought in err that bureaucratic skullduggery was hidden in Benedict Arnold's shop
-Robert Langdon thought in err that bureaucratic skullduggery was hidden in Benedict Arnold's shop
+Edward Cullen was annoyed by Del Boy Trotter
+Edward Cullen was annoyed by Fagin
+Edward Cullen was annoyed by Harry Houdini
+Edward Cullen was annoyed by Harvey Dent
+Edward Cullen was annoyed by Al Pacino
+Edward Cullen was annoyed by Russell Crowe
+Edward Cullen disliked Mark Twain
+Edward Cullen was annoyed by Matt "Daredevil" Murdock
+Edward Cullen was annoyed by Kenneth Parcell 
+Del Boy Trotter had no opinion of Fagin
+Del Boy Trotter was annoyed by Harry Houdini
+Del Boy Trotter was annoyed by Harvey Dent
+Del Boy Trotter was annoyed by Al Pacino
+Del Boy Trotter disliked Russell Crowe
+Del Boy Trotter was annoyed by Mark Twain
+Del Boy Trotter disliked Matt "Daredevil" Murdock
+Del Boy Trotter was annoyed by Kenneth Parcell 
+Fagin had no opinion of Harry Houdini
+Fagin had no opinion of Harvey Dent
+Fagin was annoyed by Al Pacino
+Fagin was annoyed by Russell Crowe
+Fagin was annoyed by Mark Twain
+Fagin disliked Matt "Daredevil" Murdock
+Fagin was annoyed by Kenneth Parcell 
+Harry Houdini had no opinion of Harvey Dent
+Harry Houdini was annoyed by Al Pacino
+Harry Houdini was annoyed by Russell Crowe
+Harry Houdini was annoyed by Mark Twain
+Harry Houdini was annoyed by Matt "Daredevil" Murdock
+Harry Houdini disliked Kenneth Parcell 
+Harvey Dent was annoyed by Al Pacino
+Harvey Dent was annoyed by Russell Crowe
+Harvey Dent was annoyed by Mark Twain
+Harvey Dent was annoyed by Matt "Daredevil" Murdock
+Harvey Dent was annoyed by Kenneth Parcell 
+Al Pacino was annoyed by Russell Crowe
+Al Pacino was annoyed by Mark Twain
+Al Pacino was fond of Matt "Daredevil" Murdock
+Al Pacino disliked Kenneth Parcell 
+Russell Crowe disliked Mark Twain
+Russell Crowe disliked Matt "Daredevil" Murdock
+Russell Crowe was annoyed by Kenneth Parcell 
+Mark Twain was annoyed by Matt "Daredevil" Murdock
+Mark Twain was annoyed by Kenneth Parcell 
+Matt "Daredevil" Murdock was annoyed by Kenneth Parcell 
+sharpened stiletto heel was hidden in hippy commune
+Since childhood, Matt "Daredevil" Murdock always wanted to have sharpened stiletto heel
+Since childhood, Kenneth Parcell  always wanted to have sharpened stiletto heel
+Harvey Dent knew that sharpened stiletto heel was hidden in hippy commune
+Edward Cullen thought in err that sharpened stiletto heel was hidden in interrogation room
+Russell Crowe thought in err that sharpened stiletto heel was hidden in telephone box
+Del Boy Trotter thought it'd be fun to see Russell Crowe kill Harvey Dent
+Al Pacino thought it'd be fun to see Harvey Dent kill Harry Houdini
+Russell Crowe thought it'd be fun to see Al Pacino kill Edward Cullen
 
 ***
 
 
-At the Robert Langdon's house...
-Robert Langdon then decided to go to Robert Langdon's shop
+At the Edward Cullen's house...
+Edward Cullen then decided to go to barn
 
-At the Benedict Arnold's house...
-Benedict Arnold then decided to go to Benedict Arnold's shop
+At the Mark Twain's house...
+Mark Twain then decided to go to music room
 
-At the George Orwell's house...
-George Orwell then decided to go to Mr. Darcy's shop
+At the Harry Houdini's house...
+Harry Houdini then decided to go to housing estate
 
-At the Elmore Leonard's house...
-Elmore Leonard then decided to go to Elmore Leonard's shop
+At the Harvey Dent's house...
+Harvey Dent then decided to go to Buddhist temple
 
-At the Lord Voldemort's house...
-Lord Voldemort then decided to go to Lord Voldemort's shop
+At the Kenneth Parcell 's house...
+Kenneth Parcell  then decided to go to barn
 
-At the Leonardo DiCaprio's house...
-Leonardo DiCaprio then decided to go to Leonardo DiCaprio's shop
+At the Fagin's house...
+Fagin then decided to go to hippy commune
 
-At the Woody Guthrie's house...
-Woody Guthrie then decided to go to Dick Cheney's shop
+At the Matt "Daredevil" Murdock's house...
+Matt "Daredevil" Murdock then decided to go to housing estate
 
-At the Mr. Darcy's house...
-Mr. Darcy then decided to go to tavern
-
-At the Dick Cheney's house...
-Dick Cheney then decided to go to Dick Cheney's shop
-
-At the Bridget Jones's house...
-Bridget Jones then decided to go to Mr. Darcy's shop
-
-At the Mr. Darcy's shop...
-George Orwell now liked Bridget Jones
-Bridget Jones learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Bridget Jones conversed with George Orwell
-Bridget Jones now was fond of George Orwell
-George Orwell conversed with Bridget Jones
-
-At the Dick Cheney's shop...
-Dick Cheney now had no opinion of Woody Guthrie
-Woody Guthrie conversed with Dick Cheney
+At the housing estate...
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Kenneth Parcell 
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Fagin
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now had no opinion of Matt "Daredevil" Murdock
 
 ***
 
 
-At the Mr. Darcy's shop...
-Bridget Jones then decided to go to Benedict Arnold's shop
-George Orwell then decided to go to Mr. Darcy's shop
-
-At the Benedict Arnold's shop...
-Bridget Jones now had no opinion of Benedict Arnold
-Benedict Arnold learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Benedict Arnold conversed with Bridget Jones
-
-At the Dick Cheney's shop...
-Woody Guthrie now was fond of Dick Cheney
-Dick Cheney conversed with Woody Guthrie
-Dick Cheney now was fond of Woody Guthrie
-Woody Guthrie conversed with Dick Cheney
+At the housing estate...
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Del Boy Trotter
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Russell Crowe
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Fagin
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now was fond of Harry Houdini
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now was fond of Matt "Daredevil" Murdock
 
 ***
 
 
-At the Mr. Darcy's shop...
-George Orwell then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Bridget Jones didnt find On The Road-rage in Benedict Arnold's shop
-George Orwell now had no opinion of Benedict Arnold
-Benedict Arnold conversed with George Orwell
-George Orwell now loved Bridget Jones
-Bridget Jones conversed with George Orwell
-Benedict Arnold now was fond of Bridget Jones
-Bridget Jones learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Bridget Jones learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Bridget Jones conversed with Benedict Arnold
-Bridget Jones now was fond of Benedict Arnold
-Benedict Arnold conversed with Bridget Jones
-Bridget Jones now liked George Orwell
-George Orwell learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-George Orwell learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-George Orwell conversed with Bridget Jones
-
-At the Dick Cheney's shop...
-Dick Cheney now liked Woody Guthrie
-Woody Guthrie conversed with Dick Cheney
-Woody Guthrie now liked Dick Cheney
-Dick Cheney conversed with Woody Guthrie
+At the housing estate...
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Harry Houdini
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Edward Cullen
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Fagin
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now liked Harry Houdini
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Al Pacino
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Kenneth Parcell 
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now liked Matt "Daredevil" Murdock
 
 ***
 
 
-At the Benedict Arnold's shop...
-Bridget Jones then decided to go to Mr. Darcy's shop
-George Orwell didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Dick Cheney's shop...
-Woody Guthrie then decided to go to Elmore Leonard's shop
-
-At the tavern...
-Mr. Darcy then decided to go to Dick Cheney's shop
-
-At the Elmore Leonard's shop...
-Woody Guthrie now was fond of Elmore Leonard
-Elmore Leonard conversed with Woody Guthrie
-Elmore Leonard now was fond of Woody Guthrie
-Woody Guthrie learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Woody Guthrie conversed with Elmore Leonard
-
-At the Benedict Arnold's shop...
-Benedict Arnold now was fond of George Orwell
-George Orwell learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-George Orwell conversed with Benedict Arnold
-George Orwell now was fond of Benedict Arnold
-Benedict Arnold conversed with George Orwell
-
-At the Dick Cheney's shop...
-Mr. Darcy now liked Dick Cheney
-Dick Cheney learned from Mr. Darcy that On The Road-rage located in Mr. Darcy's shop
-Dick Cheney conversed with Mr. Darcy
-Dick Cheney now liked Mr. Darcy
-Mr. Darcy conversed with Dick Cheney
+At the housing estate...
+Harry Houdini then decided to go to interrogation room
 
 ***
 
 
-At the Dick Cheney's shop...
-Mr. Darcy then decided to go to George Orwell's shop
+At the hippy commune...
+Fagin then decided to go to Buddhist temple
 
-At the Mr. Darcy's shop...
-Bridget Jones took On The Road-rage
+At the music room...
+Mark Twain then decided to go to hippy commune
 
-At the Elmore Leonard's shop...
-Elmore Leonard then decided to go to Woody Guthrie's shop
+At the housing estate...
+Matt "Daredevil" Murdock then decided to go to Buddhist temple
 
-At the Benedict Arnold's shop...
-George Orwell didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Leonardo DiCaprio's shop...
-Leonardo DiCaprio then decided to go to Bridget Jones's shop
-
-At the Benedict Arnold's shop...
-George Orwell now liked Benedict Arnold
-Benedict Arnold conversed with George Orwell
-Benedict Arnold now liked George Orwell
-George Orwell conversed with Benedict Arnold
-
-***
-
-
-At the Mr. Darcy's shop...
-Bridget Jones then decided to go to Dick Cheney's shop
-
-At the Dick Cheney's shop...
-Dick Cheney then decided to go to Mr. Darcy's shop
-
-At the Bridget Jones's shop...
-Leonardo DiCaprio then decided to go to Dick Cheney's shop
-
-At the Woody Guthrie's shop...
-Elmore Leonard then decided to go to Lord Voldemort's shop
-
-At the Benedict Arnold's shop...
-George Orwell then decided to go to Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Elmore Leonard now had no opinion of Lord Voldemort
-Lord Voldemort learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Lord Voldemort conversed with Elmore Leonard
-
-At the Benedict Arnold's shop...
-Benedict Arnold now loved George Orwell
-George Orwell conversed with Benedict Arnold
-George Orwell now loved Benedict Arnold
-Benedict Arnold conversed with George Orwell
-
-At the Dick Cheney's shop...
-Bridget Jones now liked Leonardo DiCaprio
-Leonardo DiCaprio learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Leonardo DiCaprio learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Leonardo DiCaprio conversed with Bridget Jones
-Leonardo DiCaprio now liked Bridget Jones
-Bridget Jones learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Bridget Jones learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Bridget Jones conversed with Leonardo DiCaprio
+At the Buddhist temple...
+Fagin insulted Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now disliked Fagin
+Fagin learned from Harvey Dent that Harvey Dent likes Russell Crowe
+Fagin learned from Harvey Dent that Harvey Dent likes Mark Twain
+Fagin learned from Harvey Dent that Harvey Dent likes Edward Cullen
+Fagin conversed with Harvey Dent
+Harvey Dent now was fond of Fagin
+Harvey Dent learned from Fagin that Fagin likes Matt "Daredevil" Murdock
+Harvey Dent learned from Fagin that Fagin likes Harvey Dent
+Harvey Dent learned from Fagin that Fagin likes Kenneth Parcell 
+Harvey Dent conversed with Fagin
+Fagin now was fond of Harvey Dent
 
 ***
 
 
-At the Benedict Arnold's shop...
-George Orwell then decided to go to tavern
-
-At the Dick Cheney's shop...
-Leonardo DiCaprio then decided to go to Dick Cheney's shop
-
-At the Lord Voldemort's shop...
-Elmore Leonard then decided to go to Benedict Arnold's shop
-
-At the Dick Cheney's shop...
-Bridget Jones then decided to go to Woody Guthrie's shop
-
-At the Elmore Leonard's shop...
-Woody Guthrie then decided to go to Leonardo DiCaprio's shop
-
-At the Mr. Darcy's shop...
-Dick Cheney then decided to go to Mr. Darcy's shop
-
-At the Benedict Arnold's shop...
-Elmore Leonard now had no opinion of Benedict Arnold
-Benedict Arnold learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Benedict Arnold conversed with Elmore Leonard
+At the Buddhist temple...
+Matt "Daredevil" Murdock insulted Fagin
+Fagin now hated Matt "Daredevil" Murdock
+Fagin insulted Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now hated Fagin
+Harvey Dent learned from Fagin that Fagin likes Harvey Dent
+Harvey Dent learned from Fagin that Fagin likes Al Pacino
+Harvey Dent learned from Fagin that Fagin likes Del Boy Trotter
+Harvey Dent conversed with Fagin
+Fagin now liked Harvey Dent
+Fagin learned from Harvey Dent that Harvey Dent likes Mark Twain
+Fagin learned from Harvey Dent that Harvey Dent likes Al Pacino
+Fagin learned from Harvey Dent that Harvey Dent likes Edward Cullen
+Fagin conversed with Harvey Dent
+Harvey Dent now liked Fagin
 
 ***
 
 
-At the George Orwell's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
+At the barn...
+Edward Cullen then decided to go to disused quarry
+Kenneth Parcell  then decided to go to disused quarry
 
-At the Woody Guthrie's shop...
-Bridget Jones then decided to go to Woody Guthrie's shop
-
-At the Benedict Arnold's shop...
-Elmore Leonard then decided to go to Dick Cheney's shop
-
-At the Mr. Darcy's shop...
-Dick Cheney then decided to go to Bridget Jones's shop
-
-At the Lord Voldemort's shop...
-Lord Voldemort then decided to go to Mr. Darcy's shop
-
-At the Robert Langdon's shop...
-Robert Langdon then decided to go to Robert Langdon's house
-
-At the Dick Cheney's shop...
-Leonardo DiCaprio then decided to go to Dick Cheney's shop
-
-At the Benedict Arnold's shop...
-Benedict Arnold now was fond of Mr. Darcy
-Mr. Darcy learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Mr. Darcy learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Mr. Darcy conversed with Benedict Arnold
-Mr. Darcy now was fond of Benedict Arnold
-Benedict Arnold conversed with Mr. Darcy
-
-At the Dick Cheney's shop...
-Leonardo DiCaprio now had no opinion of Elmore Leonard
-Elmore Leonard learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Elmore Leonard learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Elmore Leonard learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Elmore Leonard conversed with Leonardo DiCaprio
+At the Buddhist temple...
+Matt "Daredevil" Murdock beat up Fagin
+Fagin now had a vendetta against Matt "Daredevil" Murdock
+Harvey Dent witnessed that Matt "Daredevil" Murdock beat up Fagin
+Harvey Dent now hated Matt "Daredevil" Murdock
+Harvey Dent learned from Fagin that Fagin likes Russell Crowe
+Harvey Dent learned from Fagin that Fagin likes Al Pacino
+Harvey Dent learned from Fagin that Fagin likes Matt "Daredevil" Murdock
+Harvey Dent conversed with Fagin
+Fagin now loved Harvey Dent
 
 ***
 
 
-At the Dick Cheney's shop...
-Leonardo DiCaprio then decided to go to Mr. Darcy's shop
+At the Buddhist temple...
+Fagin then decided to go to interrogation room
+Matt "Daredevil" Murdock then decided to go to music room
 
-At the Woody Guthrie's shop...
-Bridget Jones then decided to go to Bridget Jones's house
-
-At the tavern...
-George Orwell then decided to go to Dick Cheney's shop
-
-At the Dick Cheney's shop...
-Elmore Leonard then decided to go to Robert Langdon's shop
-
-At the Mr. Darcy's shop...
-Lord Voldemort then decided to go to Dick Cheney's shop
-
-At the Leonardo DiCaprio's shop...
-Woody Guthrie then decided to go to Mr. Darcy's shop
-
-At the Bridget Jones's shop...
-Dick Cheney then decided to go to Leonardo DiCaprio's shop
-
-At the Benedict Arnold's shop...
-Benedict Arnold then decided to go to George Orwell's shop
-
-At the Mr. Darcy's shop...
-Woody Guthrie now liked Leonardo DiCaprio
-Leonardo DiCaprio learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Leonardo DiCaprio conversed with Woody Guthrie
-Leonardo DiCaprio now liked Woody Guthrie
-Woody Guthrie learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Woody Guthrie learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Woody Guthrie learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Woody Guthrie conversed with Leonardo DiCaprio
-
-At the Dick Cheney's shop...
-George Orwell now had no opinion of Lord Voldemort
-Lord Voldemort learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Lord Voldemort learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Lord Voldemort conversed with George Orwell
+At the interrogation room...
+Fagin learned from Harry Houdini that Harry Houdini likes Mark Twain
+Fagin learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Fagin learned from Harry Houdini that Harry Houdini likes Al Pacino
+Fagin conversed with Harry Houdini
+Harry Houdini now had no opinion of Fagin
 
 ***
 
 
-At the Dick Cheney's shop...
-Lord Voldemort then decided to go to Leonardo DiCaprio's shop
+At the Buddhist temple...
+Harvey Dent then decided to go to housing estate
 
-At the Leonardo DiCaprio's shop...
-Dick Cheney then decided to go to Lord Voldemort's shop
-
-At the Mr. Darcy's shop...
-Woody Guthrie then decided to go to Benedict Arnold's shop
-
-At the Robert Langdon's shop...
-Elmore Leonard then decided to go to Benedict Arnold's shop
-
-At the George Orwell's shop...
-Benedict Arnold then decided to go to Leonardo DiCaprio's shop
-
-At the Dick Cheney's shop...
-George Orwell then decided to go to Lord Voldemort's shop
-
-At the Mr. Darcy's shop...
-Leonardo DiCaprio then decided to go to George Orwell's shop
-
-At the Benedict Arnold's shop...
-Woody Guthrie now liked Elmore Leonard
-Elmore Leonard conversed with Woody Guthrie
-Elmore Leonard now liked Woody Guthrie
-Woody Guthrie conversed with Elmore Leonard
-
-At the Leonardo DiCaprio's shop...
-Lord Voldemort now had no opinion of Benedict Arnold
-Benedict Arnold learned from Benedict Arnold that bureaucratic skullduggery located in Lord Voldemort's shop
-Benedict Arnold conversed with Lord Voldemort
+At the interrogation room...
+Fagin learned from Harry Houdini that Harry Houdini likes Del Boy Trotter
+Fagin learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Fagin learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Fagin conversed with Harry Houdini
+Harry Houdini now was fond of Fagin
+Harry Houdini learned from Fagin that Fagin likes Matt "Daredevil" Murdock
+Harry Houdini learned from Fagin that Fagin likes Harry Houdini
+Harry Houdini learned from Fagin that Fagin likes Harvey Dent
+Harry Houdini conversed with Fagin
+Fagin now was fond of Harry Houdini
 
 ***
 
 
-At the Leonardo DiCaprio's shop...
-Benedict Arnold then decided to go to Robert Langdon's shop
+At the hippy commune...
+Mark Twain then decided to go to Buddhist temple
 
-At the Benedict Arnold's shop...
-Woody Guthrie didnt find bureaucratic skullduggery in Benedict Arnold's shop
-Mr. Darcy then decided to go to Robert Langdon's shop
-
-At the Leonardo DiCaprio's shop...
-Lord Voldemort then decided to go to Lord Voldemort's house
-
-At the Benedict Arnold's shop...
-Elmore Leonard then decided to go to Lord Voldemort's shop
-
-At the Lord Voldemort's shop...
-Dick Cheney then decided to go to Lord Voldemort's shop
-
-At the George Orwell's shop...
-Leonardo DiCaprio then decided to go to Dick Cheney's shop
-
-At the Lord Voldemort's shop...
-Dick Cheney now had no opinion of Elmore Leonard
-Elmore Leonard learned from Mr. Darcy that On The Road-rage located in Mr. Darcy's shop
-Elmore Leonard conversed with Dick Cheney
-
-At the Robert Langdon's shop...
-Mr. Darcy now liked Benedict Arnold
-Benedict Arnold conversed with Mr. Darcy
-Benedict Arnold now liked Mr. Darcy
-Mr. Darcy learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Mr. Darcy learned from Benedict Arnold that bureaucratic skullduggery located in Lord Voldemort's shop
-Mr. Darcy conversed with Benedict Arnold
+At the interrogation room...
+Harry Houdini learned from Fagin that Fagin likes Harry Houdini
+Harry Houdini learned from Fagin that Fagin likes Russell Crowe
+Harry Houdini learned from Fagin that Fagin likes Al Pacino
+Harry Houdini conversed with Fagin
+Fagin now liked Harry Houdini
+Fagin learned from Harry Houdini that Harry Houdini likes Edward Cullen
+Fagin learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Fagin learned from Harry Houdini that Harry Houdini likes Fagin
+Fagin conversed with Harry Houdini
+Harry Houdini now liked Fagin
 
 ***
 
 
-At the Robert Langdon's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
+At the interrogation room...
+Harry Houdini then decided to go to music room
 
-At the Benedict Arnold's shop...
-Woody Guthrie then decided to go to Lord Voldemort's shop
-
-At the Dick Cheney's shop...
-Leonardo DiCaprio then decided to go to Elmore Leonard's shop
-
-At the Lord Voldemort's shop...
-Dick Cheney then decided to go to Robert Langdon's shop
-
-At the Robert Langdon's shop...
-Benedict Arnold then decided to go to Elmore Leonard's shop
-
-At the Lord Voldemort's shop...
-Elmore Leonard then decided to go to Robert Langdon's shop
-
-At the Elmore Leonard's shop...
-Leonardo DiCaprio now was fond of Benedict Arnold
-Benedict Arnold learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Benedict Arnold learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Benedict Arnold conversed with Leonardo DiCaprio
-Benedict Arnold now was fond of Leonardo DiCaprio
-Leonardo DiCaprio learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Leonardo DiCaprio learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Leonardo DiCaprio conversed with Benedict Arnold
-
-At the Lord Voldemort's shop...
-George Orwell now liked Woody Guthrie
-Woody Guthrie learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Woody Guthrie learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Woody Guthrie conversed with George Orwell
-Woody Guthrie now liked George Orwell
-George Orwell learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-George Orwell learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-George Orwell learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-George Orwell conversed with Woody Guthrie
-
-At the Robert Langdon's shop...
-Dick Cheney now was fond of Elmore Leonard
-Elmore Leonard conversed with Dick Cheney
-Elmore Leonard now was fond of Dick Cheney
-Dick Cheney learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Dick Cheney learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Dick Cheney learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Dick Cheney conversed with Elmore Leonard
+At the music room...
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Al Pacino
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Fagin
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Mark Twain
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now loved Matt "Daredevil" Murdock
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Kenneth Parcell 
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Fagin
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Del Boy Trotter
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now loved Harry Houdini
 
 ***
 
 
-At the Elmore Leonard's shop...
-Benedict Arnold then decided to go to Mr. Darcy's shop
+At the Buddhist temple...
+Mark Twain then decided to go to hippy commune
 
-At the Robert Langdon's shop...
-Elmore Leonard then decided to go to Leonardo DiCaprio's shop
+At the housing estate...
+Harvey Dent then decided to go to motor home
 
-At the Lord Voldemort's shop...
-George Orwell took bureaucratic skullduggery
-
-At the Elmore Leonard's shop...
-Leonardo DiCaprio then decided to go to tavern
-
-At the Robert Langdon's shop...
-Dick Cheney then decided to go to Lord Voldemort's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Woody Guthrie didnt find bureaucratic skullduggery in Lord Voldemort's shop
-George Orwell now disliked Woody Guthrie
-Woody Guthrie beat up George Orwell
-Woody Guthrie stole bureaucratic skullduggery from the George Orwell's body
-George Orwell learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Dick Cheney learned from Elmore Leonard that Woody Guthrie beat up George Orwell
-Woody Guthrie learned from Woody Guthrie that Woody Guthrie beat up George Orwell
-Woody Guthrie now loved Dick Cheney
-Dick Cheney conversed with Woody Guthrie
-Dick Cheney now loved Woody Guthrie
-Woody Guthrie learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Woody Guthrie conversed with Dick Cheney
+At the music room...
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Fagin
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now loved Matt "Daredevil" Murdock
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Al Pacino
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Mark Twain
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Fagin
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now loved Harry Houdini
 
 ***
 
 
-At the Lord Voldemort's shop...
-Woody Guthrie then decided to go to Bridget Jones's shop
+At the disused quarry...
+Kenneth Parcell  then decided to go to telephone box
+Edward Cullen then decided to go to hippy commune
 
-At the Mr. Darcy's shop...
-Benedict Arnold then decided to go to Lord Voldemort's shop
+At the hippy commune...
+Edward Cullen insulted Mark Twain
+Mark Twain now disliked Edward Cullen
 
-At the Lord Voldemort's shop...
-Dick Cheney then decided to go to George Orwell's shop
-George Orwell then decided to go to Leonardo DiCaprio's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy then decided to go to Lord Voldemort's shop
-
-At the Leonardo DiCaprio's shop...
-Elmore Leonard then decided to go to George Orwell's shop
-
-At the Lord Voldemort's shop...
-Benedict Arnold now loved Mr. Darcy
-Mr. Darcy learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Mr. Darcy learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Mr. Darcy conversed with Benedict Arnold
-Mr. Darcy now loved Benedict Arnold
-Benedict Arnold conversed with Mr. Darcy
-
-At the George Orwell's shop...
-Elmore Leonard now liked Dick Cheney
-Dick Cheney learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Dick Cheney conversed with Elmore Leonard
-Dick Cheney now liked Elmore Leonard
-Elmore Leonard learned from Elmore Leonard that Woody Guthrie beat up George Orwell
-Elmore Leonard conversed with Dick Cheney
+At the music room...
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Fagin
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Mark Twain
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Russell Crowe
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now loved Harry Houdini
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Del Boy Trotter
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Kenneth Parcell 
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now loved Matt "Daredevil" Murdock
 
 ***
 
 
-At the Robert Langdon's house...
-Robert Langdon then decided to go to Robert Langdon's shop
+At the music room...
+Matt "Daredevil" Murdock then decided to go to Buddhist temple
 
-At the George Orwell's shop...
-Dick Cheney then decided to go to George Orwell's shop
-
-At the Leonardo DiCaprio's shop...
-George Orwell then decided to go to Bridget Jones's shop
-
-At the George Orwell's shop...
-Elmore Leonard then decided to go to Bridget Jones's shop
-
-At the Lord Voldemort's shop...
-Mr. Darcy didnt find bureaucratic skullduggery in Lord Voldemort's shop
-
-At the Bridget Jones's shop...
-Woody Guthrie didnt find On The Road-rage in Bridget Jones's shop
-
-At the tavern...
-Leonardo DiCaprio then decided to go to Bridget Jones's shop
-
-At the Lord Voldemort's shop...
-Benedict Arnold then decided to go to Woody Guthrie's shop
-
-At the Bridget Jones's shop...
-Woody Guthrie now was fond of George Orwell
-George Orwell insulted Woody Guthrie
-George Orwell now liked Leonardo DiCaprio
-Leonardo DiCaprio learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Leonardo DiCaprio now was fond of Woody Guthrie
-Leonardo DiCaprio conversed with George Orwell
-Leonardo DiCaprio now was fond of George Orwell
-George Orwell learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-George Orwell learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-George Orwell conversed with Leonardo DiCaprio
-Leonardo DiCaprio now was fond of Elmore Leonard
-Elmore Leonard learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Elmore Leonard conversed with Leonardo DiCaprio
-Elmore Leonard now loved Woody Guthrie
-Woody Guthrie conversed with Elmore Leonard
-Woody Guthrie now loved Leonardo DiCaprio
-Leonardo DiCaprio conversed with Woody Guthrie
-Woody Guthrie now loved Elmore Leonard
-Elmore Leonard conversed with Woody Guthrie
-Elmore Leonard now was fond of Leonardo DiCaprio
-Leonardo DiCaprio conversed with Elmore Leonard
-Leonardo DiCaprio now liked Woody Guthrie
-Woody Guthrie learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Woody Guthrie conversed with Leonardo DiCaprio
-George Orwell now was annoyed by Woody Guthrie
-Woody Guthrie learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-Woody Guthrie conversed with George Orwell
+At the hippy commune...
+Mark Twain then decided to go to barn
 
 ***
 
 
-At the Lord Voldemort's shop...
-Mr. Darcy then decided to go to Dick Cheney's shop
+At the interrogation room...
+Fagin then decided to go to telephone box
 
-At the Bridget Jones's shop...
-Leonardo DiCaprio then decided to go to Mr. Darcy's shop
-Woody Guthrie then decided to go to Leonardo DiCaprio's shop
-
-At the Leonardo DiCaprio's shop...
-Woody Guthrie then decided to go to Benedict Arnold's shop
-
-At the Woody Guthrie's shop...
-Benedict Arnold then decided to go to George Orwell's shop
-
-At the George Orwell's shop...
-Dick Cheney then decided to go to Lord Voldemort's shop
-
-At the Bridget Jones's shop...
-George Orwell then decided to go to tavern
-Elmore Leonard then decided to go to Bridget Jones's shop
+At the music room...
+Harry Houdini then decided to go to housing estate
 
 ***
 
 
-At the Lord Voldemort's shop...
-Dick Cheney then decided to go to tavern
+At the Buddhist temple...
+Matt "Daredevil" Murdock then decided to go to disused quarry
 
-At the Mr. Darcy's shop...
-Leonardo DiCaprio then decided to go to Mr. Darcy's shop
+At the housing estate...
+Harry Houdini then decided to go to telephone box
 
-At the Lord Voldemort's house...
-Lord Voldemort then decided to go to Lord Voldemort's shop
+At the barn...
+Mark Twain then decided to go to interrogation room
 
-At the George Orwell's shop...
-Benedict Arnold then decided to go to Elmore Leonard's shop
-
-At the Bridget Jones's house...
-Bridget Jones then decided to go to Bridget Jones's shop
-
-At the Bridget Jones's shop...
-Elmore Leonard then decided to go to Leonardo DiCaprio's shop
-
-At the Benedict Arnold's shop...
-Woody Guthrie didnt find On The Road-rage in Benedict Arnold's shop
-
-***
-
-
-At the Benedict Arnold's shop...
-Woody Guthrie then decided to go to Leonardo DiCaprio's shop
-
-At the Leonardo DiCaprio's shop...
-Woody Guthrie then decided to go to Mr. Darcy's shop
-
-At the Mr. Darcy's shop...
-Leonardo DiCaprio then decided to go to Woody Guthrie's shop
-
-At the Dick Cheney's shop...
-Mr. Darcy then decided to go to Leonardo DiCaprio's shop
-
-At the Leonardo DiCaprio's shop...
-Elmore Leonard then decided to go to tavern
-
-At the Elmore Leonard's shop...
-Benedict Arnold then decided to go to Woody Guthrie's shop
-
-At the tavern...
-Dick Cheney now loved Elmore Leonard
-Elmore Leonard conversed with Dick Cheney
-Elmore Leonard now loved Dick Cheney
-Dick Cheney learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Dick Cheney conversed with Elmore Leonard
-
-At the Woody Guthrie's shop...
-Benedict Arnold now liked Leonardo DiCaprio
-Leonardo DiCaprio conversed with Benedict Arnold
-Leonardo DiCaprio now liked Benedict Arnold
-Benedict Arnold learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Benedict Arnold now hated Woody Guthrie
-Benedict Arnold conversed with Leonardo DiCaprio
+At the telephone box...
+Harry Houdini insulted Kenneth Parcell 
+Kenneth Parcell  now hated Harry Houdini
+Kenneth Parcell  insulted Harry Houdini
+Harry Houdini now hated Kenneth Parcell 
+Fagin learned from Harry Houdini that Harry Houdini likes Edward Cullen
+Fagin learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Fagin learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Fagin conversed with Harry Houdini
+Harry Houdini now loved Fagin
+Harry Houdini learned from Fagin that Fagin likes Kenneth Parcell 
+Harry Houdini learned from Fagin that Fagin likes Matt "Daredevil" Murdock
+Harry Houdini learned from Fagin that Fagin likes Harvey Dent
+Harry Houdini conversed with Fagin
+Fagin now loved Harry Houdini
 
 ***
 
 
-At the Woody Guthrie's shop...
-Leonardo DiCaprio then decided to go to Dick Cheney's shop
-
-At the Mr. Darcy's shop...
-Woody Guthrie then decided to go to Dick Cheney's shop
-
-At the Dick Cheney's shop...
-Woody Guthrie then decided to go to Mr. Darcy's shop
-
-At the Woody Guthrie's shop...
-Benedict Arnold then decided to go to Benedict Arnold's house
-
-At the Robert Langdon's shop...
-Robert Langdon then decided to go to Bridget Jones's shop
-
-At the tavern...
-Dick Cheney now loved Elmore Leonard
-Elmore Leonard conversed with Dick Cheney
-Elmore Leonard now loved Dick Cheney
-Dick Cheney conversed with Elmore Leonard
+At the telephone box...
+Kenneth Parcell  beat up Harry Houdini
+Harry Houdini now had a vendetta against Kenneth Parcell 
+Fagin witnessed that Kenneth Parcell  beat up Harry Houdini
+Fagin now hated Kenneth Parcell 
+Fagin learned from Harry Houdini that Harry Houdini likes Edward Cullen
+Fagin learned from Harry Houdini that Harry Houdini likes Al Pacino
+Fagin learned from Harry Houdini that Harry Houdini likes Kenneth Parcell 
+Fagin conversed with Harry Houdini
+Harry Houdini now loved Fagin
 
 ***
 
 
-At the Mr. Darcy's shop...
-Woody Guthrie didnt find On The Road-rage in Mr. Darcy's shop
+At the motor home...
+Harvey Dent then decided to go to disused quarry
 
-At the tavern...
-George Orwell then decided to go to Woody Guthrie's shop
+At the hippy commune...
+Edward Cullen then decided to go to telephone box
 
-At the Bridget Jones's shop...
-Robert Langdon then decided to go to Woody Guthrie's shop
+At the telephone box...
+Kenneth Parcell  then decided to go to housing estate
 
-At the tavern...
-Elmore Leonard then decided to go to Benedict Arnold's shop
+At the disused quarry...
+Harvey Dent beat up Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now had a vendetta against Harvey Dent
 
-At the Leonardo DiCaprio's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Dick Cheney's shop...
-Leonardo DiCaprio then decided to go to Robert Langdon's shop
-
-At the Woody Guthrie's shop...
-Robert Langdon now had no opinion of George Orwell
-George Orwell learned from George Orwell that bureaucratic skullduggery located in Benedict Arnold's shop
-George Orwell conversed with Robert Langdon
-
-***
-
-
-At the tavern...
-Dick Cheney then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Elmore Leonard then decided to go to Leonardo DiCaprio's shop
-
-At the Benedict Arnold's house...
-Benedict Arnold then decided to go to Benedict Arnold's shop
-
-At the Woody Guthrie's shop...
-Robert Langdon then decided to go to Woody Guthrie's shop
-George Orwell then decided to go to Lord Voldemort's shop
-
-At the Mr. Darcy's shop...
-Woody Guthrie then decided to go to George Orwell's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Robert Langdon's shop...
-Leonardo DiCaprio then decided to go to Elmore Leonard's shop
-
-At the Lord Voldemort's shop...
-Lord Voldemort now was fond of George Orwell
-George Orwell conversed with Lord Voldemort
-George Orwell now was fond of Lord Voldemort
-Lord Voldemort learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Lord Voldemort learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Lord Voldemort now disliked Woody Guthrie
-Lord Voldemort learned from George Orwell that bureaucratic skullduggery located in Benedict Arnold's shop
-Lord Voldemort conversed with George Orwell
-
-At the Benedict Arnold's shop...
-Mr. Darcy now loved Benedict Arnold
-Benedict Arnold conversed with Mr. Darcy
-Mr. Darcy now loved Dick Cheney
-Dick Cheney conversed with Mr. Darcy
-Dick Cheney now loved Mr. Darcy
-Mr. Darcy learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Mr. Darcy learned from Elmore Leonard that Woody Guthrie beat up George Orwell
-Mr. Darcy learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Mr. Darcy conversed with Dick Cheney
-Dick Cheney now had no opinion of Benedict Arnold
-Benedict Arnold conversed with Dick Cheney
-Benedict Arnold now loved Mr. Darcy
-Mr. Darcy conversed with Benedict Arnold
+At the telephone box...
+Harry Houdini insulted Edward Cullen
+Edward Cullen now disliked Harry Houdini
+Fagin learned from Harry Houdini that Harry Houdini likes Edward Cullen
+Fagin learned from Harry Houdini that Harry Houdini likes Del Boy Trotter
+Fagin learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Fagin conversed with Harry Houdini
+Harry Houdini now loved Fagin
+Harry Houdini learned from Fagin that Fagin likes Del Boy Trotter
+Harry Houdini learned from Fagin that Fagin likes Harvey Dent
+Harry Houdini learned from Fagin that Fagin likes Kenneth Parcell 
+Harry Houdini conversed with Fagin
+Fagin now loved Harry Houdini
 
 ***
 
 
-At the Benedict Arnold's shop...
-Dick Cheney then decided to go to Robert Langdon's shop
+At the disused quarry...
+Harvey Dent then decided to go to telephone box
 
-At the Lord Voldemort's shop...
-Lord Voldemort then decided to go to Dick Cheney's shop
-
-At the Woody Guthrie's shop...
-Robert Langdon then decided to go to Bridget Jones's shop
-
-At the Elmore Leonard's shop...
-Leonardo DiCaprio then decided to go to Bridget Jones's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy then decided to go to Lord Voldemort's shop
-
-At the George Orwell's shop...
-Woody Guthrie then decided to go to Elmore Leonard's shop
-
-At the Elmore Leonard's shop...
-Woody Guthrie then decided to go to George Orwell's shop
-
-At the Leonardo DiCaprio's shop...
-Elmore Leonard then decided to go to Dick Cheney's shop
-
-At the Lord Voldemort's shop...
-George Orwell then decided to go to Benedict Arnold's shop
-
-At the Bridget Jones's shop...
-Bridget Jones now loved Leonardo DiCaprio
-Leonardo DiCaprio conversed with Bridget Jones
-Leonardo DiCaprio now loved Bridget Jones
-Bridget Jones learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Bridget Jones learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Bridget Jones now was annoyed by Woody Guthrie
-Bridget Jones learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Bridget Jones conversed with Leonardo DiCaprio
-Robert Langdon now had no opinion of Leonardo DiCaprio
-Leonardo DiCaprio conversed with Robert Langdon
-
-At the Benedict Arnold's shop...
-Benedict Arnold now loved George Orwell
-George Orwell conversed with Benedict Arnold
-George Orwell now loved Benedict Arnold
-Benedict Arnold learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-Benedict Arnold conversed with George Orwell
-
-At the Dick Cheney's shop...
-Elmore Leonard now was fond of Lord Voldemort
-Lord Voldemort conversed with Elmore Leonard
-Lord Voldemort now was fond of Elmore Leonard
-Elmore Leonard learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Elmore Leonard conversed with Lord Voldemort
+At the telephone box...
+Harry Houdini insulted Edward Cullen
+Edward Cullen now hated Harry Houdini
+Edward Cullen insulted Harry Houdini
+Harry Houdini now hated Edward Cullen
+Harvey Dent learned from Fagin that Fagin likes Mark Twain
+Harvey Dent learned from Fagin that Fagin likes Matt "Daredevil" Murdock
+Harvey Dent witnessed that Fagin likes Al Pacino
+Harvey Dent conversed with Fagin
+Fagin now loved Harvey Dent
+Harry Houdini learned from Fagin that Fagin likes Matt "Daredevil" Murdock
+Harry Houdini learned from Fagin that Fagin likes Mark Twain
+Harry Houdini witnessed that Fagin likes Kenneth Parcell 
+Harry Houdini conversed with Fagin
+Fagin now loved Harry Houdini
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Fagin
+Harvey Dent learned from Harry Houdini that Fagin likes Kenneth Parcell 
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Kenneth Parcell 
+Harvey Dent conversed with Harry Houdini
+Harry Houdini now was fond of Harvey Dent
+Fagin learned from Harvey Dent that Harvey Dent likes Russell Crowe
+Fagin learned from Harvey Dent that Harvey Dent likes Al Pacino
+Fagin learned from Harvey Dent that Harvey Dent likes Mark Twain
+Fagin conversed with Harvey Dent
+Harvey Dent now loved Fagin
+Harry Houdini learned from Harvey Dent that Fagin likes Al Pacino
+Harry Houdini learned from Harvey Dent that Harvey Dent likes Kenneth Parcell 
+Harry Houdini witnessed that Harvey Dent likes Matt "Daredevil" Murdock
+Harry Houdini conversed with Harvey Dent
+Harvey Dent now was fond of Harry Houdini
+Fagin learned from Harry Houdini that Harvey Dent likes Matt "Daredevil" Murdock
+Fagin learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Fagin learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Fagin conversed with Harry Houdini
+Harry Houdini now loved Fagin
 
 ***
 
 
-At the George Orwell's shop...
-Woody Guthrie didnt find On The Road-rage in George Orwell's shop
-
-At the Bridget Jones's shop...
-Bridget Jones then decided to go to Elmore Leonard's shop
-Leonardo DiCaprio then decided to go to Elmore Leonard's shop
-
-At the Benedict Arnold's shop...
-George Orwell then decided to go to Dick Cheney's shop
-
-At the Bridget Jones's shop...
-Robert Langdon then decided to go to Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Mr. Darcy didnt find bureaucratic skullduggery in Lord Voldemort's shop
-
-At the Dick Cheney's shop...
-Lord Voldemort then decided to go to Mr. Darcy's shop
-
-At the Benedict Arnold's shop...
-Benedict Arnold then decided to go to Robert Langdon's shop
-
-At the Robert Langdon's shop...
-Dick Cheney then decided to go to George Orwell's shop
-
-At the Dick Cheney's shop...
-Elmore Leonard then decided to go to Mr. Darcy's shop
-
-At the George Orwell's shop...
-Woody Guthrie now loved Dick Cheney
-Dick Cheney learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-Dick Cheney conversed with Woody Guthrie
-Dick Cheney now loved Woody Guthrie
-Woody Guthrie learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Woody Guthrie learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Woody Guthrie conversed with Dick Cheney
-
-At the Elmore Leonard's shop...
-Bridget Jones now loved Leonardo DiCaprio
-Leonardo DiCaprio conversed with Bridget Jones
-Leonardo DiCaprio now loved Bridget Jones
-Bridget Jones learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Bridget Jones conversed with Leonardo DiCaprio
-
-At the Mr. Darcy's shop...
-Elmore Leonard now liked Lord Voldemort
-Lord Voldemort learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Lord Voldemort conversed with Elmore Leonard
-Lord Voldemort now liked Elmore Leonard
-Elmore Leonard conversed with Lord Voldemort
+At the telephone box...
+Edward Cullen beat up Harry Houdini
+Harry Houdini now had a vendetta against Edward Cullen
+Harvey Dent witnessed that Edward Cullen beat up Harry Houdini
+Harvey Dent now disliked Edward Cullen
+Fagin witnessed that Edward Cullen beat up Harry Houdini
+Fagin now hated Edward Cullen
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Al Pacino
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Harvey Dent conversed with Harry Houdini
+Harry Houdini now liked Harvey Dent
+Fagin learned from Harvey Dent that Harvey Dent likes Mark Twain
+Fagin learned from Harvey Dent that Harvey Dent likes Al Pacino
+Fagin learned from Harvey Dent that Harvey Dent likes Edward Cullen
+Fagin conversed with Harvey Dent
+Harvey Dent now loved Fagin
+Fagin learned from Harry Houdini that Harry Houdini likes Mark Twain
+Fagin learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Fagin learned from Harry Houdini that Harry Houdini likes Del Boy Trotter
+Fagin conversed with Harry Houdini
+Harry Houdini now loved Fagin
+Harvey Dent learned from Fagin that Fagin likes Del Boy Trotter
+Harvey Dent learned from Fagin that Fagin likes Russell Crowe
+Harvey Dent learned from Fagin that Fagin likes Kenneth Parcell 
+Harvey Dent conversed with Fagin
+Fagin now loved Harvey Dent
 
 ***
 
 
-At the Benedict Arnold's shop...
-Robert Langdon then decided to go to Lord Voldemort's shop
+At the telephone box...
+Edward Cullen then decided to go to basketball court
+Fagin then decided to go to basketball court
+Harry Houdini learned from Harvey Dent that Harvey Dent likes Al Pacino
+Harry Houdini learned from Harvey Dent that Harvey Dent likes Edward Cullen
+Harry Houdini learned from Harvey Dent that Harvey Dent likes Kenneth Parcell 
+Harry Houdini conversed with Harvey Dent
+Harvey Dent now liked Harry Houdini
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Mark Twain
+Harvey Dent learned from Harry Houdini that Harry Houdini likes Del Boy Trotter
+Harvey Dent conversed with Harry Houdini
+Harry Houdini now loved Harvey Dent
 
-At the Elmore Leonard's shop...
-Bridget Jones then decided to go to Mr. Darcy's shop
-
-At the George Orwell's shop...
-Woody Guthrie then decided to go to Bridget Jones's shop
-
-At the Bridget Jones's shop...
-Woody Guthrie then decided to go to Benedict Arnold's shop
-
-At the Robert Langdon's shop...
-Benedict Arnold then decided to go to Benedict Arnold's house
-
-At the Lord Voldemort's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Mr. Darcy's shop...
-Lord Voldemort then decided to go to Bridget Jones's shop
-
-At the George Orwell's shop...
-Dick Cheney then decided to go to tavern
-
-At the Mr. Darcy's shop...
-Elmore Leonard then decided to go to Woody Guthrie's shop
-
-At the Elmore Leonard's shop...
-Leonardo DiCaprio then decided to go to Bridget Jones's shop
-
-At the Dick Cheney's shop...
-George Orwell then decided to go to Lord Voldemort's shop
-
-At the Bridget Jones's shop...
-Leonardo DiCaprio now had no opinion of Lord Voldemort
-Lord Voldemort conversed with Leonardo DiCaprio
-
-At the Lord Voldemort's shop...
-George Orwell now was fond of Robert Langdon
-Robert Langdon learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Robert Langdon learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Robert Langdon learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Robert Langdon conversed with George Orwell
-Robert Langdon now was fond of George Orwell
-George Orwell conversed with Robert Langdon
-
-At the Benedict Arnold's shop...
-Woody Guthrie now had a vendetta against Mr. Darcy
-Mr. Darcy beat up Woody Guthrie
-Mr. Darcy stole bureaucratic skullduggery from the Woody Guthrie's body
-Woody Guthrie learned from Woody Guthrie that Mr. Darcy beat up Woody Guthrie
-Mr. Darcy learned from Mr. Darcy that Mr. Darcy beat up Woody Guthrie
+At the basketball court...
+Fagin beat up Edward Cullen
+Edward Cullen now had a vendetta against Fagin
 
 ***
 
 
-At the Lord Voldemort's shop...
-Robert Langdon then decided to go to George Orwell's shop
+At the interrogation room...
+Mark Twain then decided to go to barn
 
-At the Benedict Arnold's shop...
-Woody Guthrie didnt find On The Road-rage in Benedict Arnold's shop
+At the basketball court...
+Fagin then decided to go to interrogation room
 
-At the Lord Voldemort's shop...
-George Orwell then decided to go to Benedict Arnold's shop
+At the telephone box...
+Harry Houdini then decided to go to disused quarry
 
-At the Bridget Jones's shop...
-Leonardo DiCaprio then decided to go to Bridget Jones's shop
-Lord Voldemort then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Woody Guthrie's shop...
-Elmore Leonard then decided to go to Woody Guthrie's shop
-
-At the Mr. Darcy's shop...
-Bridget Jones then decided to go to Lord Voldemort's shop
-
-At the Benedict Arnold's shop...
-Woody Guthrie now disliked Lord Voldemort
-Lord Voldemort insulted Woody Guthrie
-Woody Guthrie killed Mr. Darcy
-Woody Guthrie stole bureaucratic skullduggery from the Mr. Darcy's body
-Woody Guthrie learned from Woody Guthrie that Woody Guthrie killed Mr. Darcy
-George Orwell learned from George Orwell that Woody Guthrie killed Mr. Darcy
-Lord Voldemort learned from Lord Voldemort that Woody Guthrie killed Mr. Darcy
-Lord Voldemort vowed revenge on Woody Guthrie for the death of Mr. Darcy
-Mr. Darcy learned from Mr. Darcy that Woody Guthrie killed Mr. Darcy
-George Orwell now liked Lord Voldemort
-Lord Voldemort learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-Lord Voldemort conversed with George Orwell
-Mr. Darcy now was fond of Lord Voldemort
-Lord Voldemort conversed with Mr. Darcy
-George Orwell now had no opinion of Woody Guthrie
-Woody Guthrie learned from George Orwell that bureaucratic skullduggery located in Benedict Arnold's shop
-Woody Guthrie conversed with George Orwell
-Lord Voldemort now liked George Orwell
-George Orwell conversed with Lord Voldemort
-
-Now, filtered output:
-
+At the disused quarry...
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Al Pacino
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Del Boy Trotter
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Mark Twain
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now loved Matt "Daredevil" Murdock
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Russell Crowe
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Edward Cullen
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Del Boy Trotter
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now loved Harry Houdini
 
 ***
 
 
-At the ....
-Bridget Jones was fond of Leonardo DiCaprio
-Bridget Jones was annoyed by Benedict Arnold
-Bridget Jones had no opinion of George Orwell
-Lord Voldemort had no opinion of Elmore Leonard
-Lord Voldemort was annoyed by Woody Guthrie
-Lord Voldemort had no opinion of George Orwell
-Leonardo DiCaprio was fond of Woody Guthrie
-Leonardo DiCaprio had no opinion of Benedict Arnold
-Elmore Leonard had no opinion of Woody Guthrie
-Elmore Leonard had no opinion of Dick Cheney
-Woody Guthrie was annoyed by Mr. Darcy
-Woody Guthrie had no opinion of Dick Cheney
-Woody Guthrie was fond of George Orwell
-Mr. Darcy was fond of Dick Cheney
-Mr. Darcy had no opinion of Benedict Arnold
-Benedict Arnold had no opinion of George Orwell
-Since childhood, Woody Guthrie always wanted to have On The Road-rage
-Since childhood, Bridget Jones always wanted to have On The Road-rage
-Since childhood, Woody Guthrie always wanted to have bureaucratic skullduggery
-Since childhood, George Orwell always wanted to have bureaucratic skullduggery
-Since childhood, Mr. Darcy always wanted to have bureaucratic skullduggery
+At the disused quarry...
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Harvey Dent
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Russell Crowe
+Matt "Daredevil" Murdock learned from Harry Houdini that Harry Houdini likes Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock conversed with Harry Houdini
+Harry Houdini now loved Matt "Daredevil" Murdock
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Harvey Dent
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Al Pacino
+Harry Houdini learned from Matt "Daredevil" Murdock that Matt "Daredevil" Murdock likes Mark Twain
+Harry Houdini conversed with Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now loved Harry Houdini
 
 ***
 
 
-At the Bridget Jones's house...
-Bridget Jones then decided to go to Mr. Darcy's shop
-
-At the Mr. Darcy's shop...
-Bridget Jones learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Bridget Jones conversed with George Orwell
-Bridget Jones now was fond of George Orwell
-
-At the Dick Cheney's shop...
-Dick Cheney now had no opinion of Woody Guthrie
-Woody Guthrie conversed with Dick Cheney
-
-***
-
-
-At the Mr. Darcy's shop...
-Bridget Jones then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Bridget Jones now had no opinion of Benedict Arnold
-
-At the Dick Cheney's shop...
-Woody Guthrie now was fond of Dick Cheney
-Dick Cheney conversed with Woody Guthrie
-Dick Cheney now was fond of Woody Guthrie
-
-***
-
-
-At the Mr. Darcy's shop...
-George Orwell then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Bridget Jones didnt find On The Road-rage in Benedict Arnold's shop
-Benedict Arnold conversed with George Orwell
-Bridget Jones learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Bridget Jones conversed with Benedict Arnold
-Bridget Jones now was fond of Benedict Arnold
-
-At the Dick Cheney's shop...
-Dick Cheney now liked Woody Guthrie
-Woody Guthrie now liked Dick Cheney
-
-***
-
-
-At the Benedict Arnold's shop...
-Bridget Jones then decided to go to Mr. Darcy's shop
-George Orwell didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Elmore Leonard's shop...
-Woody Guthrie now was fond of Elmore Leonard
-Woody Guthrie learned from Mr. Darcy that On The Road-rage located in Bridget Jones's shop
-Woody Guthrie conversed with Elmore Leonard
-
-At the Benedict Arnold's shop...
-Benedict Arnold now was fond of George Orwell
-
-At the Dick Cheney's shop...
-Mr. Darcy now liked Dick Cheney
-Mr. Darcy conversed with Dick Cheney
-
-***
-
-
-At the Mr. Darcy's shop...
-Bridget Jones took On The Road-rage
-
-At the Benedict Arnold's shop...
-George Orwell didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Benedict Arnold now liked George Orwell
-
-***
-
-
-At the Lord Voldemort's shop...
-Lord Voldemort conversed with Elmore Leonard
-
-At the Benedict Arnold's shop...
-Benedict Arnold now loved George Orwell
-
-At the Dick Cheney's shop...
-Bridget Jones now liked Leonardo DiCaprio
-Leonardo DiCaprio learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Bridget Jones conversed with Leonardo DiCaprio
-
-***
-
-
-At the George Orwell's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy conversed with Benedict Arnold
-Mr. Darcy now was fond of Benedict Arnold
-
-At the Dick Cheney's shop...
-Elmore Leonard learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-
-***
-
-
-At the Leonardo DiCaprio's shop...
-Woody Guthrie then decided to go to Mr. Darcy's shop
-
-At the Mr. Darcy's shop...
-Woody Guthrie now liked Leonardo DiCaprio
-Woody Guthrie learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Woody Guthrie learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Woody Guthrie learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Woody Guthrie conversed with Leonardo DiCaprio
-
-At the Dick Cheney's shop...
-Lord Voldemort conversed with George Orwell
-
-***
-
-
-At the Mr. Darcy's shop...
-Woody Guthrie then decided to go to Benedict Arnold's shop
-
-At the Dick Cheney's shop...
-George Orwell then decided to go to Lord Voldemort's shop
-
-At the Benedict Arnold's shop...
-Woody Guthrie now liked Elmore Leonard
-
-***
-
-
-At the Benedict Arnold's shop...
-Woody Guthrie didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Elmore Leonard conversed with Dick Cheney
-
-At the Robert Langdon's shop...
-Mr. Darcy now liked Benedict Arnold
-Mr. Darcy learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Mr. Darcy learned from Benedict Arnold that bureaucratic skullduggery located in Lord Voldemort's shop
-Mr. Darcy conversed with Benedict Arnold
-
-***
-
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Woody Guthrie then decided to go to Lord Voldemort's shop
-
-At the Elmore Leonard's shop...
-Benedict Arnold learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-Benedict Arnold conversed with Leonardo DiCaprio
-Benedict Arnold now was fond of Leonardo DiCaprio
-
-At the Lord Voldemort's shop...
-George Orwell now liked Woody Guthrie
-Woody Guthrie learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Woody Guthrie learned from Leonardo DiCaprio that On The Road-rage located in Mr. Darcy's shop
-Woody Guthrie conversed with George Orwell
-Woody Guthrie now liked George Orwell
-George Orwell learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-
-At the Robert Langdon's shop...
-Elmore Leonard now was fond of Dick Cheney
-Dick Cheney learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-
-***
-
-
-At the Lord Voldemort's shop...
-George Orwell took bureaucratic skullduggery
-
-At the Benedict Arnold's shop...
-Mr. Darcy didnt find bureaucratic skullduggery in Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Woody Guthrie didnt find bureaucratic skullduggery in Lord Voldemort's shop
-George Orwell now disliked Woody Guthrie
-Woody Guthrie beat up George Orwell
-Woody Guthrie stole bureaucratic skullduggery from the George Orwell's body
-George Orwell learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Dick Cheney learned from Elmore Leonard that Woody Guthrie beat up George Orwell
-Woody Guthrie learned from Woody Guthrie that Woody Guthrie beat up George Orwell
-Woody Guthrie now loved Dick Cheney
-Dick Cheney now loved Woody Guthrie
-
-***
-
-Woody Guthrie then decided to go to Bridget Jones's shop
-
-At the Benedict Arnold's shop...
-Mr. Darcy then decided to go to Lord Voldemort's shop
-
-At the Lord Voldemort's shop...
-Mr. Darcy learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-
-At the George Orwell's shop...
-Elmore Leonard now liked Dick Cheney
-Elmore Leonard learned from Elmore Leonard that Woody Guthrie beat up George Orwell
-
-***
-
-
-At the Lord Voldemort's shop...
-Mr. Darcy didnt find bureaucratic skullduggery in Lord Voldemort's shop
-
-At the Bridget Jones's shop...
-Woody Guthrie didnt find On The Road-rage in Bridget Jones's shop
-
-At the Bridget Jones's shop...
-Woody Guthrie now was fond of George Orwell
-George Orwell insulted Woody Guthrie
-Leonardo DiCaprio learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Woody Guthrie now loved Leonardo DiCaprio
-Woody Guthrie learned from Lord Voldemort that On The Road-rage located in George Orwell's shop
-Woody Guthrie conversed with Leonardo DiCaprio
-Woody Guthrie learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-Woody Guthrie conversed with George Orwell
-
-***
-
-
-At the Leonardo DiCaprio's shop...
-Woody Guthrie then decided to go to Benedict Arnold's shop
-
-***
-
-
-At the Benedict Arnold's shop...
-Woody Guthrie didnt find On The Road-rage in Benedict Arnold's shop
-
-***
-
-
-At the Leonardo DiCaprio's shop...
-Woody Guthrie then decided to go to Mr. Darcy's shop
-
-At the Woody Guthrie's shop...
-Benedict Arnold now liked Leonardo DiCaprio
-Benedict Arnold learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-
-***
-
-
-At the Dick Cheney's shop...
-Woody Guthrie then decided to go to Mr. Darcy's shop
-
-***
-
-
-At the Mr. Darcy's shop...
-Woody Guthrie didnt find On The Road-rage in Mr. Darcy's shop
-
-***
-
-
-At the Mr. Darcy's shop...
-Woody Guthrie then decided to go to George Orwell's shop
-
-At the Lord Voldemort's shop...
-Lord Voldemort now was fond of George Orwell
-Lord Voldemort learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-Lord Voldemort now disliked Woody Guthrie
-Lord Voldemort conversed with George Orwell
-
-At the Benedict Arnold's shop...
-Mr. Darcy now loved Dick Cheney
-Mr. Darcy learned from George Orwell that bureaucratic skullduggery located in Lord Voldemort's shop
-Mr. Darcy learned from Elmore Leonard that Woody Guthrie beat up George Orwell
-Mr. Darcy learned from Dick Cheney that bureaucratic skullduggery located in Benedict Arnold's shop
-Mr. Darcy conversed with Dick Cheney
-
-***
-
-
-At the Benedict Arnold's shop...
-Mr. Darcy then decided to go to Lord Voldemort's shop
-
-At the Elmore Leonard's shop...
-Woody Guthrie then decided to go to George Orwell's shop
-
-At the Bridget Jones's shop...
-Bridget Jones now loved Leonardo DiCaprio
-Bridget Jones learned from Leonardo DiCaprio that Woody Guthrie beat up George Orwell
-
-At the Benedict Arnold's shop...
-Benedict Arnold now loved George Orwell
-Benedict Arnold learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-
-At the Dick Cheney's shop...
-Lord Voldemort now was fond of Elmore Leonard
-
-***
-
-
-At the George Orwell's shop...
-Woody Guthrie didnt find On The Road-rage in George Orwell's shop
-
-At the Lord Voldemort's shop...
-Mr. Darcy didnt find bureaucratic skullduggery in Lord Voldemort's shop
-
-At the George Orwell's shop...
-Woody Guthrie now loved Dick Cheney
-Dick Cheney learned from George Orwell that bureaucratic skullduggery owned by George Orwell
-Woody Guthrie learned from George Orwell that On The Road-rage located in Benedict Arnold's shop
-Woody Guthrie conversed with Dick Cheney
-
-At the Mr. Darcy's shop...
-Lord Voldemort learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-
-***
-
-
-At the Bridget Jones's shop...
-Woody Guthrie then decided to go to Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Mr. Darcy then decided to go to Benedict Arnold's shop
-
-At the Lord Voldemort's shop...
-Robert Langdon learned from Mr. Darcy that On The Road-rage owned by Bridget Jones
-
-At the Benedict Arnold's shop...
-Woody Guthrie now had a vendetta against Mr. Darcy
-Mr. Darcy beat up Woody Guthrie
-Mr. Darcy stole bureaucratic skullduggery from the Woody Guthrie's body
-Woody Guthrie learned from Woody Guthrie that Mr. Darcy beat up Woody Guthrie
-Mr. Darcy learned from Mr. Darcy that Mr. Darcy beat up Woody Guthrie
-
-***
-
-
-At the Benedict Arnold's shop...
-Woody Guthrie didnt find On The Road-rage in Benedict Arnold's shop
-
-At the Benedict Arnold's shop...
-Lord Voldemort insulted Woody Guthrie
-Woody Guthrie killed Mr. Darcy
-Woody Guthrie stole bureaucratic skullduggery from the Mr. Darcy's body
-Woody Guthrie learned from Woody Guthrie that Woody Guthrie killed Mr. Darcy
-George Orwell learned from George Orwell that Woody Guthrie killed Mr. Darcy
-Lord Voldemort learned from Lord Voldemort that Woody Guthrie killed Mr. Darcy
-Lord Voldemort vowed revenge on Woody Guthrie for the death of Mr. Darcy
-Mr. Darcy learned from Mr. Darcy that Woody Guthrie killed Mr. Darcy
-Lord Voldemort learned from George Orwell that bureaucratic skullduggery owned by George Orwell
+At the disused quarry...
+Matt "Daredevil" Murdock then decided to go to motor home
+Harry Houdini then decided to go to barn
+
+At the barn...
+Mark Twain insulted Harry Houdini
+Harry Houdini now disliked Mark Twain
+
+FINAL OUTPUT:
+
+
+Meanwhile, at the ....
+Edward Cullen was annoyed by Fagin
+Edward Cullen was annoyed by Harry Houdini
+Edward Cullen disliked Mark Twain
+Fagin had no opinion of Harry Houdini
+Fagin had no opinion of Harvey Dent
+Fagin disliked Matt "Daredevil" Murdock
+Harry Houdini was annoyed by Mark Twain
+Harry Houdini disliked Kenneth Parcell 
+Harvey Dent was annoyed by Matt "Daredevil" Murdock
+Since childhood, Matt "Daredevil" Murdock always wanted to have sharpened stiletto heel
+Since childhood, Kenneth Parcell  always wanted to have sharpened stiletto heel
+Del Boy Trotter thought it'd be fun to see Russell Crowe kill Harvey Dent
+Al Pacino thought it'd be fun to see Harvey Dent kill Harry Houdini
+Russell Crowe thought it'd be fun to see Al Pacino kill Edward Cullen
+
+At the Harry Houdini's house...
+Harry Houdini then decided to go to housing estate
+
+At the housing estate...
+Harry Houdini then decided to go to interrogation room
+
+Meanwhile, at the Buddhist temple...
+Fagin insulted Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now disliked Fagin
+Harvey Dent now was fond of Fagin
+Matt "Daredevil" Murdock insulted Fagin
+Fagin now hated Matt "Daredevil" Murdock
+Fagin insulted Matt "Daredevil" Murdock
+Matt "Daredevil" Murdock now hated Fagin
+Harvey Dent now liked Fagin
+
+Meanwhile, at the Buddhist temple...
+Matt "Daredevil" Murdock beat up Fagin
+Harvey Dent witnessed that Matt "Daredevil" Murdock beat up Fagin
+Harvey Dent now hated Matt "Daredevil" Murdock
+
+At the interrogation room...
+Fagin now was fond of Harry Houdini
+
+At the interrogation room...
+Fagin now liked Harry Houdini
+Harry Houdini then decided to go to music room
+
+Meanwhile, at the hippy commune...
+Edward Cullen insulted Mark Twain
+
+At the music room...
+Harry Houdini then decided to go to housing estate
+
+At the housing estate...
+Harry Houdini then decided to go to telephone box
+
+At the telephone box...
+Harry Houdini insulted Kenneth Parcell 
+Kenneth Parcell  now hated Harry Houdini
+Kenneth Parcell  insulted Harry Houdini
+Fagin now loved Harry Houdini
+Kenneth Parcell  beat up Harry Houdini
+Fagin witnessed that Kenneth Parcell  beat up Harry Houdini
+
+Meanwhile, at the disused quarry...
+Harvey Dent beat up Matt "Daredevil" Murdock
+
+At the telephone box...
+Harry Houdini insulted Edward Cullen
+Edward Cullen now disliked Harry Houdini
+Fagin now loved Harry Houdini
+
+At the telephone box...
+Harry Houdini insulted Edward Cullen
+Edward Cullen now hated Harry Houdini
+Edward Cullen insulted Harry Houdini
+Fagin now loved Harry Houdini
+Edward Cullen beat up Harry Houdini
+Harvey Dent witnessed that Edward Cullen beat up Harry Houdini
+Fagin witnessed that Edward Cullen beat up Harry Houdini
+Fagin now hated Edward Cullen
+
+Meanwhile, at the basketball court...
+Fagin beat up Edward Cullen
+
+At the telephone box...
+Harry Houdini then decided to go to disused quarry
+
+At the disused quarry...
+Harry Houdini then decided to go to barn
+
+At the barn...
+Mark Twain insulted Harry Houdini

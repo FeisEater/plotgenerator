@@ -1,14 +1,16 @@
 import random
-from dataloaders import CharacterDataLoader, ObjectDataLoader
+from dataloaders import CharacterDataLoader, ObjectDataLoader, LocationDataLoader
 from models import Knowledge, Actions, Goal, GoalType, Location
 from utilities import safe_append, safe_extend, persons_shop, TAVERN, dump_output
 import output
 
 step = 0
 out = []
+locations = LocationDataLoader().load(howmany=10, out=out)
 characters = CharacterDataLoader().load(howmany=10, out=out)
+for char in characters:
+  char.setLocations(locations)
 objects = ObjectDataLoader().load(howmany=random.randint(1, 3), random_sample=True, out=out)
-locations = [Location(persons_shop(x)) for x in characters] + [Location(TAVERN)]
 objectLocations = random.sample(locations, len(objects))
 for i in range(len(objects)):
   objects[i].location = objectLocations[i]
@@ -69,6 +71,7 @@ def do_kill(source, target, chars_to_ignore):
       source.goals = [goal for goal in source.goals if goal.target1 != object]
       context = [output.Context(output.Got, {'character': target, 'object': object})]
       additionalOutput.append(output.Steal(step, source.location, context, source, target, object))
+  source.schedule_time = 0
   return ([
     output.Context(output.ExposRelationship, {'source': source, 'target': target}),
     output.Context(output.ExposRelationship, {'source': target, 'target': source}),
@@ -77,10 +80,10 @@ def do_kill(source, target, chars_to_ignore):
   ], additionalOutput)
 
 def do_beat_up(source, target, chars_to_ignore):
-  target.change_relationship(source, -1, [])
+  pendingOutput = target.change_relationship(source, -1, [], False)
   chars_to_ignore.append(target)
   source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
-  additionalOutput = []
+  additionalOutput = [pendingOutput]
   for object in objects:
     if object.owner == target:
       source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == object)]
@@ -89,6 +92,7 @@ def do_beat_up(source, target, chars_to_ignore):
       source.goals = [goal for goal in source.goals if goal.target1 != object]
       context = [output.Context(output.Got, {'character': target, 'object': object})]
       additionalOutput.append(output.Steal(step, source.location, context, source, target, object))
+  source.schedule_time = 0
   return ([
     output.Context(output.ExposRelationship, {'source': source, 'target': target}),
     output.Context(output.ExposRelationship, {'source': target, 'target': source}),
@@ -96,20 +100,24 @@ def do_beat_up(source, target, chars_to_ignore):
   ], additionalOutput)
 
 def do_insult(source, target, chars_to_ignore):
-  target.change_relationship(source, -0.25, [])
+  pendingOutput = target.change_relationship(source, -0.25, [], False)
   return ([
     output.Context(output.ExposRelationship, {'source': source, 'target': target}),
     output.Context(output.ExposRelationship, {'source': target, 'target': source}),
     output.Context(output.RelationshipChange, {'source': source, 'target': target}),
-  ], [])
+  ], [pendingOutput])
 
 def do_converse(source, target, chars_to_ignore):
-  target.change_relationship(source, 0.25, [])
+  pendingOutput = target.change_relationship(source, 0.25, [], False)
   if source in target.told_knowledge:
     untold_knowledge = [x for x in target.knowledge if x not in target.told_knowledge[source]]
   else:
     untold_knowledge = [x for x in target.knowledge]
-  conversation_topics = untold_knowledge if len(untold_knowledge) <= 3 else random.sample(untold_knowledge, 3)
+  relationshipGossip = [x for x in untold_knowledge if x.action == Actions.LIKES]
+  eventGossip = [x for x in untold_knowledge if x.action != Actions.LIKES]
+  topics_rel = relationshipGossip if len(relationshipGossip) <= 3 else random.sample(relationshipGossip, 3)
+  topics_eve = eventGossip if len(eventGossip) <= 3 else random.sample(eventGossip, 3)
+  conversation_topics = topics_eve + topics_rel
   for topic in conversation_topics:
     topic.source = target
   safe_extend(target.told_knowledge, source, conversation_topics)
@@ -120,7 +128,7 @@ def do_converse(source, target, chars_to_ignore):
     output.Context(output.ExposRelationship, {'source': source, 'target': target}),
     output.Context(output.ExposRelationship, {'source': target, 'target': source}),
     output.Context(output.RelationshipChange, {'source': source, 'target': target}),
-  ], [])
+  ], [pendingOutput])
 
 action_methods = {
   Actions.KILL: do_kill,
@@ -177,4 +185,6 @@ if __name__ == '__main__':
   #dump_output(out)
   for _ in range(25):
     generation_step()
+  protagonist = random.choice(characters)
+  protagonist.protagonist = True
   output.printOutput(out)

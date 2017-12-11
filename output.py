@@ -156,6 +156,8 @@ class KnowledgeLearned(Output):
     self.knowledge = knowledge
 
   def __str__(self):
+    if self.knowledge.source == self.learner:
+      return "{CHARACTER} witnessed that {SUBJECT} {ACTION} {TARGET}".format(CHARACTER=self.learner.name, SUBJECT=self.knowledge.subject.name, ACTION=self.knowledge.action.value, TARGET=self.knowledge.target.name)
     return "{CHARACTER} learned from {SOURCE} that {SUBJECT} {ACTION} {TARGET}".format(CHARACTER=self.learner.name, SOURCE=self.knowledge.source.name, SUBJECT=self.knowledge.subject.name, ACTION=self.knowledge.action.value, TARGET=self.knowledge.target.name)
 
 class LieReveal(Output):
@@ -236,6 +238,13 @@ def printOutput(output):
   prevLocation = None
   prevTime = -1
   
+  characters = [out.source for out in output if type(out) is ExposRelationship] + [out.target for out in output if type(out) is ExposRelationship]
+  characters = list(set(characters))
+  
+  for line in output:
+    if type(line) is GoesTo and line.character.protagonist:
+      line.important = True
+
   for idx, line in enumerate(output):
     if line.important:
       for context in line.context:
@@ -252,23 +261,23 @@ def printOutput(output):
       prevLocation = line.location
     print(line)
 
-  print("\nNow, filtered output:\n")
+  print("\nFINAL OUTPUT:\n")
+  protagonist = [char for char in characters if char.protagonist][0]
+  protagonistLocation = [out.location for out in output if type(out) is GoesTo and out.character == protagonist][0]
   printLocation = True
-  printTime = True
   for line in output:
-    if line.time != prevTime:
-      printTime = True
     if line.location != prevLocation:
       printLocation = True
     if line.important:
-      if printTime:
-        print("\n***\n")
-        prevTime = line.time
-        prevLocation = '.'
       if printLocation:
-        print("\nAt the {LOCATION}...".format(LOCATION=line.location))
+        if line.location == protagonistLocation:
+          print("\nAt the {LOCATION}...".format(LOCATION=line.location))
+        else:
+          print("\nMeanwhile, at the {LOCATION}...".format(LOCATION=line.location))        
         prevLocation = line.location
       print(line)
       printLocation = False
       printTime = False
+    if type(line) is GoesTo and line.character == protagonist:
+      protagonistLocation = line.place
 

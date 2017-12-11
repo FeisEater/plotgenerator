@@ -19,6 +19,7 @@ class Character(Thing):
         self.domains = domains # type: set
         self.dead = False
         self.step = 0
+        self.protagonist = False
 
         self.reactions = {
           Actions.KILL: self.react_to_kill,
@@ -31,6 +32,9 @@ class Character(Thing):
           GoalType.KILL: self.do_kill,
           GoalType.NONE: self.do_schedule
         }
+    
+    def setLocations(self, locations):
+        self.locations = locations
 
     def __str__(self):
         return "Name: {NAME} Goals {GOALS} Political views: {POLITICAL_VIEWS} Location: {LOCATION} Domains: {DOMAINS} Positive talking points: {POSITIVE_TALKING_POINTS} Negative talking points: {NEGATIVE_TALKING_POINTS} Dead: {DEAD}".format(NAME = self.name, GOALS = self.goals, LOCATION = self.location, POLITICAL_VIEWS = self.political_views, DOMAINS = self.domains, POSITIVE_TALKING_POINTS = self.positive_talking_points, NEGATIVE_TALKING_POINTS = self.negative_talking_points, DEAD = self.dead)
@@ -40,8 +44,9 @@ class Character(Thing):
 
     def findThing(self, thing):
         wrong_knowledge = False
+        tried_locations = [know.target for know in self.knowledge if know.action == Actions.NOT_LOCATED_IN]
         for know in self.knowledge:
-          if know.action == Actions.LOCATED_IN and know.subject == thing:
+          if know.action == Actions.LOCATED_IN and know.subject == thing and know.target not in tried_locations:
             if self.location == know.target:
               if thing.location == self.location:
                 return True
@@ -57,15 +62,11 @@ class Character(Thing):
             self.findThing(know.target)
         if wrong_knowledge:
           self.knowledge = [k for k in self.knowledge if not(k.subject == thing and k.action == Actions.LOCATED_IN and k.target == self.location)]
+          self.knowledge.append(Knowledge(self, thing, Actions.NOT_LOCATED_IN, self.location, self.step))
           context = [output.Context(output.GoesTo, {'character': self, 'place': self.location})]
           self.out.append(output.DidntFind(self.step, self.location, context, self, thing))
           return False
-        if self.schedule_time <= 0:
-          locations = [Location(persons_shop(x)) for x in self.relationships.keys()] + [Location(TAVERN)]
-          newlocation = random.choice(locations)
-          self.out.append(output.GoesTo(self.step, self.location, [], self, newlocation))
-          self.location = newlocation
-          self.schedule_time = random.randint(1, 3)    
+        self.do_schedule(None, None)
     
     def do_getObject(self, arg1, arg2):
         if self.findThing(arg1):
@@ -93,27 +94,32 @@ class Character(Thing):
           if arg1.relationships[self] < 0:
             # self.do_befriend(arg1)
             return
-          knownObjects = [know.subject for know in self.knowledge if (know.action == Actions.LOCATED_IN or know.action == Actions.OWNED_BY) and type(know.subject) is Object]
-          acquaintances = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0 and arg1.relationships[person] < 0.5]
-          friends = [person for person in arg1.relationships.keys() if arg1.relationships[person] >= 0.5]
+          knownObjects = [know for know in self.knowledge if (know.action == Actions.LOCATED_IN or know.action == Actions.OWNED_BY) and type(know.subject) is Object]
+          acquaintances = [know for know in self.knowledge if know.subject == arg1 and know.action == Actions.LIKES and know.value >= 0 and know.value < 0.5]
+          friends = [know for know in self.knowledge if know.subject == arg1 and know.action == Actions.LIKES and know.value >= 0.5]
           if knownObjects and random.random() < 0.5:
-            self.tellLie(arg1, random.choice(knownObjects), Actions.OWNED_BY, arg2)
+            targetObjectKnowledge = random.choice(knownObjects)
+            self.tellLie(arg1, targetObjectKnowledge.subject, Actions.OWNED_BY, arg2, targetObjectKnowledge)
           else:
             if friends:
-              deadFriends = [friend for friend in friends if friend.dead]
+              deadFriends = [friend for friend in friends if friend.target.dead]
               if deadFriends:
-                deadFriend = random.choice(deadFriends)
-                self.tellLie(arg1, arg2, Actions.KILL, deadFriend)
+                deadFriendKnowledge = random.choice(deadFriends)
+                self.tellLie(arg1, arg2, Actions.KILL, deadFriendKnowledge.target, deadFriendKnowledge)
               else:
-                friend = random.choice(friends)
-                self.tellLie(arg1, arg2, Actions.BEAT_UP, friend)
+                friendKnowledge = random.choice(friends)
+                self.tellLie(arg1, arg2, Actions.BEAT_UP, friendKnowledge.target, friendKnowledge)
             elif acquaintances:
-              acquaintance = random.choice(acquaintances)
-              self.tellLie(arg1, arg2, Actions.BEAT_UP, acquaintance)
+              acquaintanceKnowledge = random.choice(acquaintances)
+              self.tellLie(arg1, arg2, Actions.BEAT_UP, acquaintanceKnowledge.target, acquaintanceKnowledge)
     
     def do_schedule(self, arg1, arg2):
         if self.schedule_time <= 0:
-            if self.location.name == persons_house(self):
+            newlocation = random.choice([loc for loc in self.locations if self.location != loc])
+            self.out.append(output.GoesTo(self.step, self.location, [], self, newlocation))
+            self.location = newlocation
+            self.schedule_time = random.randint(2, 8)
+            '''if self.location.name == persons_house(self):
                 newlocation = Location(persons_shop(self))
                 self.out.append(output.GoesTo(self.step, self.location, [], self, newlocation))
                 self.location = newlocation
@@ -126,25 +132,25 @@ class Character(Thing):
                 if self.location.name == persons_house(self):
                     self.schedule_time = random.randint(2, 8)
                 elif self.location.name == TAVERN:
-                    self.schedule_time = random.randint(1, 4)
+                    self.schedule_time = random.randint(1, 4)'''
 
-    def tellLie(self, target, arg1, action, arg2):
+    def tellLie(self, target, arg1, action, arg2, context):
       lie = Knowledge(self, arg1, action, arg2, self.step)
       safe_append(target.told_knowledge, self, lie)
       safe_append(self.told_knowledge, target, lie)
       target.acquire_knowledge(lie)
-      context = [output.Context(output.ExposManipulationMotivation, {'subject': self, 'killer': target})]
+      context.append(output.Context(output.ExposManipulationMotivation, {'subject': self, 'killer': target}))
       self.out.append(output.WasLying(self.step, self.location, context, self, target, lie))
         
     def schedule_step(self, step):
-        #self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
-        #self.knowledge = [Knowledge(self, self, Actions.LIKES, x, step, self.relationships[x]) for x in self.relationships.keys()]
+        self.knowledge = [know for know in self.knowledge if not(know.subject == self and know.action == Actions.LIKES)]
+        self.knowledge = [Knowledge(self, self, Actions.LIKES, x, step, self.relationships[x]) for x in self.relationships.keys()]
         self.step = step
         goal = self.goals[0]
         self.schedule_methods[goal.type](goal.target1, goal.target1)
         self.schedule_time -= 1
     
-    def change_relationship(self, person, delta, context):
+    def change_relationship(self, person, delta, context, printNow=True):
         if self == person or person not in self.relationships:
           return
         oldvalue = self.relationships[person]
@@ -153,7 +159,11 @@ class Character(Thing):
           self.relationships[person] = 1
         if self.relationships[person] < -1:
           self.relationships[person] = -1
-        self.out.append(output.RelationshipChange(self.step, self.location, context, self, person, oldvalue, self.relationships[person]))
+        pendingOutput = output.RelationshipChange(self.step, self.location, context, self, person, oldvalue, self.relationships[person])
+        if printNow:
+          self.out.append(pendingOutput)
+        else:
+          return pendingOutput
 
     def source_trust(self, source):
       if self == source:
@@ -188,18 +198,19 @@ class Character(Thing):
             if knowledge.action in self.reactions.keys():
               self.reactions[knowledge.action](knowledge)
             for source in conflicting_sources:
-              self.change_relationship(source, -0.25, [])
               self.knowledge = [know for know in self.knowledge if not(know.source == source)]
               context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge.source': source})]
               self.out.append(output.LieReveal(self.step, self.location, context, self, source))
+              self.change_relationship(source, -0.25, [])
           else:
-            self.change_relationship(knowledge.source, -0.25, [])
             self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
             context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge': knowledge})]
             self.out.append(output.NewInfoIsLie(self.step, self.location, context, self, knowledge))
+            self.change_relationship(knowledge.source, -0.25, [])
         else:
           self.knowledge.append(knowledge)
-          self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
+          if not(knowledge.source == self and (knowledge.subject == self or knowledge.target == self)):
+            self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
           if knowledge.action in self.reactions.keys():
             self.reactions[knowledge.action](knowledge)
     
@@ -236,3 +247,6 @@ class Character(Thing):
           self.change_relationship(knowledge.subject, -0.25, context)
         elif self.relationships[knowledge.target] < -0.5:
           self.change_relationship(knowledge.subject, 0.25, context)
+
+    def description(self):
+        "{NAME}".format(NAME=self.name)

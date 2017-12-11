@@ -76,6 +76,7 @@ class Actions(Enum):
   INSULT = "insulted"
   CONVERSE = "conversed with"
   LOCATED_IN = "located in"
+  NOT_LOCATED_IN = "not located in"
   OWNED_BY = "owned by"
   LIKES = "likes"
   NONE = "none"
