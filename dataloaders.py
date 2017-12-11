@@ -212,7 +212,7 @@ class CharacterDataLoader(DataLoader):
 
         scores = [positive_score, negative_score]
     
-        return np.average(scores) # -0.5 # the substractions is an offset to generate more extreme initial relationship
+        return np.average(scores) -0.5 # the substractions is an offset to generate more extreme initial relationship
 
 class ObjectDataLoader(DataLoader):
     def load(self, howmany = None, random_sample = True, out = []):
