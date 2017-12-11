@@ -4,6 +4,18 @@ from functools import reduce
 import output
 from models import Actions
 
+class OverallRelationshipChange:
+  def __init__(self, source, target):
+    self.source = source # type: Character
+    self.target = target # type: Character
+    self.change = 0.0 # type: float
+
+  def __repr__(self):
+      return "<OverallRelationshipChange {}>".format(self.__str__())
+
+  def __str__(self):
+      return "Source: {SOURCE}; Target: {TARGET}; Change: {CHANGE}".format(SOURCE = self.source.name, TARGET = self.target.name, CHANGE = self.change)
+
 def evaluate(story, **kwargs):
     '''
     Evaluates the creativity score of the given story parameter, which is returned by the generator.
@@ -18,9 +30,11 @@ def evaluate(story, **kwargs):
     verbose = kwargs.get("verbose", False)
 
     characters = __get_unique_characters(story)
+
     scores = [
         __evaluate_characters_variety(characters),
-        __evaluate_story_flow(story)
+        __evaluate_story_flow(story),
+        __evaluate_relationship_changes(story)
     ]
 
     if verbose:
@@ -37,24 +51,42 @@ def __get_unique_characters(story):
     :rtype: set
     '''
     characters = set()
-    relationships = list(filter(lambda x: isinstance(x, output.ExposRelationship), story))
+    relationships = __get_initial_relationships(story)
     for relationship in relationships:
         characters.add(relationship.source)
         characters.add(relationship.target)
 
     return characters
 
-def __evaluate_initial_and_final_state(initial_state, final_state):
+def __get_initial_relationships(story):
     '''
-    Determines the score between the initial and the final state of the story. The higher score is given if the difference between the two state is "bigger". For instance, if many of the relationships have turned the other way around between characters, if characters have achieved their goals or initial friends have killed eachother in the story, the higher score is given.
-    :param initial_state: The dump of the initial state from which the story has begun.
-    :type initial_state:
-    :param final_state: The dump of the initial state from which the story has ended.
-    :type final_state:
+    Extracts the list of initial relationships from the story.
+    :param story: The story object.
+    :type story: [Output]
+    :return:
+    :rtype: [output.ExposRelationship]
+    '''
+    relationships = list(filter(lambda x: isinstance(x, output.ExposRelationship), story))
+    return relationships
+
+def __evaluate_relationship_changes(story):
+    '''
+    Determines the score of the list of relationship changes that has happened during the story. The higher score is given if the story has gone through radical changes in terms of character relationships. For instance, if many of the relationships have turned the other way around between characters, if characters have achieved their goals or initial friends have killed eachother in the story, the higher score is given.
+    :param story: The story object.
+    :type story: [Output]
     :return: A score on the range of [0, 1].
     :rtype: float
     '''
-    return random.uniform(0, 1)
+    relationship_changes = list(filter(lambda x: isinstance(x, output.RelationshipChange), story))[:2] # type: [output.RelationshipChange]
+
+    overall_changes = list(map(lambda x: OverallRelationshipChange(source=x.source, target=x.target), __get_initial_relationships(story))) # type: [OverallRelationshipChange]
+
+    for relationship in relationship_changes:
+        for change in list(filter(lambda x: x.source == relationship.source and x.target == relationship.target, overall_changes)):
+            change.change += relationship.newvalue - relationship.oldvalue
+
+    final_change_values = list(map(lambda x: x.change, overall_changes))
+    return np.average(np.abs(final_change_values))
 
 def __evaluate_characters_variety(characters):
     '''
@@ -130,13 +162,14 @@ def __score_action(action, total_steps_in_story):
     assert total_steps_in_story > 0
 
     if action.action == Actions.KILL: # prefer to happen near the end
-        return 1
-    elif action.action == Actions.BEAT_UP: # prefer to happen near the end
-        return 1
-    elif action.action == Actions.INSULT: # prefer to happen in the middle
-        return 1
+        return action.time / total_steps_in_story
+    elif action.action == Actions.BEAT_UP or action.action == Actions.INSULT: # prefer to happen in the middle
+        if action.time <= (total_steps_in_story / 2):
+            return action.time / (total_steps_in_story / 2)
+        else:
+            return - 1 * (1 - (total_steps_in_story / action.time))
     elif action.action == Actions.CONVERSE: # prefer to happen near the beginning
-        return -1 * np.log(action.time) * total_steps_in_story
+        return (-(action.time - total_steps_in_story) + 1) / total_steps_in_story
     else: # unsure about the action
         return -1
 
@@ -150,11 +183,11 @@ def __score_steal(steal, total_steps_in_story):
     :return: A score on the range of [0, 1]. Returns -1 if the action is not handled.
     :rtype: float
     '''
-    assert isinstance(steal, output.SomeAction)
+    assert isinstance(steal, output.Steal)
     assert isinstance(total_steps_in_story, int)
     assert total_steps_in_story > 0
 
-    return 0
+    return (-(steal.time - total_steps_in_story) + 1) / total_steps_in_story
 
 def __get_number_of_steps_in_story(story):
     '''
@@ -174,4 +207,5 @@ def __sort_by_time(story):
     :return: The same story ordered by the time value of the items.
     :rtype: [Output]
     '''
-    return sorted(story, key=lambda x: x.time)
+    result = sorted(story, key=lambda x: x.time)
+    return result
