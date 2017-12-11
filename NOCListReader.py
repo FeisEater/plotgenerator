@@ -77,3 +77,11 @@ class NOCListReader:
         :rtype: pandas.core.frame.DataFrame
         '''
         return self.get_contents(file = NOCFile.WEAPON_ARSENAL)
+
+    def get_location_listing_contents(self):
+        '''
+        Reads the contents of the Location Listing file. Equivalent to get_contents(file = NOCFile.LOCATION_LISTING).
+        :return: The contents of Location Listing file.
+        :rtype: pandas.core.frame.DataFrame
+        '''
+        return self.get_contents(file = NOCFile.LOCATION_LISTING)

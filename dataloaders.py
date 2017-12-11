@@ -1,5 +1,5 @@
 from NOCListReader import *
-from models import Object
+from models import Object, Location
 from character import Character
 import random
 from enum import Enum
@@ -51,6 +51,16 @@ class NOCWeaponArsenalColumn(Enum):
     DETERMINER = "Determiner"
     WEAPON = "Weapon"
     AFFORDANCES = "Affordances"
+
+class NOCLocationListingColumn(Enum):
+    NAME = "Location"
+    TYPE = "Type"
+    DETERMINER = "Determiner"
+    PREPOSITION = "Preposition"
+    SIZE = "Size"
+    AMBIENCE = "Ambience"
+    INTERACTIONS = "Interactions"
+    PROPS = "Props"
 
 class DataLoader:
     def _sample(self, data, howmany, random_sample):
@@ -220,6 +230,27 @@ class ObjectDataLoader(DataLoader):
 
         for index, row in data.iterrows():
             object = Object(name=row[NOCWeaponArsenalColumn.WEAPON.value])
+
+            objects.append(object)
+
+        return objects
+
+class LocationDataLoader(DataLoader):
+    def load(self, howmany = None, random_sample = True, out = []):
+        self.out = out
+
+        data = NOCListReader().get_location_listing_contents()
+
+        objects = self.__parse_objects(data)
+        objects = self._sample(data=objects, howmany=howmany, random_sample=random_sample)
+
+        return objects
+
+    def __parse_objects(self, data):
+        objects = []
+
+        for index, row in data.iterrows():
+            object = Location(name=row[NOCLocationListingColumn.NAME.value])
 
             objects.append(object)
 
