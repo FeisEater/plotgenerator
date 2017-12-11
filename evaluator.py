@@ -130,13 +130,14 @@ def __score_action(action, total_steps_in_story):
     assert total_steps_in_story > 0
 
     if action.action == Actions.KILL: # prefer to happen near the end
-        return 1
-    elif action.action == Actions.BEAT_UP: # prefer to happen near the end
-        return 1
-    elif action.action == Actions.INSULT: # prefer to happen in the middle
-        return 1
+        return action.time / total_steps_in_story
+    elif action.action == Actions.BEAT_UP or action.action == Actions.INSULT: # prefer to happen in the middle
+        if action.time <= (total_steps_in_story / 2):
+            return action.time / (total_steps_in_story / 2)
+        else:
+            return - 1 * (1 - (total_steps_in_story / action.time))
     elif action.action == Actions.CONVERSE: # prefer to happen near the beginning
-        return -1 * np.log(action.time) * total_steps_in_story
+        return (-(action.time - total_steps_in_story) + 1) / total_steps_in_story
     else: # unsure about the action
         return -1
 
@@ -150,11 +151,11 @@ def __score_steal(steal, total_steps_in_story):
     :return: A score on the range of [0, 1]. Returns -1 if the action is not handled.
     :rtype: float
     '''
-    assert isinstance(steal, output.SomeAction)
+    assert isinstance(steal, output.Steal)
     assert isinstance(total_steps_in_story, int)
     assert total_steps_in_story > 0
 
-    return 0
+    return (-(steal.time - total_steps_in_story) + 1) / total_steps_in_story
 
 def __get_number_of_steps_in_story(story):
     '''
@@ -174,4 +175,5 @@ def __sort_by_time(story):
     :return: The same story ordered by the time value of the items.
     :rtype: [Output]
     '''
-    return sorted(story, key=lambda x: x.time)
+    result = sorted(story, key=lambda x: x.time)
+    return result
