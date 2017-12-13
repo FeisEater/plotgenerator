@@ -36,24 +36,6 @@ You can also run a massive generation of stories ordered by their evaluated scor
 
 Where n is amount of stories and filename is the name of the file where the stories will be written
 
-# Contributions
-
-* Péter Ivanics:
-
-  * Implemented parser for NOC list and analyzed what kind of data it incorporates (4 hours)
-
-  * Implemented parser for the NOC Weapon Arsenal (1 hour)
-
-  * Refactoring (2 hours)
-
-  * Documentation (2 hours)
-
-* Pavel Smirnov:
-
-  * Plot generation logic (20 hours)
-
-  * Output filtering (5 hours)
-
 # Resources
 [Scealextric](https://github.com/prosecconetwork/Scealextric)
 
