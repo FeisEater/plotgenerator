@@ -138,15 +138,15 @@ class CharacterDataLoader(DataLoader):
         '''
         for person in characters:
             for person2 in characters:
-                if person == person2 or self.__have_relationship(person, person2):
+                if person == person2:# or self.__have_relationship(person, person2):
                     continue
 
                 if self.__are_opponents(person, person2, data):
                     person.relationships[person2] = -1.0
                     person2.relationships[person] = -1.0
                 else:
-                    person.relationships[person2] = np.average([self.__get_initial_relationship_from_political_views(person, person2), self.__get_initial_relationship_from_talking_points(person, person2), random.uniform(-.5, .5)])
-                    person2.relationships[person] = np.average([self.__get_initial_relationship_from_political_views(person2, person), self.__get_initial_relationship_from_talking_points(person2, person), random.uniform(-.5, .5)])
+                    person.relationships[person2] = np.average([self.__get_initial_relationship_from_political_views(person, person2), random.uniform(-.5, .5)])
+                    person2.relationships[person] = np.average([self.__get_initial_relationship_from_political_views(person2, person), random.uniform(-.5, .5)])
 
                 self.out.append(output.ExposRelationship(person, person2, person.relationships[person2]))
 

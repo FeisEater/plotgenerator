@@ -121,7 +121,7 @@ class WasLying(Output):
     self.lie = lie
 
   def __str__(self):
-    return "But {SUBJECT} was lying to {TARGET} about {LIE}".format(SUBJECT=self.source.name, TARGET=self.target.name, LIE=self.lie.action.value)
+    return "But {SUBJECT} was lying to {TARGET} that '{LIESUBJECT} {ACTION} {LIETARGET}'".format(SUBJECT=self.source.name, TARGET=self.target.name, LIESUBJECT=self.lie.subject.name, ACTION=self.lie.action.value, LIETARGET=self.lie.target.name)
 
 class RelationshipChange(Output):
   def __init__(self, time, location, context, source, target, oldvalue, newvalue, important=False):
@@ -234,6 +234,7 @@ def revealContext(output, maxIdx, context):
           revealContext(output, idx, context)
 
 def printOutput(output):
+  result = []
   output.sort(key=attrgetter('time'))
   prevLocation = None
   prevTime = -1
@@ -250,18 +251,6 @@ def printOutput(output):
       for context in line.context:
         revealContext(output, idx, context)
 
-  print("Debug output with unimportant fluff\n")
-  for line in output:
-    if line.time != prevTime:
-      print("\n***\n")
-      prevTime = line.time
-      prevLocation = '.'
-    if line.location != prevLocation:
-      print("\nAt the {LOCATION}...".format(LOCATION=line.location))
-      prevLocation = line.location
-    print(line)
-
-  print("\nFINAL OUTPUT:\n")
   protagonist = [char for char in characters if char.protagonist][0]
   protagonistLocation = [out.location for out in output if type(out) is GoesTo and out.character == protagonist][0]
   printLocation = True
@@ -270,14 +259,17 @@ def printOutput(output):
       printLocation = True
     if line.important:
       if printLocation:
-        if line.location == protagonistLocation:
-          print("\nAt the {LOCATION}...".format(LOCATION=line.location))
+        if line.location == '.':
+          result.append("This is a story about {PROTAGONIST}".format(PROTAGONIST=protagonist.name))
+        elif line.location == protagonistLocation:
+          result.append("\nAt the {LOCATION}...".format(LOCATION=line.location))
         else:
-          print("\nMeanwhile, at the {LOCATION}...".format(LOCATION=line.location))        
+          result.append("\nMeanwhile, at the {LOCATION}...".format(LOCATION=line.location))        
         prevLocation = line.location
-      print(line)
+      result.append(line)
       printLocation = False
       printTime = False
     if type(line) is GoesTo and line.character == protagonist:
       protagonistLocation = line.place
+  return result
 

@@ -8,14 +8,14 @@ step = 0
 out = []
 locations = LocationDataLoader().load(howmany=10, out=out)
 characters = CharacterDataLoader().load(howmany=10, out=out)
-for char in characters:
-  char.setLocations(locations)
 objects = ObjectDataLoader().load(howmany=random.randint(1, 3), random_sample=True, out=out)
+for char in characters:
+  char.setWorldData(locations, objects)
 objectLocations = random.sample(locations, len(objects))
 for i in range(len(objects)):
   objects[i].location = objectLocations[i]
   out.append(output.ExposObjectPosition(objects[i], objectLocations[i]))
-  pursuerCount = random.randint(1, 3)
+  pursuerCount = random.randint(1, 4)
   adviserCount = random.randint(1, 2)
   redHerringCount = random.randint(1, 4)
   charSample = random.sample(characters, pursuerCount + adviserCount + redHerringCount)
@@ -32,117 +32,17 @@ for i in range(len(objects)):
     char.knowledge.append(locationKnowledge)
     out.append(output.ExposObjectInfo(char, locationKnowledge, False))
     
-for _ in range(random.randint(0, 3)):
+for _ in range(random.randint(0, 7)):
   trio = random.sample(characters, 3)
   trio[0].goals.insert(0, Goal(GoalType.KILL, trio[1], trio[2]))
   out.append(output.ExposManipulationMotivation(trio[0], trio[1], trio[2]))
-
-def make_decision(source, target):
-  if [goal for goal in source.goals if goal.type == GoalType.KILL and goal.target1 == target and goal.target2 == None]:
-    return Actions.KILL
-  if [goal.target1 for goal in source.goals if goal.type == GoalType.GET_OBJECT and goal.target1.owner == target]:
-    if source.relationships[target] < -0.75:
-      return Actions.KILL
-    else:
-      return Actions.BEAT_UP
-  if source.relationships[target] < -0.75:
-    return Actions.KILL
-  if source.relationships[target] < -0.5:
-    return Actions.BEAT_UP
-  if source.relationships[target] < -0.25:
-    return Actions.INSULT
-  if source.relationships[target] > 0:
-    return Actions.CONVERSE
-  return Actions.NONE
-
-def do_kill(source, target, chars_to_ignore):
-  target.dead = True
-  global characters, out
-  if target in characters:
-    characters.remove(target)
-  chars_to_ignore.append(target)
-  source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
-  additionalOutput = []
-  for object in objects:
-    if object.owner == target:
-      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == object)]
-      object.owner = source
-      object.location = None
-      source.goals = [goal for goal in source.goals if goal.target1 != object]
-      context = [output.Context(output.Got, {'character': target, 'object': object})]
-      additionalOutput.append(output.Steal(step, source.location, context, source, target, object))
-  source.schedule_time = 0
-  return ([
-    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
-    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
-    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
-    output.Context(output.VowRevenge, {'source': source, 'target': target}),
-  ], additionalOutput)
-
-def do_beat_up(source, target, chars_to_ignore):
-  pendingOutput = target.change_relationship(source, -1, [], False)
-  chars_to_ignore.append(target)
-  source.knowledge = [know for know in source.knowledge if not(know.action == Actions.OWNED_BY and know.target == target)]
-  additionalOutput = [pendingOutput]
-  for object in objects:
-    if object.owner == target:
-      source.knowledge = [know for know in source.knowledge if not(know.action == Actions.LOCATED_IN and know.subject == object)]
-      object.owner = source
-      object.location = None
-      source.goals = [goal for goal in source.goals if goal.target1 != object]
-      context = [output.Context(output.Got, {'character': target, 'object': object})]
-      additionalOutput.append(output.Steal(step, source.location, context, source, target, object))
-  source.schedule_time = 0
-  return ([
-    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
-    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
-    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
-  ], additionalOutput)
-
-def do_insult(source, target, chars_to_ignore):
-  pendingOutput = target.change_relationship(source, -0.25, [], False)
-  return ([
-    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
-    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
-    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
-  ], [pendingOutput])
-
-def do_converse(source, target, chars_to_ignore):
-  pendingOutput = target.change_relationship(source, 0.25, [], False)
-  if source in target.told_knowledge:
-    untold_knowledge = [x for x in target.knowledge if x not in target.told_knowledge[source]]
-  else:
-    untold_knowledge = [x for x in target.knowledge]
-  relationshipGossip = [x for x in untold_knowledge if x.action == Actions.LIKES]
-  eventGossip = [x for x in untold_knowledge if x.action != Actions.LIKES]
-  topics_rel = relationshipGossip if len(relationshipGossip) <= 3 else random.sample(relationshipGossip, 3)
-  topics_eve = eventGossip if len(eventGossip) <= 3 else random.sample(eventGossip, 3)
-  conversation_topics = topics_eve + topics_rel
-  for topic in conversation_topics:
-    topic.source = target
-  safe_extend(target.told_knowledge, source, conversation_topics)
-  safe_extend(source.told_knowledge, target, conversation_topics)
-  for knowledge in conversation_topics:
-    source.acquire_knowledge(knowledge)
-  return ([
-    output.Context(output.ExposRelationship, {'source': source, 'target': target}),
-    output.Context(output.ExposRelationship, {'source': target, 'target': source}),
-    output.Context(output.RelationshipChange, {'source': source, 'target': target}),
-  ], [pendingOutput])
-
-action_methods = {
-  Actions.KILL: do_kill,
-  Actions.BEAT_UP: do_beat_up,
-  Actions.INSULT: do_insult,
-  Actions.CONVERSE: do_converse
-}
 
 def execute_action(action, place, events, chars_to_ignore):
   random.shuffle(events[action])
   for tuple in events[action]:
     if tuple[0] in chars_to_ignore:
       continue
-    methodTuple = action_methods[action](tuple[0], tuple[1], chars_to_ignore)
+    methodTuple = tuple[0].action_methods[action](tuple[1], chars_to_ignore)
     context = methodTuple[0]
     additionalOutput = methodTuple[1]
     out.append(output.SomeAction(step, tuple[0].location, context, tuple[0], tuple[1], action))
@@ -173,10 +73,10 @@ def generation_step():
       for person2 in places[place]:
         if person1 == person2:
           continue
-        events[make_decision(person1, person2)].append((person1, person2))
+        events[person1.make_decision(person2)].append((person1, person2))
 
     chars_to_ignore = []
-    for action in action_methods.keys():
+    for action in characters[0].action_methods.keys():
       execute_action(action, places[place], events, chars_to_ignore)
 
   #dump_output(out)
