@@ -6,7 +6,21 @@ from evaluator import evaluate
 import output
 
 class Generator:
+  '''
+  Does character interaction simulation to retrieve creative plot-driven narratives.
+  '''
   def __init__(self, **kwargs):
+    '''
+    kwargs parameters:
+    locationCount (int): amount of locations in the story
+    characterCount (int): amount of characters in the story
+    objectCount (int): amount of mcguffins in the story
+    pursuerCount (int): amount of characters whose motivation is to get some mcguffins
+    adviserCount (int): amount of characters that know where some mcguffin is hidden
+    redHerringCount (int): amount of characters that think they know where some mcguffin is hidden
+    manipulatorCount (int): amount of characters that want to manipulate some character into killing another character
+    iterations (int): amount of steps to generate in the simulation
+    '''
     locationCount = kwargs.get("locationCount", 10)
     characterCount = kwargs.get("characterCount", 10)
     objectCount = kwargs.get("objectCount", random.randint(1,4))
@@ -47,6 +61,10 @@ class Generator:
       self.out.append(output.ExposManipulationMotivation(trio[0], trio[1], trio[2]))
 
   def execute_action(self, action, place, events, chars_to_ignore):
+    '''
+    For a given place and action, simulates interractions for pending characters
+    chars_to_ignore is used to keep track which characters should skip a turn
+    '''
     random.shuffle(events[action])
     for tuple in events[action]:
       if tuple[0] in chars_to_ignore:
@@ -61,6 +79,9 @@ class Generator:
           witness.acquire_knowledge(Knowledge(witness, tuple[0], action, tuple[1], self.step))
       
   def generation_step(self):
+    '''
+    Does simulation for one step
+    '''
     self.step += 1
     
     places = {}
@@ -86,6 +107,12 @@ class Generator:
         self.execute_action(action, places[place], events, chars_to_ignore)
 
   def run(self, printConsole = False):
+    '''
+    Runs the entire simulation and evaluates it
+    if printConsole set, prints the story to console
+    Returns tuple, where lhs is list of string lines consisting of a story,
+    and rhs is evaluated score of the story
+    '''
     for _ in range(self.iterations):
       self.generation_step()
     protagonist = random.choice(self.characters)

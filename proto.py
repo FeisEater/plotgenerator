@@ -1,3 +1,6 @@
+'''
+OBSOLETE
+'''
 import random
 from dataloaders import CharacterDataLoader, ObjectDataLoader, LocationDataLoader
 from models import Knowledge, Actions, Goal, GoalType, Location

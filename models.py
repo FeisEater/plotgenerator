@@ -42,12 +42,14 @@ class Object(Thing):
         self.owner = owner # type: Character
 
 class Location(Thing):
+    '''Each character exists at some location at any point of time'''
     def __init__(self, name):
       Thing.__init__(self, name)
 
 class Knowledge:
+    '''Piece of knowledge that a character has and may spread to other characters through conversation'''
     def __init__(self, source, subject, action, target, timestamp, value = 0):
-        # Knowledge format: SOURCE told me that SUBJECT performed ACTION on TARGET
+        '''Knowledge format: SOURCE told me that SUBJECT performed ACTION on TARGET'''
         self.source = source # type: Character. Character that gave this information
         self.subject = subject # type: Character
         self.action = action # type: Actions
@@ -71,6 +73,7 @@ class Knowledge:
         return self.action in [Actions.KILL, Actions.BEAT_UP, Actions.INSULT, Actions.OWNED_BY]
 
 class Actions(Enum):
+  '''Enumeration of rudimentary actions characters can perform and can be witnessed and stored as knowledge'''
   KILL = "killed"
   BEAT_UP = "beat up"
   INSULT = "insulted"
@@ -81,6 +84,7 @@ class Actions(Enum):
   LIKES = "likes"
   NONE = "none"
 
+  '''These actions can be witnessed by other characters at the same location'''
   @property
   def is_witnessed(self):
     if self in [Actions.KILL, Actions.BEAT_UP]:
@@ -88,6 +92,10 @@ class Actions(Enum):
     else:
       return False
   
+  '''
+  Knowledge with this action is discarded if knowledge recepient is target of the knowledge
+  eg If I got beat up, someone telling me about it does not make a difference
+  '''
   @property
   def ignore_if_self_is_target(self):
     return self in [Actions.KILL, Actions.BEAT_UP, Actions.OWNED_BY]
@@ -100,10 +108,12 @@ class Actions(Enum):
   def react_badly_if_conflicting_targets(self):
     return False
 
+  '''Receiving knowledge with these actions should be always put into the story'''
   @property
   def importantEvent(self):
     return self in [Actions.KILL, Actions.BEAT_UP, Actions.INSULT]
 
+'''Types of motivation a character can have'''
 class GoalType(Enum):
   GET_OBJECT = 1
   BEFRIEND = 2

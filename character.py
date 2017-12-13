@@ -21,11 +21,13 @@ class Character(Thing):
         self.step = 0
         self.protagonist = False
 
+        '''Methods to perform to react to newly acquired knowledge'''
         self.reactions = {
           Actions.KILL: self.react_to_kill,
           Actions.BEAT_UP: self.react_to_beat_up
         }
 
+        '''Methods to perform based on current goal (mainly deals with choosing which location to visit)'''
         self.schedule_methods = {
           GoalType.GET_OBJECT: self.sched_getObject,
           GoalType.BEFRIEND: self.sched_befriend,
@@ -33,6 +35,11 @@ class Character(Thing):
           GoalType.NONE: self.sched_none
         }
         
+        '''
+        Methods to perform when commiting some action
+        Returns tuple, where rhs is output that needs to be printed after SomeAction line,
+        and lhs is context required for that
+        '''
         self.action_methods = {
           Actions.KILL: self.do_kill,
           Actions.BEAT_UP: self.do_beat_up,
@@ -51,6 +58,10 @@ class Character(Thing):
         return "<Character {}>".format(self.__str__())
 
     def findThing(self, thing):
+        '''
+        If things location is known, visits that location and tries to find it. Otherwise default location visitation
+        Returns true if thing was found
+        '''
         wrong_knowledge = False
         tried_locations = [know.target for know in self.knowledge if know.action == Actions.NOT_LOCATED_IN]
         for know in self.knowledge:
@@ -93,6 +104,10 @@ class Character(Thing):
           print("not implemented")
 
     def sched_kill(self, arg1, arg2):
+        '''
+        If arg1 and arg2 not None, tries to manipulate arg1 into killing arg2 by generating lies
+        If only arg1 is defined, tries to kill arg1
+        '''
         if arg2 == None:
           self.findThing(arg1)
         else:
@@ -100,11 +115,12 @@ class Character(Thing):
           if arg1.location != self.location:
             self.sched_none(None, None)
             return
-          if arg1.relationships[self] < 0:
+          if arg1.relationships[self] < 0: # arg1 doesn't like me, better chat him up
             method_tuple = self.do_converse(arg1, [])
             converseOutput = [output.SomeAction(self.step, self.location, [], self, arg1, Actions.CONVERSE)] + method_tuple[1]
             self.out.extend(converseOutput)
             return
+          #Use knowledge to generate a lie that would turn arg1 against arg2
           knownObjects = [know for know in self.knowledge if (know.action == Actions.LOCATED_IN or know.action == Actions.OWNED_BY) and type(know.subject) is Object]
           acquaintances = [know for know in self.knowledge if know.subject == arg1 and know.action == Actions.LIKES and know.value >= 0 and know.value < 0.5]
           friends = [know for know in self.knowledge if know.subject == arg1 and know.action == Actions.LIKES and know.value >= 0.5]
@@ -210,7 +226,8 @@ class Character(Thing):
           return
         discussionContext = [output.Context(output.SomeAction, {'source': self, 'target': knowledge.source, 'action': Actions.CONVERSE})]
         conflicting_sources = [know.source for know in self.knowledge if know.subject == knowledge.subject and know.target != knowledge.target]
-        if conflicting_sources and knowledge.action.react_badly_if_conflicting_targets:
+        #Attempt at managing sources of conflicting knowledge and feeling betrayed if suspecting someone of lying
+        '''if conflicting_sources and knowledge.action.react_badly_if_conflicting_targets:
           if self.choose_who_to_trust(knowledge.source, conflicting_sources):
             self.knowledge.append(knowledge)
             self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
@@ -226,12 +243,12 @@ class Character(Thing):
             context = [output.Context(output.KnowledgeLearned, {'learner': self, 'knowledge': knowledge})]
             self.out.append(output.NewInfoIsLie(self.step, self.location, context, self, knowledge))
             self.change_relationship(knowledge.source, -0.25, [])
-        else:
-          self.knowledge.append(knowledge)
-          if not(knowledge.source == self and (knowledge.subject == self or knowledge.target == self)):
-            self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
-          if knowledge.action in self.reactions.keys():
-            self.reactions[knowledge.action](knowledge)
+        else:'''
+        self.knowledge.append(knowledge)
+        if not(knowledge.source == self and (knowledge.subject == self or knowledge.target == self)):
+          self.out.append(output.KnowledgeLearned(self.step, self.location, discussionContext, self, knowledge))
+        if knowledge.action in self.reactions.keys():
+          self.reactions[knowledge.action](knowledge)
     
     def react_to_kill(self, knowledge):
         if self == knowledge.target:
@@ -339,6 +356,9 @@ class Character(Thing):
       ], [pendingOutput])
     
     def make_decision(source, target):
+      '''
+      Decide which action to take when confronting target
+      '''
       if [goal for goal in source.goals if goal.type == GoalType.KILL and goal.target1 == target and goal.target2 == None]:
         return Actions.KILL
       if [goal.target1 for goal in source.goals if goal.type == GoalType.GET_OBJECT and goal.target1.owner == target]:
